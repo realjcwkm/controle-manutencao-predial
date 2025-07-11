@@ -4,6 +4,7 @@
  */
 package br.com.loggers.view;
 
+
 public class View extends javax.swing.JFrame {
 
     
@@ -13,6 +14,7 @@ public class View extends javax.swing.JFrame {
      * Creates new form LoginView
      */
     public View() {
+        
         
         }
 
@@ -72,6 +74,8 @@ public class View extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
         dashboard = new javax.swing.JPanel();
+        header = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -463,6 +467,19 @@ public class View extends javax.swing.JFrame {
     root.add(cadastro, "cadastro");
 
     dashboard.setLayout(new java.awt.BorderLayout());
+
+    header.setBackground(new java.awt.Color(60, 137, 166));
+    header.setPreferredSize(new java.awt.Dimension(1440, 64));
+    header.setLayout(new java.awt.BorderLayout());
+
+    jLabel8.setFont(new java.awt.Font("Poppins", 1, 24)); // NOI18N
+    jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+    jLabel8.setText("SGMP");
+    jLabel8.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
+    header.add(jLabel8, java.awt.BorderLayout.LINE_START);
+
+    dashboard.add(header, java.awt.BorderLayout.PAGE_START);
+
     root.add(dashboard, "dashboard");
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -479,42 +496,7 @@ public class View extends javax.swing.JFrame {
     pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jTextFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldEmailActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jTextFieldEmail1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmail1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldEmail1ActionPerformed
-
-    private void jTextFieldEmail2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmail2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldEmail2ActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */
@@ -538,6 +520,7 @@ public class View extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel cadastro;
     private javax.swing.JPanel dashboard;
+    private javax.swing.JPanel header;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -560,6 +543,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
