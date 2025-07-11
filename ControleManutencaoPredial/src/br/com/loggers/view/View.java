@@ -82,6 +82,7 @@ public class View extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
+        menu = new javax.swing.JPanel();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -536,6 +537,12 @@ public class View extends javax.swing.JFrame {
 
     dashboard.add(header, java.awt.BorderLayout.PAGE_START);
 
+    menu.setBackground(new java.awt.Color(255, 255, 255));
+    menu.setMinimumSize(new java.awt.Dimension(0, 0));
+    menu.setPreferredSize(new java.awt.Dimension(263, 746));
+    menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+    dashboard.add(menu, java.awt.BorderLayout.LINE_START);
+
     root.add(dashboard, "dashboard");
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -634,6 +641,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldEmail1;
     private javax.swing.JTextField jTextFieldEmail2;
     private javax.swing.JPanel login;
+    private javax.swing.JPanel menu;
     private javax.swing.JLabel nameUser;
     private javax.swing.JPanel root;
     // End of variables declaration//GEN-END:variables
