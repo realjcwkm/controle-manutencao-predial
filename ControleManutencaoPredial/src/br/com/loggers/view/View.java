@@ -52,6 +52,11 @@ public class View extends javax.swing.JFrame {
         cadastro = new javax.swing.JPanel();
         jPanel59 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
+        jPanel60 = new javax.swing.JPanel();
+        jPanel61 = new javax.swing.JPanel();
+        jPanel62 = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -255,6 +260,53 @@ public class View extends javax.swing.JFrame {
 
     cadastro.add(jPanel59, java.awt.BorderLayout.CENTER);
 
+    jPanel60.setBackground(new java.awt.Color(255, 255, 255));
+    jPanel60.setPreferredSize(new java.awt.Dimension(540, 810));
+
+    jPanel61.setBackground(new java.awt.Color(255, 255, 255));
+    jPanel61.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+    jPanel61.setPreferredSize(new java.awt.Dimension(360, 384));
+    jPanel61.setLayout(new javax.swing.BoxLayout(jPanel61, javax.swing.BoxLayout.Y_AXIS));
+
+    jPanel62.setBackground(new java.awt.Color(255, 255, 255));
+    jPanel62.setAlignmentX(0.0F);
+    jPanel62.setPreferredSize(new java.awt.Dimension(360, 80));
+    jPanel62.setLayout(new javax.swing.BoxLayout(jPanel62, javax.swing.BoxLayout.Y_AXIS));
+
+    jLabel23.setFont(new java.awt.Font("Poppins", 1, 28)); // NOI18N
+    jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    jLabel23.setText("SGMP");
+    jLabel23.setAlignmentX(0.5F);
+    jLabel23.setPreferredSize(new java.awt.Dimension(81, 28));
+    jPanel62.add(jLabel23);
+
+    jLabel24.setFont(new java.awt.Font("Poppins Medium", 0, 16)); // NOI18N
+    jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    jLabel24.setText("<html>Sistema de Gerenciamento<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;de Manutenção Predial</html>");
+    jLabel24.setAlignmentX(0.5F);
+    jPanel62.add(jLabel24);
+
+    jPanel61.add(jPanel62);
+
+    javax.swing.GroupLayout jPanel60Layout = new javax.swing.GroupLayout(jPanel60);
+    jPanel60.setLayout(jPanel60Layout);
+    jPanel60Layout.setHorizontalGroup(
+        jPanel60Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel60Layout.createSequentialGroup()
+            .addContainerGap(102, Short.MAX_VALUE)
+            .addComponent(jPanel61, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(78, 78, 78))
+    );
+    jPanel60Layout.setVerticalGroup(
+        jPanel60Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel60Layout.createSequentialGroup()
+            .addContainerGap(174, Short.MAX_VALUE)
+            .addComponent(jPanel61, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(169, Short.MAX_VALUE))
+    );
+
+    cadastro.add(jPanel60, java.awt.BorderLayout.EAST);
+
     root.add(cadastro, "cadastro");
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -316,6 +368,8 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -327,6 +381,9 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel59;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel60;
+    private javax.swing.JPanel jPanel61;
+    private javax.swing.JPanel jPanel62;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JPasswordField jPasswordFieldSenha;
