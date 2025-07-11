@@ -80,6 +80,8 @@ public class View extends javax.swing.JFrame {
         jPanel17 = new javax.swing.JPanel();
         nameUser = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -504,6 +506,30 @@ public class View extends javax.swing.JFrame {
     jButton9.setFocusPainted(false);
     jPanel17.add(jButton9);
 
+    jButton10.setBackground(new java.awt.Color(60, 137, 166));
+    jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/notifica.png"))); // NOI18N
+    jButton10.setBorder(javax.swing.BorderFactory.createEmptyBorder(6, 6, 6, 6));
+    jButton10.setBorderPainted(false);
+    jButton10.setFocusPainted(false);
+    jButton10.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton10ActionPerformed(evt);
+        }
+    });
+    jPanel17.add(jButton10);
+
+    jButton13.setBackground(new java.awt.Color(60, 137, 166));
+    jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/notifica.png"))); // NOI18N
+    jButton13.setBorder(javax.swing.BorderFactory.createEmptyBorder(6, 6, 6, 6));
+    jButton13.setBorderPainted(false);
+    jButton13.setFocusPainted(false);
+    jButton13.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton13ActionPerformed(evt);
+        }
+    });
+    jPanel17.add(jButton13);
+
     jPanel1.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 16, 198, 32));
 
     header.add(jPanel1, java.awt.BorderLayout.LINE_END);
@@ -525,6 +551,14 @@ public class View extends javax.swing.JFrame {
 
     pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton10ActionPerformed
 
     
     /**
@@ -552,6 +586,8 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel dashboard;
     private javax.swing.JPanel header;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
