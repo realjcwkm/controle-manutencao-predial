@@ -110,6 +110,9 @@ public class View extends javax.swing.JFrame {
         jPanel26 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jPanel27 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        OSTable = new javax.swing.JTable();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -745,6 +748,40 @@ public class View extends javax.swing.JFrame {
 
     jPanel25.add(jPanel22, java.awt.BorderLayout.NORTH);
 
+    jPanel27.setAlignmentX(0.0F);
+    jPanel27.setLayout(new java.awt.GridBagLayout());
+
+    OSTable.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+    OSTable.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+            {"asdfsa", "asdfasdfas", "dasfasdfa", "asdfasdfasd", "asdfasdf", null}
+        },
+        new String [] {
+            "Ordem", "Título", "Técnico", "Status", "Local", "Prazo"
+        }
+    ) {
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false, false, false
+        };
+
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
+    });
+    OSTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
+    OSTable.setRowHeight(56);
+    jScrollPane6.setViewportView(OSTable);
+
+    gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+    gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+    gridBagConstraints.weightx = 1.0;
+    gridBagConstraints.weighty = 1.0;
+    gridBagConstraints.insets = new java.awt.Insets(0, 50, 50, 50);
+    jPanel27.add(jScrollPane6, gridBagConstraints);
+
+    jPanel25.add(jPanel27, java.awt.BorderLayout.CENTER);
+
     jScrollPane1.setViewportView(jPanel25);
 
     javax.swing.GroupLayout ordem_servicoLayout = new javax.swing.GroupLayout(ordem_servico);
@@ -816,6 +853,7 @@ public class View extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable OSTable;
     private javax.swing.JLabel agendadoLabel;
     private javax.swing.JLabel andamentoLabel;
     private javax.swing.JPanel cadastro;
@@ -869,6 +907,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -887,6 +926,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordFieldSenha1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldEmail1;
     private javax.swing.JTextField jTextFieldEmail2;
