@@ -66,6 +66,11 @@ public class View extends javax.swing.JFrame {
         jPanel64 = new javax.swing.JPanel();
         jPasswordFieldSenha1 = new javax.swing.JPasswordField();
         jButton5 = new javax.swing.JButton();
+        jPanel65 = new javax.swing.JPanel();
+        jLabel30 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
+        jLabel31 = new javax.swing.JLabel();
+        jButton8 = new javax.swing.JButton();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -389,6 +394,52 @@ public class View extends javax.swing.JFrame {
 
     jPanel61.add(jPanel63);
 
+    jPanel65.setBackground(new java.awt.Color(255, 255, 255));
+    jPanel65.setAlignmentX(0.0F);
+    jPanel65.setPreferredSize(new java.awt.Dimension(360, 120));
+    jPanel65.setLayout(new javax.swing.BoxLayout(jPanel65, javax.swing.BoxLayout.PAGE_AXIS));
+
+    jLabel30.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    jLabel30.setText("<html> </html>");
+    jLabel30.setAlignmentX(1.0F);
+    jPanel65.add(jLabel30);
+
+    jButton7.setBackground(new java.awt.Color(60, 137, 166));
+    jButton7.setFont(new java.awt.Font("Poppins", 1, 16)); // NOI18N
+    jButton7.setForeground(new java.awt.Color(255, 255, 255));
+    jButton7.setText("Cadastrar");
+    jButton7.setAlignmentX(1.0F);
+    jButton7.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+    jButton7.setMaximumSize(new java.awt.Dimension(360, 52));
+    jButton7.setPreferredSize(new java.awt.Dimension(360, 52));
+    jButton7.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton7ActionPerformed(evt);
+        }
+    });
+    jPanel65.add(jButton7);
+
+    jLabel31.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    jLabel31.setText("<html></html>");
+    jLabel31.setAlignmentX(1.0F);
+    jPanel65.add(jLabel31);
+
+    jButton8.setBackground(new java.awt.Color(60, 137, 166));
+    jButton8.setFont(new java.awt.Font("Poppins", 1, 16)); // NOI18N
+    jButton8.setForeground(new java.awt.Color(255, 255, 255));
+    jButton8.setText("Voltar");
+    jButton8.setAlignmentX(1.0F);
+    jButton8.setBorderPainted(false);
+    jButton8.setFocusPainted(false);
+    jButton8.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton8ActionPerformed(evt);
+        }
+    });
+    jPanel65.add(jButton8);
+
+    jPanel61.add(jPanel65);
+
     javax.swing.GroupLayout jPanel60Layout = new javax.swing.GroupLayout(jPanel60);
     jPanel60.setLayout(jPanel60Layout);
     jPanel60Layout.setHorizontalGroup(
@@ -452,6 +503,14 @@ public class View extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldEmail2ActionPerformed
 
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -478,6 +537,8 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -488,6 +549,8 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -503,6 +566,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel62;
     private javax.swing.JPanel jPanel63;
     private javax.swing.JPanel jPanel64;
+    private javax.swing.JPanel jPanel65;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JPasswordField jPasswordFieldSenha;
