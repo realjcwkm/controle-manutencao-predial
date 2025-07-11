@@ -13,4 +13,21 @@ import java.sql.DriverManager;
  */
 public class Connect {
     private Connection con;
+    
+    private String driver = "com.mysql.cj.jdbc.Driver";
+    private String url = "jdbc:mysql://127.0.0.1:3306/mydb";
+    private String user = "root";
+    private String password = "alunoifro";
+    
+    public Connection conectar(){
+        try{
+            Class.forName(driver);
+            con = DriverManager.getConnection(url, user, password);
+            
+        } catch(Exception e){
+            System.out.println(e);
+            return null;
+        }
+        return con;
+    }
 }
