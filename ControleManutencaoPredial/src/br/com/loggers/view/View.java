@@ -94,6 +94,8 @@ public class View extends javax.swing.JFrame {
         logButton = new javax.swing.JButton();
         jPanel15 = new javax.swing.JPanel();
         relatoriosButton = new javax.swing.JButton();
+        jPanel16 = new javax.swing.JPanel();
+        ativosButton = new javax.swing.JButton();
         rootDashboard = new javax.swing.JPanel();
         ordem_servico = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -161,6 +163,12 @@ public class View extends javax.swing.JFrame {
         jPanel49 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jPanel50 = new javax.swing.JPanel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        relatorioTable = new javax.swing.JTable();
+        ativo = new javax.swing.JPanel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        jPanel51 = new javax.swing.JPanel();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -659,7 +667,7 @@ public class View extends javax.swing.JFrame {
     );
     jPanel12Layout.setVerticalGroup(
         jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(ordem_servicoButton, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+        .addComponent(ordem_servicoButton, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
     );
 
     jPanel10.add(jPanel12);
@@ -686,7 +694,7 @@ public class View extends javax.swing.JFrame {
     );
     jPanel13Layout.setVerticalGroup(
         jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(manutencoesButton, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+        .addComponent(manutencoesButton, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
     );
 
     jPanel10.add(jPanel13);
@@ -713,7 +721,7 @@ public class View extends javax.swing.JFrame {
     );
     jPanel14Layout.setVerticalGroup(
         jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(logButton, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+        .addComponent(logButton, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
     );
 
     jPanel10.add(jPanel14);
@@ -740,10 +748,37 @@ public class View extends javax.swing.JFrame {
     );
     jPanel15Layout.setVerticalGroup(
         jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(relatoriosButton, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+        .addComponent(relatoriosButton, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
     );
 
     jPanel10.add(jPanel15);
+
+    jPanel16.setBackground(new java.awt.Color(255, 255, 255));
+    jPanel16.setPreferredSize(new java.awt.Dimension(183, 42));
+
+    ativosButton.setFont(new java.awt.Font("Poppins Medium", 0, 12)); // NOI18N
+    ativosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Box.png"))); // NOI18N
+    ativosButton.setText("  Ativos");
+    ativosButton.setBorderPainted(false);
+    ativosButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    ativosButton.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            ativosButtonActionPerformed(evt);
+        }
+    });
+
+    javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+    jPanel16.setLayout(jPanel16Layout);
+    jPanel16Layout.setHorizontalGroup(
+        jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(ativosButton, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+    );
+    jPanel16Layout.setVerticalGroup(
+        jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(ativosButton, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+    );
+
+    jPanel10.add(jPanel16);
 
     menu.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 220, 300));
 
@@ -1210,6 +1245,49 @@ public class View extends javax.swing.JFrame {
 
     jPanel41.add(jPanel44, java.awt.BorderLayout.NORTH);
 
+    jPanel50.setAlignmentX(0.0F);
+    jPanel50.setLayout(new java.awt.GridBagLayout());
+
+    relatorioTable.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+    relatorioTable.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+            {"10", "Abril", "2025", "16"},
+            {"9", "Março", "2025", "10"},
+            {"8", "Fevereiro", "2025", "11"},
+            {"7", "Janeiro", "2025", "17"},
+            {"6", "Dezembro", "2024", "9"},
+            {"5", "Novembro", "2024", "17"},
+            {"4", "Outubro", "2024", "20"},
+            {"3", "Setembro", "2024", "14"},
+            {"2", "Agosto", "2024", "13"},
+            {"1", "Julho", "2024", "11"}
+        },
+        new String [] {
+            "ID", "Mês", "Ano", "Total de OS"
+        }
+    ) {
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false
+        };
+
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
+    });
+    relatorioTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
+    relatorioTable.setRowHeight(56);
+    jScrollPane10.setViewportView(relatorioTable);
+
+    gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+    gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+    gridBagConstraints.weightx = 1.0;
+    gridBagConstraints.weighty = 1.0;
+    gridBagConstraints.insets = new java.awt.Insets(0, 50, 50, 50);
+    jPanel50.add(jScrollPane10, gridBagConstraints);
+
+    jPanel41.add(jPanel50, java.awt.BorderLayout.CENTER);
+
     jScrollPane9.setViewportView(jPanel41);
 
     javax.swing.GroupLayout relatorioLayout = new javax.swing.GroupLayout(relatorio);
@@ -1224,6 +1302,24 @@ public class View extends javax.swing.JFrame {
     );
 
     rootDashboard.add(relatorio, "relatorio");
+
+    jPanel51.setMinimumSize(new java.awt.Dimension(0, 66));
+    jPanel51.setPreferredSize(new java.awt.Dimension(500, 1000));
+    jPanel51.setLayout(new java.awt.BorderLayout());
+    jScrollPane11.setViewportView(jPanel51);
+
+    javax.swing.GroupLayout ativoLayout = new javax.swing.GroupLayout(ativo);
+    ativo.setLayout(ativoLayout);
+    ativoLayout.setHorizontalGroup(
+        ativoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 1177, Short.MAX_VALUE)
+    );
+    ativoLayout.setVerticalGroup(
+        ativoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE)
+    );
+
+    rootDashboard.add(ativo, "ativo");
 
     dashboard.add(rootDashboard, java.awt.BorderLayout.CENTER);
 
@@ -1287,6 +1383,10 @@ public class View extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton15ActionPerformed
 
+    private void ativosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ativosButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ativosButtonActionPerformed
+
     
     /**
      * @param args the command line arguments
@@ -1312,6 +1412,8 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JTable OSTable;
     private javax.swing.JLabel agendadoLabel;
     private javax.swing.JLabel andamentoLabel;
+    private javax.swing.JPanel ativo;
+    private javax.swing.JButton ativosButton;
     private javax.swing.JPanel cadastro;
     private javax.swing.JPanel dashboard;
     private javax.swing.JLabel finalizadoLabel;
@@ -1366,6 +1468,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
@@ -1403,6 +1506,8 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel48;
     private javax.swing.JPanel jPanel49;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel50;
+    private javax.swing.JPanel jPanel51;
     private javax.swing.JPanel jPanel59;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel60;
@@ -1417,6 +1522,8 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordFieldSenha;
     private javax.swing.JPasswordField jPasswordFieldSenha1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -1439,6 +1546,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JButton ordem_servicoButton;
     private javax.swing.JLabel pendenteLabel;
     private javax.swing.JPanel relatorio;
+    private javax.swing.JTable relatorioTable;
     private javax.swing.JButton relatoriosButton;
     private javax.swing.JPanel root;
     private javax.swing.JPanel rootDashboard;
