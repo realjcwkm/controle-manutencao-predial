@@ -128,6 +128,9 @@ public class View extends javax.swing.JFrame {
         jPanel34 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        jPanel38 = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        manutencaoTable = new javax.swing.JTable();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -912,6 +915,40 @@ public class View extends javax.swing.JFrame {
 
     jPanel28.add(jPanel29, java.awt.BorderLayout.NORTH);
 
+    jPanel38.setAlignmentX(0.0F);
+    jPanel38.setLayout(new java.awt.GridBagLayout());
+
+    manutencaoTable.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+    manutencaoTable.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+            {"asdfsa", "asdfasdfas", "asdfasdfas", "asdfasdf", null}
+        },
+        new String [] {
+            "Ordem", "Título", "Data", "Local", "Tipo"
+        }
+    ) {
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false, false
+        };
+
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
+    });
+    manutencaoTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
+    manutencaoTable.setRowHeight(56);
+    jScrollPane7.setViewportView(manutencaoTable);
+
+    gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+    gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+    gridBagConstraints.weightx = 1.0;
+    gridBagConstraints.weighty = 1.0;
+    gridBagConstraints.insets = new java.awt.Insets(0, 50, 50, 50);
+    jPanel38.add(jScrollPane7, gridBagConstraints);
+
+    jPanel28.add(jPanel38, java.awt.BorderLayout.CENTER);
+
     jScrollPane3.setViewportView(jPanel28);
 
     javax.swing.GroupLayout manutencoesLayout = new javax.swing.GroupLayout(manutencoes);
@@ -1063,6 +1100,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel32;
     private javax.swing.JPanel jPanel33;
     private javax.swing.JPanel jPanel34;
+    private javax.swing.JPanel jPanel38;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel59;
@@ -1082,10 +1120,12 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldEmail1;
     private javax.swing.JTextField jTextFieldEmail2;
     private javax.swing.JPanel login;
+    private javax.swing.JTable manutencaoTable;
     private javax.swing.JPanel manutencoes;
     private javax.swing.JButton manutencoesButton;
     private javax.swing.JPanel menu;
