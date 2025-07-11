@@ -143,6 +143,9 @@ public class View extends javax.swing.JFrame {
         jPanel42 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        jPanel43 = new javax.swing.JPanel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        logsTable = new javax.swing.JTable();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -1044,6 +1047,40 @@ public class View extends javax.swing.JFrame {
 
     jPanel35.add(jPanel36, java.awt.BorderLayout.NORTH);
 
+    jPanel43.setAlignmentX(0.0F);
+    jPanel43.setLayout(new java.awt.GridBagLayout());
+
+    logsTable.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+    logsTable.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+            {"asdfsa", "asdfasdfas", "asdfasdfas", "asdfasdf", null}
+        },
+        new String [] {
+            "Data", "Hora", "Usuário", "Descrição", "Tipo"
+        }
+    ) {
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false, false
+        };
+
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
+    });
+    logsTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
+    logsTable.setRowHeight(56);
+    jScrollPane8.setViewportView(logsTable);
+
+    gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+    gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+    gridBagConstraints.weightx = 1.0;
+    gridBagConstraints.weighty = 1.0;
+    gridBagConstraints.insets = new java.awt.Insets(0, 50, 50, 50);
+    jPanel43.add(jScrollPane8, gridBagConstraints);
+
+    jPanel35.add(jPanel43, java.awt.BorderLayout.CENTER);
+
     jScrollPane4.setViewportView(jPanel35);
 
     javax.swing.GroupLayout historicoLayout = new javax.swing.GroupLayout(historico);
@@ -1211,6 +1248,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel40;
     private javax.swing.JPanel jPanel42;
+    private javax.swing.JPanel jPanel43;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel59;
     private javax.swing.JPanel jPanel6;
@@ -1231,11 +1269,13 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldEmail1;
     private javax.swing.JTextField jTextFieldEmail2;
     private javax.swing.JButton logButton;
     private javax.swing.JPanel login;
+    private javax.swing.JTable logsTable;
     private javax.swing.JTable manutencaoTable;
     private javax.swing.JPanel manutencoes;
     private javax.swing.JButton manutencoesButton;
