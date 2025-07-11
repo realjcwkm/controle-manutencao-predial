@@ -50,6 +50,8 @@ public class View extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         cadastro = new javax.swing.JPanel();
+        jPanel59 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -243,6 +245,16 @@ public class View extends javax.swing.JFrame {
     cadastro.setBackground(new java.awt.Color(255, 255, 255));
     cadastro.setPreferredSize(new java.awt.Dimension(1440, 810));
     cadastro.setLayout(new java.awt.BorderLayout());
+
+    jPanel59.setBackground(new java.awt.Color(23, 50, 62));
+    jPanel59.setMinimumSize(new java.awt.Dimension(0, 0));
+    jPanel59.setLayout(new java.awt.GridBagLayout());
+
+    jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/server_image_svg.png"))); // NOI18N
+    jPanel59.add(jLabel22, new java.awt.GridBagConstraints());
+
+    cadastro.add(jPanel59, java.awt.BorderLayout.CENTER);
+
     root.add(cadastro, "cadastro");
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -303,6 +315,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -312,6 +325,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel59;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel9;
