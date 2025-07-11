@@ -90,6 +90,8 @@ public class View extends javax.swing.JFrame {
         ordem_servicoButton = new javax.swing.JButton();
         jPanel13 = new javax.swing.JPanel();
         manutencoesButton = new javax.swing.JButton();
+        jPanel14 = new javax.swing.JPanel();
+        logButton = new javax.swing.JButton();
         rootDashboard = new javax.swing.JPanel();
         ordem_servico = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -131,6 +133,9 @@ public class View extends javax.swing.JFrame {
         jPanel38 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         manutencaoTable = new javax.swing.JTable();
+        historico = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jPanel35 = new javax.swing.JPanel();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -629,7 +634,7 @@ public class View extends javax.swing.JFrame {
     );
     jPanel12Layout.setVerticalGroup(
         jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(ordem_servicoButton, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+        .addComponent(ordem_servicoButton, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
     );
 
     jPanel10.add(jPanel12);
@@ -656,10 +661,37 @@ public class View extends javax.swing.JFrame {
     );
     jPanel13Layout.setVerticalGroup(
         jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(manutencoesButton, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+        .addComponent(manutencoesButton, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
     );
 
     jPanel10.add(jPanel13);
+
+    jPanel14.setBackground(new java.awt.Color(255, 255, 255));
+    jPanel14.setPreferredSize(new java.awt.Dimension(183, 42));
+
+    logButton.setFont(new java.awt.Font("Poppins Medium", 0, 12)); // NOI18N
+    logButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Clock.png"))); // NOI18N
+    logButton.setText("  Logs de Sistema");
+    logButton.setBorderPainted(false);
+    logButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    logButton.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            logButtonActionPerformed(evt);
+        }
+    });
+
+    javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+    jPanel14.setLayout(jPanel14Layout);
+    jPanel14Layout.setHorizontalGroup(
+        jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(logButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+    jPanel14Layout.setVerticalGroup(
+        jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(logButton, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+    );
+
+    jPanel10.add(jPanel14);
 
     menu.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 220, 300));
 
@@ -964,6 +996,26 @@ public class View extends javax.swing.JFrame {
 
     rootDashboard.add(manutencoes, "manutencoes");
 
+    historico.setBackground(new java.awt.Color(255, 255, 255));
+
+    jPanel35.setMinimumSize(new java.awt.Dimension(0, 66));
+    jPanel35.setPreferredSize(new java.awt.Dimension(500, 1000));
+    jPanel35.setLayout(new java.awt.BorderLayout());
+    jScrollPane4.setViewportView(jPanel35);
+
+    javax.swing.GroupLayout historicoLayout = new javax.swing.GroupLayout(historico);
+    historico.setLayout(historicoLayout);
+    historicoLayout.setHorizontalGroup(
+        historicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1177, Short.MAX_VALUE)
+    );
+    historicoLayout.setVerticalGroup(
+        historicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE)
+    );
+
+    rootDashboard.add(historico, "historico");
+
     dashboard.add(rootDashboard, java.awt.BorderLayout.CENTER);
 
     root.add(dashboard, "dashboard");
@@ -1010,6 +1062,10 @@ public class View extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton14ActionPerformed
 
+    private void logButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_logButtonActionPerformed
+
     
     /**
      * @param args the command line arguments
@@ -1039,6 +1095,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel dashboard;
     private javax.swing.JLabel finalizadoLabel;
     private javax.swing.JPanel header;
+    private javax.swing.JPanel historico;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton12;
@@ -1080,6 +1137,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
@@ -1100,6 +1158,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel32;
     private javax.swing.JPanel jPanel33;
     private javax.swing.JPanel jPanel34;
+    private javax.swing.JPanel jPanel35;
     private javax.swing.JPanel jPanel38;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -1118,12 +1177,14 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordFieldSenha1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldEmail1;
     private javax.swing.JTextField jTextFieldEmail2;
+    private javax.swing.JButton logButton;
     private javax.swing.JPanel login;
     private javax.swing.JTable manutencaoTable;
     private javax.swing.JPanel manutencoes;
