@@ -83,6 +83,11 @@ public class View extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
         menu = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
+        ordem_servicoButton = new javax.swing.JButton();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -541,6 +546,53 @@ public class View extends javax.swing.JFrame {
     menu.setMinimumSize(new java.awt.Dimension(0, 0));
     menu.setPreferredSize(new java.awt.Dimension(263, 746));
     menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    jPanel10.setBackground(new java.awt.Color(255, 255, 255));
+    jPanel10.setPreferredSize(new java.awt.Dimension(183, 256));
+    jPanel10.setLayout(new javax.swing.BoxLayout(jPanel10, javax.swing.BoxLayout.Y_AXIS));
+
+    jPanel11.setBackground(new java.awt.Color(255, 255, 255));
+    jPanel11.setMaximumSize(new java.awt.Dimension(2147483647, 42));
+    jPanel11.setPreferredSize(new java.awt.Dimension(183, 42));
+    jPanel11.setLayout(new java.awt.BorderLayout());
+
+    jLabel9.setFont(new java.awt.Font("Poppins", 1, 14)); // NOI18N
+    jLabel9.setText("Menu");
+    jPanel11.add(jLabel9, java.awt.BorderLayout.LINE_START);
+
+    jPanel10.add(jPanel11);
+
+    jPanel12.setBackground(new java.awt.Color(255, 255, 255));
+    jPanel12.setPreferredSize(new java.awt.Dimension(183, 42));
+
+    ordem_servicoButton.setFont(new java.awt.Font("Poppins", 1, 12)); // NOI18N
+    ordem_servicoButton.setForeground(new java.awt.Color(60, 137, 166));
+    ordem_servicoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Chart.png"))); // NOI18N
+    ordem_servicoButton.setText("  Ordens de Serviço");
+    ordem_servicoButton.setBorderPainted(false);
+    ordem_servicoButton.setFocusPainted(false);
+    ordem_servicoButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    ordem_servicoButton.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            ordem_servicoButtonActionPerformed(evt);
+        }
+    });
+
+    javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+    jPanel12.setLayout(jPanel12Layout);
+    jPanel12Layout.setHorizontalGroup(
+        jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(ordem_servicoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+    jPanel12Layout.setVerticalGroup(
+        jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(ordem_servicoButton, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
+    );
+
+    jPanel10.add(jPanel12);
+
+    menu.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 220, 300));
+
     dashboard.add(menu, java.awt.BorderLayout.LINE_START);
 
     root.add(dashboard, "dashboard");
@@ -566,6 +618,10 @@ public class View extends javax.swing.JFrame {
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void ordem_servicoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordem_servicoButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ordem_servicoButtonActionPerformed
 
     
     /**
@@ -618,7 +674,11 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -643,6 +703,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel login;
     private javax.swing.JPanel menu;
     private javax.swing.JLabel nameUser;
+    private javax.swing.JButton ordem_servicoButton;
     private javax.swing.JPanel root;
     // End of variables declaration//GEN-END:variables
 }
