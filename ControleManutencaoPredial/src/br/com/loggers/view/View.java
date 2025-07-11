@@ -151,6 +151,15 @@ public class View extends javax.swing.JFrame {
         relatorio = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
         jPanel41 = new javax.swing.JPanel();
+        jPanel44 = new javax.swing.JPanel();
+        jPanel45 = new javax.swing.JPanel();
+        jPanel46 = new javax.swing.JPanel();
+        jPanel47 = new javax.swing.JPanel();
+        jPanel48 = new javax.swing.JPanel();
+        jButton16 = new javax.swing.JButton();
+        jPanel49 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -1133,6 +1142,60 @@ public class View extends javax.swing.JFrame {
     jPanel41.setMinimumSize(new java.awt.Dimension(0, 66));
     jPanel41.setPreferredSize(new java.awt.Dimension(500, 1000));
     jPanel41.setLayout(new java.awt.BorderLayout());
+
+    jPanel44.setLayout(new javax.swing.BoxLayout(jPanel44, javax.swing.BoxLayout.Y_AXIS));
+
+    jPanel45.setAlignmentX(0.0F);
+    jPanel45.setPreferredSize(new java.awt.Dimension(1177, 150));
+    jPanel45.setLayout(new java.awt.BorderLayout());
+
+    jPanel46.setMinimumSize(new java.awt.Dimension(0, 0));
+    jPanel46.setLayout(new java.awt.GridBagLayout());
+
+    jPanel47.setLayout(new java.awt.BorderLayout());
+
+    jPanel48.setPreferredSize(new java.awt.Dimension(300, 42));
+    jPanel48.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    jButton16.setBackground(new java.awt.Color(23, 50, 62));
+    jButton16.setFont(new java.awt.Font("Poppins", 1, 12)); // NOI18N
+    jButton16.setForeground(new java.awt.Color(255, 255, 255));
+    jButton16.setText("Exportar PDF");
+    jButton16.setBorder(null);
+    jButton16.setBorderPainted(false);
+    jButton16.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton16ActionPerformed(evt);
+        }
+    });
+    jPanel48.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 109, 35));
+
+    jPanel47.add(jPanel48, java.awt.BorderLayout.EAST);
+
+    jPanel49.setLayout(new javax.swing.BoxLayout(jPanel49, javax.swing.BoxLayout.Y_AXIS));
+
+    jLabel18.setFont(new java.awt.Font("Poppins", 1, 24)); // NOI18N
+    jLabel18.setText("Relatórios");
+    jPanel49.add(jLabel18);
+
+    jLabel19.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+    jLabel19.setText("Exportar arquivo em PDF");
+    jPanel49.add(jLabel19);
+
+    jPanel47.add(jPanel49, java.awt.BorderLayout.WEST);
+
+    gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+    gridBagConstraints.weightx = 1.0;
+    gridBagConstraints.insets = new java.awt.Insets(0, 50, 0, 50);
+    jPanel46.add(jPanel47, gridBagConstraints);
+
+    jPanel45.add(jPanel46, java.awt.BorderLayout.CENTER);
+
+    jPanel44.add(jPanel45);
+
+    jPanel41.add(jPanel44, java.awt.BorderLayout.NORTH);
+
     jScrollPane9.setViewportView(jPanel41);
 
     javax.swing.GroupLayout relatorioLayout = new javax.swing.GroupLayout(relatorio);
@@ -1202,6 +1265,10 @@ public class View extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_relatoriosButtonActionPerformed
 
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton16ActionPerformed
+
     
     /**
      * @param args the command line arguments
@@ -1237,6 +1304,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1254,6 +1322,8 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -1307,6 +1377,12 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel41;
     private javax.swing.JPanel jPanel42;
     private javax.swing.JPanel jPanel43;
+    private javax.swing.JPanel jPanel44;
+    private javax.swing.JPanel jPanel45;
+    private javax.swing.JPanel jPanel46;
+    private javax.swing.JPanel jPanel47;
+    private javax.swing.JPanel jPanel48;
+    private javax.swing.JPanel jPanel49;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel59;
     private javax.swing.JPanel jPanel6;
