@@ -61,6 +61,181 @@ public class View extends javax.swing.JFrame {
             }
         });
 
+        root.setLayout(new java.awt.CardLayout());
+
+        login.setBackground(new java.awt.Color(255, 255, 255));
+        login.setPreferredSize(new java.awt.Dimension(1440, 810));
+        login.setLayout(new java.awt.BorderLayout());
+
+        jPanel2.setBackground(new java.awt.Color(23, 50, 62));
+        jPanel2.setMinimumSize(new java.awt.Dimension(0, 0));
+        jPanel2.setLayout(new java.awt.GridBagLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/server_image_svg.png"))); // NOI18N
+        jPanel2.add(jLabel1, new java.awt.GridBagConstraints());
+
+        login.add(jPanel2, java.awt.BorderLayout.CENTER);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setPreferredSize(new java.awt.Dimension(540, 810));
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
+        jPanel4.setPreferredSize(new java.awt.Dimension(360, 384));
+        jPanel4.setLayout(new javax.swing.BoxLayout(jPanel4, javax.swing.BoxLayout.Y_AXIS));
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setAlignmentX(0.0F);
+        jPanel5.setPreferredSize(new java.awt.Dimension(360, 80));
+        jPanel5.setLayout(new javax.swing.BoxLayout(jPanel5, javax.swing.BoxLayout.Y_AXIS));
+
+        jLabel2.setFont(new java.awt.Font("Poppins", 1, 28)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("SGMP");
+        jLabel2.setAlignmentX(0.5F);
+        jLabel2.setPreferredSize(new java.awt.Dimension(81, 28));
+        jPanel5.add(jLabel2);
+
+        jLabel3.setFont(new java.awt.Font("Poppins Medium", 0, 16)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("<html>Sistema de Gerenciamento<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;de Manutenção Predial</html>");
+        jLabel3.setAlignmentX(0.5F);
+        jPanel5.add(jLabel3);
+
+        jPanel4.add(jPanel5);
+
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setPreferredSize(new java.awt.Dimension(360, 186));
+        jPanel6.setLayout(new javax.swing.BoxLayout(jPanel6, javax.swing.BoxLayout.Y_AXIS));
+
+        jLabel4.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel4.setText("E-mail");
+        jLabel4.setFocusable(false);
+        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        jLabel4.setPreferredSize(new java.awt.Dimension(49, 44));
+        jPanel6.add(jLabel4);
+
+        jTextFieldEmail.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jTextFieldEmail.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextFieldEmail.setAlignmentX(0.0F);
+        jTextFieldEmail.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+            javax.swing.BorderFactory.createLineBorder(java.awt.Color.decode("#D0D5DD"), 3, true),
+            javax.swing.BorderFactory.createEmptyBorder(8, 8, 8, 8)
+        )
+    );
+    jTextFieldEmail.setPreferredSize(new java.awt.Dimension(360, 20));
+    jTextFieldEmail.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jTextFieldEmailActionPerformed(evt);
+        }
+    });
+    jPanel6.add(jTextFieldEmail);
+
+    jLabel5.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+    jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    jLabel5.setText("Senha");
+    jLabel5.setPreferredSize(new java.awt.Dimension(48, 44));
+    jPanel6.add(jLabel5);
+
+    jPanel9.setBackground(new java.awt.Color(255, 255, 255));
+    jPanel9.setAlignmentX(0.0F);
+    jPanel9.setPreferredSize(new java.awt.Dimension(360, 20));
+    jPanel9.setLayout(new javax.swing.BoxLayout(jPanel9, javax.swing.BoxLayout.X_AXIS));
+
+    jPasswordFieldSenha.setFont(new java.awt.Font("Poppins", 1, 15)); // NOI18N
+    jPasswordFieldSenha.setToolTipText("");
+    jPasswordFieldSenha.setAlignmentX(0.0F);
+    jPasswordFieldSenha.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+        javax.swing.BorderFactory.createLineBorder(java.awt.Color.decode("#D0D5DD"), 3, true),
+        javax.swing.BorderFactory.createEmptyBorder(8, 8, 8, 8)
+    )
+    );
+    jPasswordFieldSenha.setPreferredSize(new java.awt.Dimension(135, 20));
+    jPanel9.add(jPasswordFieldSenha);
+
+    jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/eye.png"))); // NOI18N
+    jButton3.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+        javax.swing.BorderFactory.createLineBorder(java.awt.Color.decode("#D0D5DD"), 3, true),
+        javax.swing.BorderFactory.createEmptyBorder(8, 8, 8, 8)
+    )
+    );
+    jButton3.setPreferredSize(new java.awt.Dimension(40, 30));
+    jButton3.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton3ActionPerformed(evt);
+        }
+    });
+    jPanel9.add(jButton3);
+
+    jPanel6.add(jPanel9);
+
+    jPanel4.add(jPanel6);
+
+    jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+    jPanel7.setAlignmentX(0.0F);
+    jPanel7.setPreferredSize(new java.awt.Dimension(360, 120));
+    jPanel7.setLayout(new javax.swing.BoxLayout(jPanel7, javax.swing.BoxLayout.PAGE_AXIS));
+
+    jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    jLabel6.setText("<html> </html>");
+    jLabel6.setAlignmentX(1.0F);
+    jPanel7.add(jLabel6);
+
+    jButton1.setBackground(new java.awt.Color(60, 137, 166));
+    jButton1.setFont(new java.awt.Font("Poppins", 1, 16)); // NOI18N
+    jButton1.setForeground(new java.awt.Color(255, 255, 255));
+    jButton1.setText("Entrar");
+    jButton1.setAlignmentX(1.0F);
+    jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+    jButton1.setMaximumSize(new java.awt.Dimension(360, 52));
+    jButton1.setPreferredSize(new java.awt.Dimension(360, 52));
+    jButton1.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton1ActionPerformed(evt);
+        }
+    });
+    jPanel7.add(jButton1);
+
+    jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+    jLabel7.setText("<html></html>");
+    jLabel7.setAlignmentX(1.0F);
+    jPanel7.add(jLabel7);
+
+    jButton2.setBackground(new java.awt.Color(60, 137, 166));
+    jButton2.setFont(new java.awt.Font("Poppins", 1, 16)); // NOI18N
+    jButton2.setForeground(new java.awt.Color(255, 255, 255));
+    jButton2.setText("Cadastrar");
+    jButton2.setAlignmentX(1.0F);
+    jButton2.setBorderPainted(false);
+    jButton2.setFocusPainted(false);
+    jButton2.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton2ActionPerformed(evt);
+        }
+    });
+    jPanel7.add(jButton2);
+
+    jPanel4.add(jPanel7);
+
+    javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+    jPanel3.setLayout(jPanel3Layout);
+    jPanel3Layout.setHorizontalGroup(
+        jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+            .addContainerGap(102, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(78, 78, 78))
+    );
+    jPanel3Layout.setVerticalGroup(
+        jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel3Layout.createSequentialGroup()
+            .addContainerGap(209, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(217, Short.MAX_VALUE))
+    );
+
+    login.add(jPanel3, java.awt.BorderLayout.EAST);
 
     root.add(login, "login");
 
