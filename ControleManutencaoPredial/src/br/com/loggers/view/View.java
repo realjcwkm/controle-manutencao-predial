@@ -4,24 +4,6 @@
  */
 package br.com.loggers.view;
 
-import com.formdev.flatlaf.FlatClientProperties;
-import com.formdev.flatlaf.FlatLightLaf;
-import java.awt.BorderLayout;
-import java.awt.CardLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import javax.swing.BorderFactory;
-import javax.swing.BoxLayout;
-import javax.swing.SwingConstants;
-import javax.swing.UIManager;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.TableColumnModel;
-import popup.glasspanepopup.GlassPanePopup;
-
-
 public class View extends javax.swing.JFrame {
 
     
@@ -31,9 +13,7 @@ public class View extends javax.swing.JFrame {
      * Creates new form LoginView
      */
     public View() {
-        initComponents();
-        GlassPanePopup.install(this);
-        FlatLightLaf.install();
+        
         }
 
     /**
@@ -44,8 +24,27 @@ public class View extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        //
+        java.awt.GridBagConstraints gridBagConstraints;
+
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jEditorPane1 = new javax.swing.JEditorPane();
+        root = new javax.swing.JPanel();
+        login = new javax.swing.JPanel();
+
+        jScrollPane5.setViewportView(jEditorPane1);
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(400, 400));
+        setSize(new java.awt.Dimension(1440, 810));
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentResized(java.awt.event.ComponentEvent evt) {
+                formComponentResized(evt);
+            }
+        });
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
+
     /**
      * @param args the command line arguments
      */
@@ -66,4 +65,10 @@ public class View extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> new View().setVisible(true));
     }
 
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JEditorPane jEditorPane1;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JPanel login;
+    private javax.swing.JPanel root;
+    // End of variables declaration//GEN-END:variables
 }
