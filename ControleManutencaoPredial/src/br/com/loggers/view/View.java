@@ -136,6 +136,13 @@ public class View extends javax.swing.JFrame {
         historico = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jPanel35 = new javax.swing.JPanel();
+        jPanel36 = new javax.swing.JPanel();
+        jPanel37 = new javax.swing.JPanel();
+        jPanel39 = new javax.swing.JPanel();
+        jPanel40 = new javax.swing.JPanel();
+        jPanel42 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -1001,6 +1008,42 @@ public class View extends javax.swing.JFrame {
     jPanel35.setMinimumSize(new java.awt.Dimension(0, 66));
     jPanel35.setPreferredSize(new java.awt.Dimension(500, 1000));
     jPanel35.setLayout(new java.awt.BorderLayout());
+
+    jPanel36.setLayout(new javax.swing.BoxLayout(jPanel36, javax.swing.BoxLayout.Y_AXIS));
+
+    jPanel37.setAlignmentX(0.0F);
+    jPanel37.setPreferredSize(new java.awt.Dimension(1177, 150));
+    jPanel37.setLayout(new java.awt.BorderLayout());
+
+    jPanel39.setMinimumSize(new java.awt.Dimension(0, 0));
+    jPanel39.setLayout(new java.awt.GridBagLayout());
+
+    jPanel40.setLayout(new java.awt.BorderLayout());
+
+    jPanel42.setLayout(new javax.swing.BoxLayout(jPanel42, javax.swing.BoxLayout.Y_AXIS));
+
+    jLabel16.setFont(new java.awt.Font("Poppins", 1, 24)); // NOI18N
+    jLabel16.setText("Logs de sistema");
+    jPanel42.add(jLabel16);
+
+    jLabel17.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+    jLabel17.setText("Logs e histórico de mudanças no sistema");
+    jPanel42.add(jLabel17);
+
+    jPanel40.add(jPanel42, java.awt.BorderLayout.WEST);
+
+    gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+    gridBagConstraints.weightx = 1.0;
+    gridBagConstraints.insets = new java.awt.Insets(0, 50, 0, 50);
+    jPanel39.add(jPanel40, gridBagConstraints);
+
+    jPanel37.add(jPanel39, java.awt.BorderLayout.CENTER);
+
+    jPanel36.add(jPanel37);
+
+    jPanel35.add(jPanel36, java.awt.BorderLayout.NORTH);
+
     jScrollPane4.setViewportView(jPanel35);
 
     javax.swing.GroupLayout historicoLayout = new javax.swing.GroupLayout(historico);
@@ -1116,6 +1159,8 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -1159,8 +1204,13 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel33;
     private javax.swing.JPanel jPanel34;
     private javax.swing.JPanel jPanel35;
+    private javax.swing.JPanel jPanel36;
+    private javax.swing.JPanel jPanel37;
     private javax.swing.JPanel jPanel38;
+    private javax.swing.JPanel jPanel39;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel40;
+    private javax.swing.JPanel jPanel42;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel59;
     private javax.swing.JPanel jPanel6;
