@@ -76,6 +76,10 @@ public class View extends javax.swing.JFrame {
         dashboard = new javax.swing.JPanel();
         header = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel17 = new javax.swing.JPanel();
+        nameUser = new javax.swing.JLabel();
+        jButton9 = new javax.swing.JButton();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -478,6 +482,32 @@ public class View extends javax.swing.JFrame {
     jLabel8.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
     header.add(jLabel8, java.awt.BorderLayout.LINE_START);
 
+    jPanel1.setBackground(new java.awt.Color(60, 137, 166));
+    jPanel1.setPreferredSize(new java.awt.Dimension(220, 100));
+    jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    jPanel17.setBackground(new java.awt.Color(60, 137, 166));
+    jPanel17.setPreferredSize(new java.awt.Dimension(198, 32));
+    jPanel17.setLayout(new javax.swing.BoxLayout(jPanel17, javax.swing.BoxLayout.LINE_AXIS));
+
+    nameUser.setFont(new java.awt.Font("Poppins Medium", 0, 12)); // NOI18N
+    nameUser.setForeground(new java.awt.Color(255, 255, 255));
+    nameUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/user-3296.png"))); // NOI18N
+    nameUser.setText("  Técnico - Mário");
+    jPanel17.add(nameUser);
+
+    jButton9.setBackground(new java.awt.Color(60, 137, 166));
+    jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/chevron_down.png"))); // NOI18N
+    jButton9.setBorder(javax.swing.BorderFactory.createEmptyBorder(6, 6, 6, 6));
+    jButton9.setBorderPainted(false);
+    jButton9.setContentAreaFilled(false);
+    jButton9.setFocusPainted(false);
+    jPanel17.add(jButton9);
+
+    jPanel1.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 16, 198, 32));
+
+    header.add(jPanel1, java.awt.BorderLayout.LINE_END);
+
     dashboard.add(header, java.awt.BorderLayout.PAGE_START);
 
     root.add(dashboard, "dashboard");
@@ -527,6 +557,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -544,6 +575,8 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -565,6 +598,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldEmail1;
     private javax.swing.JTextField jTextFieldEmail2;
     private javax.swing.JPanel login;
+    private javax.swing.JLabel nameUser;
     private javax.swing.JPanel root;
     // End of variables declaration//GEN-END:variables
 }
