@@ -156,6 +156,7 @@ public class View extends javax.swing.JFrame {
         jPanel46 = new javax.swing.JPanel();
         jPanel47 = new javax.swing.JPanel();
         jPanel48 = new javax.swing.JPanel();
+        jButton15 = new javax.swing.JButton();
         jButton16 = new javax.swing.JButton();
         jPanel49 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
@@ -1157,6 +1158,19 @@ public class View extends javax.swing.JFrame {
     jPanel48.setPreferredSize(new java.awt.Dimension(300, 42));
     jPanel48.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+    jButton15.setBackground(new java.awt.Color(23, 50, 62));
+    jButton15.setFont(new java.awt.Font("Poppins", 1, 12)); // NOI18N
+    jButton15.setForeground(new java.awt.Color(255, 255, 255));
+    jButton15.setText("Exportar CSV");
+    jButton15.setBorder(null);
+    jButton15.setPreferredSize(new java.awt.Dimension(150, 34));
+    jButton15.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton15ActionPerformed(evt);
+        }
+    });
+    jPanel48.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 109, 34));
+
     jButton16.setBackground(new java.awt.Color(23, 50, 62));
     jButton16.setFont(new java.awt.Font("Poppins", 1, 12)); // NOI18N
     jButton16.setForeground(new java.awt.Color(255, 255, 255));
@@ -1269,6 +1283,10 @@ public class View extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton16ActionPerformed
 
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton15ActionPerformed
+
     
     /**
      * @param args the command line arguments
@@ -1304,6 +1322,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
