@@ -179,6 +179,9 @@ public class View extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jLabel21 = new javax.swing.JLabel();
+        jPanel58 = new javax.swing.JPanel();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        ativoTable = new javax.swing.JTable();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -1372,6 +1375,40 @@ public class View extends javax.swing.JFrame {
 
     jPanel51.add(jPanel52, java.awt.BorderLayout.NORTH);
 
+    jPanel58.setAlignmentX(0.0F);
+    jPanel58.setLayout(new java.awt.GridBagLayout());
+
+    ativoTable.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+    ativoTable.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+            {"asdfsa", "asdfasdfas", "asdfasdfas", "asdfasdf", null}
+        },
+        new String [] {
+            "ID", "Nome", "Tipo", "Localização", "Última manut."
+        }
+    ) {
+        boolean[] canEdit = new boolean [] {
+            false, false, false, false, false
+        };
+
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
+    });
+    ativoTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
+    ativoTable.setRowHeight(56);
+    jScrollPane12.setViewportView(ativoTable);
+
+    gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+    gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+    gridBagConstraints.weightx = 1.0;
+    gridBagConstraints.weighty = 1.0;
+    gridBagConstraints.insets = new java.awt.Insets(0, 50, 50, 50);
+    jPanel58.add(jScrollPane12, gridBagConstraints);
+
+    jPanel51.add(jPanel58, java.awt.BorderLayout.CENTER);
+
     jScrollPane11.setViewportView(jPanel51);
 
     javax.swing.GroupLayout ativoLayout = new javax.swing.GroupLayout(ativo);
@@ -1483,6 +1520,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel agendadoLabel;
     private javax.swing.JLabel andamentoLabel;
     private javax.swing.JPanel ativo;
+    private javax.swing.JTable ativoTable;
     private javax.swing.JButton ativosButton;
     private javax.swing.JPanel cadastro;
     private javax.swing.JPanel dashboard;
@@ -1587,6 +1625,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel55;
     private javax.swing.JPanel jPanel56;
     private javax.swing.JPanel jPanel57;
+    private javax.swing.JPanel jPanel58;
     private javax.swing.JPanel jPanel59;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel60;
@@ -1603,6 +1642,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
