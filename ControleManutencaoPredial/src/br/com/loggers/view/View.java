@@ -106,6 +106,10 @@ public class View extends javax.swing.JFrame {
         andamentoLabel = new javax.swing.JLabel();
         finalizadoLabel = new javax.swing.JLabel();
         agendadoLabel = new javax.swing.JLabel();
+        jPanel21 = new javax.swing.JPanel();
+        jPanel26 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -718,6 +722,27 @@ public class View extends javax.swing.JFrame {
 
     jPanel22.add(jPanel19);
 
+    jPanel21.setAlignmentX(0.0F);
+    jPanel21.setPreferredSize(new java.awt.Dimension(1227, 100));
+    jPanel21.setLayout(new java.awt.BorderLayout());
+
+    jPanel26.setLayout(new javax.swing.BoxLayout(jPanel26, javax.swing.BoxLayout.Y_AXIS));
+
+    jLabel10.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
+    jLabel10.setText("Notificações recentes");
+    jLabel10.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 50, 15, 1));
+    jPanel26.add(jLabel10);
+
+    jLabel13.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+    jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Document.png"))); // NOI18N
+    jLabel13.setText("Nenhuma notificação recente");
+    jLabel13.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 50, 1, 1));
+    jPanel26.add(jLabel13);
+
+    jPanel21.add(jPanel26, java.awt.BorderLayout.PAGE_START);
+
+    jPanel22.add(jPanel21);
+
     jPanel25.add(jPanel22, java.awt.BorderLayout.NORTH);
 
     jScrollPane1.setViewportView(jPanel25);
@@ -809,8 +834,10 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -836,10 +863,12 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
