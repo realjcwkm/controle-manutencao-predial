@@ -101,6 +101,11 @@ public class View extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jPanel19 = new javax.swing.JPanel();
+        pendenteLabel = new javax.swing.JLabel();
+        andamentoLabel = new javax.swing.JLabel();
+        finalizadoLabel = new javax.swing.JLabel();
+        agendadoLabel = new javax.swing.JLabel();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -667,6 +672,52 @@ public class View extends javax.swing.JFrame {
 
     jPanel22.add(jPanel18);
 
+    jPanel19.setAlignmentX(0.0F);
+    jPanel19.setMinimumSize(new java.awt.Dimension(0, 0));
+    jPanel19.setPreferredSize(new java.awt.Dimension(1177, 200));
+    jPanel19.setLayout(new java.awt.GridBagLayout());
+
+    pendenteLabel.setFont(new java.awt.Font("Poppins Medium", 0, 16)); // NOI18N
+    pendenteLabel.setForeground(new java.awt.Color(255, 255, 255));
+    pendenteLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/pendentes.png"))); // NOI18N
+    pendenteLabel.setText("<html><body style='text-align: center'>0<br>Pendentes");
+    pendenteLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.gridy = 0;
+    gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 35);
+    jPanel19.add(pendenteLabel, gridBagConstraints);
+
+    andamentoLabel.setFont(new java.awt.Font("Poppins Medium", 0, 16)); // NOI18N
+    andamentoLabel.setForeground(new java.awt.Color(255, 255, 255));
+    andamentoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/em_andamento.png"))); // NOI18N
+    andamentoLabel.setText("<html><body style='text-align: center'>0<br>Em andamento");
+    andamentoLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.gridy = 0;
+    gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 35);
+    jPanel19.add(andamentoLabel, gridBagConstraints);
+
+    finalizadoLabel.setFont(new java.awt.Font("Poppins Medium", 0, 16)); // NOI18N
+    finalizadoLabel.setForeground(new java.awt.Color(255, 255, 255));
+    finalizadoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/finalizados.png"))); // NOI18N
+    finalizadoLabel.setText("<html><body style='text-align: center'>0<br>Finalizadas");
+    finalizadoLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.gridy = 0;
+    gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 35);
+    jPanel19.add(finalizadoLabel, gridBagConstraints);
+
+    agendadoLabel.setFont(new java.awt.Font("Poppins Medium", 0, 16)); // NOI18N
+    agendadoLabel.setForeground(new java.awt.Color(255, 255, 255));
+    agendadoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/agendados.png"))); // NOI18N
+    agendadoLabel.setText("<html><body style='text-align: center'>0<br>Agendadas");
+    agendadoLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+    gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.gridy = 0;
+    jPanel19.add(agendadoLabel, gridBagConstraints);
+
+    jPanel22.add(jPanel19);
+
     jPanel25.add(jPanel22, java.awt.BorderLayout.NORTH);
 
     jScrollPane1.setViewportView(jPanel25);
@@ -740,8 +791,11 @@ public class View extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel agendadoLabel;
+    private javax.swing.JLabel andamentoLabel;
     private javax.swing.JPanel cadastro;
     private javax.swing.JPanel dashboard;
+    private javax.swing.JLabel finalizadoLabel;
     private javax.swing.JPanel header;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
@@ -779,6 +833,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel22;
@@ -811,6 +866,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel nameUser;
     private javax.swing.JPanel ordem_servico;
     private javax.swing.JButton ordem_servicoButton;
+    private javax.swing.JLabel pendenteLabel;
     private javax.swing.JPanel root;
     private javax.swing.JPanel rootDashboard;
     // End of variables declaration//GEN-END:variables
