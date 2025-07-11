@@ -124,6 +124,7 @@ public class View extends javax.swing.JFrame {
         jPanel32 = new javax.swing.JPanel();
         jPanel33 = new javax.swing.JPanel();
         jButton12 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
         jPanel34 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -625,7 +626,7 @@ public class View extends javax.swing.JFrame {
     );
     jPanel12Layout.setVerticalGroup(
         jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(ordem_servicoButton, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+        .addComponent(ordem_servicoButton, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
     );
 
     jPanel10.add(jPanel12);
@@ -652,7 +653,7 @@ public class View extends javax.swing.JFrame {
     );
     jPanel13Layout.setVerticalGroup(
         jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(manutencoesButton, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+        .addComponent(manutencoesButton, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
     );
 
     jPanel10.add(jPanel13);
@@ -872,6 +873,19 @@ public class View extends javax.swing.JFrame {
     });
     jPanel33.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 150, 34));
 
+    jButton14.setBackground(new java.awt.Color(23, 50, 62));
+    jButton14.setFont(new java.awt.Font("Poppins", 1, 12)); // NOI18N
+    jButton14.setForeground(new java.awt.Color(255, 255, 255));
+    jButton14.setText("Exportar PDF");
+    jButton14.setBorder(null);
+    jButton14.setBorderPainted(false);
+    jButton14.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton14ActionPerformed(evt);
+        }
+    });
+    jPanel33.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 109, 35));
+
     jPanel32.add(jPanel33, java.awt.BorderLayout.EAST);
 
     jPanel34.setLayout(new javax.swing.BoxLayout(jPanel34, javax.swing.BoxLayout.Y_AXIS));
@@ -955,6 +969,10 @@ public class View extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton12ActionPerformed
 
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton14ActionPerformed
+
     
     /**
      * @param args the command line arguments
@@ -988,6 +1006,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
