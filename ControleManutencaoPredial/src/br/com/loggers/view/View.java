@@ -118,6 +118,15 @@ public class View extends javax.swing.JFrame {
         manutencoes = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jPanel28 = new javax.swing.JPanel();
+        jPanel29 = new javax.swing.JPanel();
+        jPanel30 = new javax.swing.JPanel();
+        jPanel31 = new javax.swing.JPanel();
+        jPanel32 = new javax.swing.JPanel();
+        jPanel33 = new javax.swing.JPanel();
+        jButton12 = new javax.swing.JButton();
+        jPanel34 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -834,6 +843,61 @@ public class View extends javax.swing.JFrame {
     jPanel28.setMinimumSize(new java.awt.Dimension(0, 66));
     jPanel28.setPreferredSize(new java.awt.Dimension(500, 800));
     jPanel28.setLayout(new java.awt.BorderLayout());
+
+    jPanel29.setLayout(new javax.swing.BoxLayout(jPanel29, javax.swing.BoxLayout.Y_AXIS));
+
+    jPanel30.setAlignmentX(0.0F);
+    jPanel30.setPreferredSize(new java.awt.Dimension(1177, 150));
+    jPanel30.setLayout(new java.awt.BorderLayout());
+
+    jPanel31.setMinimumSize(new java.awt.Dimension(0, 0));
+    jPanel31.setLayout(new java.awt.GridBagLayout());
+
+    jPanel32.setLayout(new java.awt.BorderLayout());
+
+    jPanel33.setPreferredSize(new java.awt.Dimension(300, 42));
+    jPanel33.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    jButton12.setBackground(new java.awt.Color(23, 50, 62));
+    jButton12.setFont(new java.awt.Font("Poppins", 1, 12)); // NOI18N
+    jButton12.setForeground(new java.awt.Color(255, 255, 255));
+    jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Icon.png"))); // NOI18N
+    jButton12.setText("Nova manutenção");
+    jButton12.setBorder(null);
+    jButton12.setPreferredSize(new java.awt.Dimension(150, 34));
+    jButton12.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton12ActionPerformed(evt);
+        }
+    });
+    jPanel33.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 150, 34));
+
+    jPanel32.add(jPanel33, java.awt.BorderLayout.EAST);
+
+    jPanel34.setLayout(new javax.swing.BoxLayout(jPanel34, javax.swing.BoxLayout.Y_AXIS));
+
+    jLabel14.setFont(new java.awt.Font("Poppins", 1, 24)); // NOI18N
+    jLabel14.setText("Manutenções");
+    jPanel34.add(jLabel14);
+
+    jLabel15.setFont(new java.awt.Font("Poppins Medium", 0, 13)); // NOI18N
+    jLabel15.setText("Manutenções registradas");
+    jPanel34.add(jLabel15);
+
+    jPanel32.add(jPanel34, java.awt.BorderLayout.WEST);
+
+    gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+    gridBagConstraints.weightx = 1.0;
+    gridBagConstraints.insets = new java.awt.Insets(0, 50, 0, 50);
+    jPanel31.add(jPanel32, gridBagConstraints);
+
+    jPanel30.add(jPanel31, java.awt.BorderLayout.CENTER);
+
+    jPanel29.add(jPanel30);
+
+    jPanel28.add(jPanel29, java.awt.BorderLayout.NORTH);
+
     jScrollPane3.setViewportView(jPanel28);
 
     javax.swing.GroupLayout manutencoesLayout = new javax.swing.GroupLayout(manutencoes);
@@ -887,6 +951,10 @@ public class View extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_manutencoesButtonActionPerformed
 
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton12ActionPerformed
+
     
     /**
      * @param args the command line arguments
@@ -918,6 +986,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel header;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -932,6 +1001,8 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -966,7 +1037,13 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel27;
     private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel30;
+    private javax.swing.JPanel jPanel31;
+    private javax.swing.JPanel jPanel32;
+    private javax.swing.JPanel jPanel33;
+    private javax.swing.JPanel jPanel34;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel59;
