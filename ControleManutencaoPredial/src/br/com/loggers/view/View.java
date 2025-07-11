@@ -88,6 +88,10 @@ public class View extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
         ordem_servicoButton = new javax.swing.JButton();
+        rootDashboard = new javax.swing.JPanel();
+        ordem_servico = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel25 = new javax.swing.JPanel();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -595,6 +599,32 @@ public class View extends javax.swing.JFrame {
 
     dashboard.add(menu, java.awt.BorderLayout.LINE_START);
 
+    rootDashboard.setLayout(new java.awt.CardLayout());
+
+    ordem_servico.setBackground(new java.awt.Color(255, 255, 255));
+    ordem_servico.setPreferredSize(new java.awt.Dimension(1177, 746));
+
+    jScrollPane1.setPreferredSize(new java.awt.Dimension(1177, 776));
+
+    jPanel25.setPreferredSize(new java.awt.Dimension(500, 1000));
+    jPanel25.setLayout(new java.awt.BorderLayout());
+    jScrollPane1.setViewportView(jPanel25);
+
+    javax.swing.GroupLayout ordem_servicoLayout = new javax.swing.GroupLayout(ordem_servico);
+    ordem_servico.setLayout(ordem_servicoLayout);
+    ordem_servicoLayout.setHorizontalGroup(
+        ordem_servicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+    ordem_servicoLayout.setVerticalGroup(
+        ordem_servicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE)
+    );
+
+    rootDashboard.add(ordem_servico, "ordem_servico");
+
+    dashboard.add(rootDashboard, java.awt.BorderLayout.CENTER);
+
     root.add(dashboard, "dashboard");
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -681,6 +711,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -696,6 +727,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JPasswordField jPasswordFieldSenha;
     private javax.swing.JPasswordField jPasswordFieldSenha1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldEmail1;
@@ -703,7 +735,9 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel login;
     private javax.swing.JPanel menu;
     private javax.swing.JLabel nameUser;
+    private javax.swing.JPanel ordem_servico;
     private javax.swing.JButton ordem_servicoButton;
     private javax.swing.JPanel root;
+    private javax.swing.JPanel rootDashboard;
     // End of variables declaration//GEN-END:variables
 }
