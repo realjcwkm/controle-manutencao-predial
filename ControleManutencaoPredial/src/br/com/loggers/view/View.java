@@ -92,6 +92,8 @@ public class View extends javax.swing.JFrame {
         manutencoesButton = new javax.swing.JButton();
         jPanel14 = new javax.swing.JPanel();
         logButton = new javax.swing.JButton();
+        jPanel15 = new javax.swing.JPanel();
+        relatoriosButton = new javax.swing.JButton();
         rootDashboard = new javax.swing.JPanel();
         ordem_servico = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -146,6 +148,9 @@ public class View extends javax.swing.JFrame {
         jPanel43 = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         logsTable = new javax.swing.JTable();
+        relatorio = new javax.swing.JPanel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jPanel41 = new javax.swing.JPanel();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -644,7 +649,7 @@ public class View extends javax.swing.JFrame {
     );
     jPanel12Layout.setVerticalGroup(
         jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(ordem_servicoButton, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+        .addComponent(ordem_servicoButton, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
     );
 
     jPanel10.add(jPanel12);
@@ -671,7 +676,7 @@ public class View extends javax.swing.JFrame {
     );
     jPanel13Layout.setVerticalGroup(
         jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(manutencoesButton, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+        .addComponent(manutencoesButton, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
     );
 
     jPanel10.add(jPanel13);
@@ -698,10 +703,37 @@ public class View extends javax.swing.JFrame {
     );
     jPanel14Layout.setVerticalGroup(
         jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(logButton, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+        .addComponent(logButton, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
     );
 
     jPanel10.add(jPanel14);
+
+    jPanel15.setBackground(new java.awt.Color(255, 255, 255));
+    jPanel15.setPreferredSize(new java.awt.Dimension(183, 42));
+
+    relatoriosButton.setFont(new java.awt.Font("Poppins Medium", 0, 12)); // NOI18N
+    relatoriosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Document.png"))); // NOI18N
+    relatoriosButton.setText("  Relatórios");
+    relatoriosButton.setBorderPainted(false);
+    relatoriosButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    relatoriosButton.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            relatoriosButtonActionPerformed(evt);
+        }
+    });
+
+    javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+    jPanel15.setLayout(jPanel15Layout);
+    jPanel15Layout.setHorizontalGroup(
+        jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(relatoriosButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    );
+    jPanel15Layout.setVerticalGroup(
+        jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(relatoriosButton, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+    );
+
+    jPanel10.add(jPanel15);
 
     menu.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 220, 300));
 
@@ -1096,6 +1128,26 @@ public class View extends javax.swing.JFrame {
 
     rootDashboard.add(historico, "historico");
 
+    relatorio.setBackground(new java.awt.Color(255, 255, 255));
+
+    jPanel41.setMinimumSize(new java.awt.Dimension(0, 66));
+    jPanel41.setPreferredSize(new java.awt.Dimension(500, 1000));
+    jPanel41.setLayout(new java.awt.BorderLayout());
+    jScrollPane9.setViewportView(jPanel41);
+
+    javax.swing.GroupLayout relatorioLayout = new javax.swing.GroupLayout(relatorio);
+    relatorio.setLayout(relatorioLayout);
+    relatorioLayout.setHorizontalGroup(
+        relatorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 1177, Short.MAX_VALUE)
+    );
+    relatorioLayout.setVerticalGroup(
+        relatorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE)
+    );
+
+    rootDashboard.add(relatorio, "relatorio");
+
     dashboard.add(rootDashboard, java.awt.BorderLayout.CENTER);
 
     root.add(dashboard, "dashboard");
@@ -1145,6 +1197,10 @@ public class View extends javax.swing.JFrame {
     private void logButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_logButtonActionPerformed
+
+    private void relatoriosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_relatoriosButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_relatoriosButtonActionPerformed
 
     
     /**
@@ -1220,6 +1276,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
@@ -1247,6 +1304,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel39;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel40;
+    private javax.swing.JPanel jPanel41;
     private javax.swing.JPanel jPanel42;
     private javax.swing.JPanel jPanel43;
     private javax.swing.JPanel jPanel5;
@@ -1270,6 +1328,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldEmail1;
     private javax.swing.JTextField jTextFieldEmail2;
@@ -1284,6 +1343,8 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel ordem_servico;
     private javax.swing.JButton ordem_servicoButton;
     private javax.swing.JLabel pendenteLabel;
+    private javax.swing.JPanel relatorio;
+    private javax.swing.JButton relatoriosButton;
     private javax.swing.JPanel root;
     private javax.swing.JPanel rootDashboard;
     // End of variables declaration//GEN-END:variables
