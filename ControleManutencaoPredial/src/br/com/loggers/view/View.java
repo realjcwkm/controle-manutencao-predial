@@ -71,6 +71,7 @@ public class View extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jLabel31 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
+        dashboard = new javax.swing.JPanel();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -461,6 +462,9 @@ public class View extends javax.swing.JFrame {
 
     root.add(cadastro, "cadastro");
 
+    dashboard.setLayout(new java.awt.BorderLayout());
+    root.add(dashboard, "dashboard");
+
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
@@ -533,6 +537,7 @@ public class View extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel cadastro;
+    private javax.swing.JPanel dashboard;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
