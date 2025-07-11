@@ -57,6 +57,15 @@ public class View extends javax.swing.JFrame {
         jPanel62 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
+        jPanel63 = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
+        jTextFieldEmail2 = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jTextFieldEmail1 = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        jPanel64 = new javax.swing.JPanel();
+        jPasswordFieldSenha1 = new javax.swing.JPasswordField();
+        jButton5 = new javax.swing.JButton();
 
         jScrollPane5.setViewportView(jEditorPane1);
 
@@ -288,6 +297,98 @@ public class View extends javax.swing.JFrame {
 
     jPanel61.add(jPanel62);
 
+    jPanel63.setBackground(new java.awt.Color(255, 255, 255));
+    jPanel63.setPreferredSize(new java.awt.Dimension(360, 180));
+    jPanel63.setLayout(new javax.swing.BoxLayout(jPanel63, javax.swing.BoxLayout.Y_AXIS));
+
+    jLabel27.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+    jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+    jLabel27.setText("Nome");
+    jLabel27.setFocusable(false);
+    jLabel27.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+    jLabel27.setPreferredSize(new java.awt.Dimension(49, 44));
+    jPanel63.add(jLabel27);
+
+    jTextFieldEmail2.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+    jTextFieldEmail2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+    jTextFieldEmail2.setAlignmentX(0.0F);
+    jTextFieldEmail2.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+        javax.swing.BorderFactory.createLineBorder(java.awt.Color.decode("#D0D5DD"), 3, true),
+        javax.swing.BorderFactory.createEmptyBorder(8, 8, 8, 8)
+    )
+    );
+    jTextFieldEmail2.setPreferredSize(new java.awt.Dimension(360, 20));
+    jTextFieldEmail2.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jTextFieldEmail2ActionPerformed(evt);
+        }
+    });
+    jPanel63.add(jTextFieldEmail2);
+
+    jLabel25.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+    jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+    jLabel25.setText("E-mail");
+    jLabel25.setFocusable(false);
+    jLabel25.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+    jLabel25.setPreferredSize(new java.awt.Dimension(49, 44));
+    jPanel63.add(jLabel25);
+
+    jTextFieldEmail1.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+    jTextFieldEmail1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+    jTextFieldEmail1.setAlignmentX(0.0F);
+    jTextFieldEmail1.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+        javax.swing.BorderFactory.createLineBorder(java.awt.Color.decode("#D0D5DD"), 3, true),
+        javax.swing.BorderFactory.createEmptyBorder(8, 8, 8, 8)
+    )
+    );
+    jTextFieldEmail1.setPreferredSize(new java.awt.Dimension(360, 20));
+    jTextFieldEmail1.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jTextFieldEmail1ActionPerformed(evt);
+        }
+    });
+    jPanel63.add(jTextFieldEmail1);
+
+    jLabel26.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+    jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    jLabel26.setText("Senha");
+    jLabel26.setPreferredSize(new java.awt.Dimension(48, 44));
+    jPanel63.add(jLabel26);
+
+    jPanel64.setBackground(new java.awt.Color(255, 255, 255));
+    jPanel64.setAlignmentX(0.0F);
+    jPanel64.setPreferredSize(new java.awt.Dimension(360, 20));
+    jPanel64.setLayout(new javax.swing.BoxLayout(jPanel64, javax.swing.BoxLayout.X_AXIS));
+
+    jPasswordFieldSenha1.setFont(new java.awt.Font("Poppins", 1, 15)); // NOI18N
+    jPasswordFieldSenha1.setToolTipText("");
+    jPasswordFieldSenha1.setAlignmentX(0.0F);
+    jPasswordFieldSenha1.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+        javax.swing.BorderFactory.createLineBorder(java.awt.Color.decode("#D0D5DD"), 3, true),
+        javax.swing.BorderFactory.createEmptyBorder(8, 8, 8, 8)
+    )
+    );
+    jPasswordFieldSenha1.setPreferredSize(new java.awt.Dimension(135, 20));
+    jPanel64.add(jPasswordFieldSenha1);
+
+    jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/eye.png"))); // NOI18N
+    jButton5.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+        javax.swing.BorderFactory.createLineBorder(java.awt.Color.decode("#D0D5DD"), 3, true),
+        javax.swing.BorderFactory.createEmptyBorder(8, 8, 8, 8)
+    )
+    );
+    jButton5.setPreferredSize(new java.awt.Dimension(40, 30));
+    jButton5.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton5ActionPerformed(evt);
+        }
+    });
+    jPanel64.add(jButton5);
+
+    jPanel63.add(jPanel64);
+
+    jPanel61.add(jPanel63);
+
     javax.swing.GroupLayout jPanel60Layout = new javax.swing.GroupLayout(jPanel60);
     jPanel60.setLayout(jPanel60Layout);
     jPanel60Layout.setHorizontalGroup(
@@ -339,6 +440,18 @@ public class View extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jTextFieldEmail1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmail1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEmail1ActionPerformed
+
+    private void jTextFieldEmail2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmail2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEmail2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -364,12 +477,16 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton5;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -384,11 +501,16 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel60;
     private javax.swing.JPanel jPanel61;
     private javax.swing.JPanel jPanel62;
+    private javax.swing.JPanel jPanel63;
+    private javax.swing.JPanel jPanel64;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JPasswordField jPasswordFieldSenha;
+    private javax.swing.JPasswordField jPasswordFieldSenha1;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTextField jTextFieldEmail;
+    private javax.swing.JTextField jTextFieldEmail1;
+    private javax.swing.JTextField jTextFieldEmail2;
     private javax.swing.JPanel login;
     private javax.swing.JPanel root;
     // End of variables declaration//GEN-END:variables
