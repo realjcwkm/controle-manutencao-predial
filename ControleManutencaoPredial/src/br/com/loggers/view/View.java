@@ -1771,6 +1771,16 @@ public class View extends javax.swing.JFrame {
         
         updateLogs();
     }//GEN-LAST:event_logButtonActionPerformed
+
+    private void relatoriosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_relatoriosButtonActionPerformed
+        CardLayout card = (CardLayout) rootDashboard.getLayout();
+        card.show(rootDashboard, "relatorio");
+        
+        updateMenu();
+        relatoriosButton.setFont(new Font("Poppins", Font.BOLD, 12));
+        relatoriosButton.setForeground(new Color(60,137,166));
+        relatoriosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/DocumentBlue.png")));
+    }//GEN-LAST:event_relatoriosButtonActionPerformed
     /**
      * @param args the command line arguments
      */
