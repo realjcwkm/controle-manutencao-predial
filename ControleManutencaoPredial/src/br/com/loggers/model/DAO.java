@@ -240,3 +240,22 @@ public class DAO {
 
         return id_local;
     }
+
+    public int getAtivoTipoID(String nome){
+        int id_local = 0;
+
+        try (Connection conn = new Connect().conectar();
+             PreparedStatement stmt = conn.prepareStatement("SELECT id_tipo_ativo FROM tipo_ativo WHERE nome_tipo_ativo = ?");) {
+
+            stmt.setString(1, nome); 
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                id_local = rs.getInt("id_tipo_ativo");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace(); // Or use logging
+        }
+
+        return id_local;
+    }
