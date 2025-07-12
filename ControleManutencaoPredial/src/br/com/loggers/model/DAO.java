@@ -297,3 +297,22 @@ public class DAO {
 
         return idOS;
     }
+
+    public boolean insertOS(OS ordem) {
+        String sql = "insert into ordem_servico(titulo, tecnico, prazo, urgencia, status, descricao, local_id_local) values (?, ?, ?, ?, ?, ?, ?)";
+
+        try (Connection conn = new Connect().conectar(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, ordem.getTitulo());
+            stmt.setInt(2, ordem.getTecnico());
+            stmt.setDate(3, Date.valueOf(ordem.getPrazo()));
+            stmt.setString(4, ordem.getUrgencia());
+            stmt.setString(5, ordem.getStatus());
+            stmt.setString(6, ordem.getDescricao());
+            stmt.setInt(7, ordem.getLocal_id_local());
+            stmt.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
