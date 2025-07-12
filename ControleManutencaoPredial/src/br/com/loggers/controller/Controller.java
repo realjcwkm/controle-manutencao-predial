@@ -230,4 +230,12 @@ public class Controller {
         System.out.println("[insertLog] Resultado: " + resultado);
         return resultado;
     }
+
+    // Insere um log específico de ordem de serviço
+    public boolean insertLogOS(Log log) {
+        System.out.println("[insertLogOS] Inserindo log relacionado à ordem de serviço...");
+        boolean resultado = this.theDAO.insertLogOS(log);
+        System.out.println("[insertLogOS] Resultado: " + resultado);
+        return resultado;
+    }
 }
