@@ -262,6 +262,9 @@ public class AtivoForms extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        GlassPanePopup.closePopupLast();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
 // Variables declaration - do not modify                     
