@@ -1856,6 +1856,10 @@ public class View extends javax.swing.JFrame {
         CardLayout card = (CardLayout) root.getLayout();
         card.show(root, "login");
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        exportToPDF(manutencaoTable);
+    }//GEN-LAST:event_jButton14ActionPerformed
     /**
      * @param args the command line arguments
      */
