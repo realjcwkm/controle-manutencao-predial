@@ -271,5 +271,11 @@ public class Controller {
         return model;
     }
 
-  
+    // Retorna os dados dos ativos em formato de tabela
+    public DefaultTableModel getAtivoTable() {
+        System.out.println("[getAtivoTable] Carregando tabela de ativos...");
+        DefaultTableModel model = this.theDAO.getAtivoTable();
+        System.out.println("[getAtivoTable] Tabela carregada com sucesso.");
+        return model;
+    }
 }
