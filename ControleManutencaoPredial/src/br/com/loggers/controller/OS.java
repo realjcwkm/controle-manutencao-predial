@@ -30,5 +30,32 @@ public class OS {
         this.local_id_local = local_id_local;
     }
 
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getUrgencia() {
+        return urgencia;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public LocalDate getPrazo() {
+        return prazo;
+    }
+
+    public int getTecnico() {
+        return tecnico;
+    }
+
+    public int getLocal_id_local() {
+        return local_id_local;
+    }
     
 }
