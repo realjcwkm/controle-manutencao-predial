@@ -178,4 +178,12 @@ public class Controller {
         System.out.println("[getPeriocididadeID] ID: " + id);
         return id;
     }
+
+    // Busca o ID de uma ordem de serviço
+    public int getOSId(String nome) {
+        System.out.println("[getOSId] Buscando ID da OS com nome: " + nome);
+        int id = this.theDAO.getOSId(nome);
+        System.out.println("[getOSId] ID retornado: " + id);
+        return id;
+    }
 }
