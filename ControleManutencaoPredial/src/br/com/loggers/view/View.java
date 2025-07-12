@@ -1717,6 +1717,16 @@ public class View extends javax.swing.JFrame {
         CardLayout card = (CardLayout) root.getLayout();
         card.show(root, "cadastro");
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        if (visible == false){
+            visible = true;
+            jPasswordFieldSenha.setEchoChar((char)0);
+        } else{
+            visible = false;
+            jPasswordFieldSenha.setEchoChar('*');
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
     
     /**
      * @param args the command line arguments
