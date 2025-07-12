@@ -1818,6 +1818,22 @@ public class View extends javax.swing.JFrame {
     private void jTextFieldEmail1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmail1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldEmail1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        if (visible == false){
+            visible = true;
+            jPasswordFieldSenha1.setEchoChar((char)0);
+        } else{
+            visible = false;
+            jPasswordFieldSenha1.setEchoChar('*');
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jTextFieldEmail2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmail2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEmail2ActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
