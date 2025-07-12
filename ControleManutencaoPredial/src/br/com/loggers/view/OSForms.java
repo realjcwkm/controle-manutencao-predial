@@ -4,6 +4,23 @@
  */
 package br.com.loggers.view;
 
+import br.com.loggers.controller.Controller;
+import br.com.loggers.controller.Log;
+import br.com.loggers.controller.OS;
+import br.com.loggers.controller.User;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.awt.event.ActionListener;
+import java.awt.geom.RoundRectangle2D;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+import javax.swing.JLabel;
+import popup.glasspanepopup.GlassPanePopup;
+
 
 /**
  *
@@ -13,12 +30,23 @@ public class OSForms extends javax.swing.JPanel {
     /**
      * Creates new form PopupView
      */
+    User logged;
     public OSForms(User logged) {
         initComponents();
         setOpaque(false);
+        
+        this.logged = logged;
+        
+        Controller controller = new Controller();
+        List<String> categories = controller.getTecnico();
+        for (String name : categories) {
+            jComboBox2.addItem(name);
+        }
     }
     
+    
 }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -171,14 +199,8 @@ public class OSForms extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        //
-    }//GEN-LAST:event_jButton3ActionPerformed
-
+    
+    
 // Variables declaration - do not modify                     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
