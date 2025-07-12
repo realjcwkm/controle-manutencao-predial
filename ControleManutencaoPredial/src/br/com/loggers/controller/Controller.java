@@ -122,4 +122,12 @@ public class Controller {
         System.out.println("[getLocal] Total de locais: " + locais.size());
         return locais;
     }
+
+    // Retorna os tipos de ativos cadastrados
+    public List<String> getTipoAtivo() {
+        System.out.println("[getTipoAtivo] Buscando tipos de ativos...");
+        List<String> tipos = this.theDAO.getTipoAtivo();
+        System.out.println("[getTipoAtivo] Total encontrados: " + tipos.size());
+        return tipos;
+    }
 }
