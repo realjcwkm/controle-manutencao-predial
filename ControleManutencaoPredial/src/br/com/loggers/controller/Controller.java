@@ -138,4 +138,12 @@ public class Controller {
         System.out.println("[getPeriodicidade] Total: " + periodicidades.size());
         return periodicidades;
     }
+
+    // Retorna os IDs de todas as ordens de serviço
+    public List<String> getOSID() {
+        System.out.println("[getOSID] Buscando IDs de ordens de serviço...");
+        List<String> osIds = this.theDAO.getOSID();
+        System.out.println("[getOSID] Total de IDs obtidos: " + osIds.size());
+        return osIds;
+    }
 }
