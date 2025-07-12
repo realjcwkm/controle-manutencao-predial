@@ -210,4 +210,16 @@ public class Controller {
         System.out.println("[insertAtivo] Resultado: " + resultado);
         return resultado;
     }
+
+    // Insere uma nova manutenção no banco
+    public boolean insertManutencao(Manutencao manutencao) {
+        System.out.println("[insertManutencao] Inserindo nova manutenção...");
+        if (manutencao == null) {
+            System.err.println("[insertManutencao] Objeto Manutencao é nulo. Cancelando operação.");
+            return false;
+        }
+        boolean resultado = this.theDAO.insertManutencao(manutencao);
+        System.out.println("[insertManutencao] Resultado: " + resultado);
+        return resultado;
+    }
 }
