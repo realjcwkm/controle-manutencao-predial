@@ -1727,6 +1727,18 @@ public class View extends javax.swing.JFrame {
             jPasswordFieldSenha.setEchoChar('*');
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void ordem_servicoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordem_servicoButtonActionPerformed
+        CardLayout card = (CardLayout) rootDashboard.getLayout();
+        card.show(rootDashboard, "ordem_servico");
+        
+        updateMenu();
+        ordem_servicoButton.setFont(new Font("Poppins", Font.BOLD, 12));
+        ordem_servicoButton.setForeground(new Color(60,137,166));
+        ordem_servicoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Chart.png")));
+        
+        updateOS();
+    }//GEN-LAST:event_ordem_servicoButtonActionPerformed
     
     /**
      * @param args the command line arguments
