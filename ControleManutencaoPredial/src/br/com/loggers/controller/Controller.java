@@ -254,4 +254,13 @@ public class Controller {
         System.out.println("[getOSTable] Tabela carregada com sucesso.");
         return model;
     }
+
+    // Retorna os dados das manutenções em formato de tabela
+    public DefaultTableModel getManutencaoTable() {
+        System.out.println("[getManutencaoTable] Carregando tabela de manutenções...");
+        DefaultTableModel model = this.theDAO.getManutencaoTable();
+        System.out.println("[getManutencaoTable] Tabela carregada com sucesso.");
+        return model;
+    }
+
 }
