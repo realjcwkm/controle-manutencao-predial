@@ -112,3 +112,21 @@ public class DAO {
         System.out.println(count);
         return count;
     }
+
+    public List<String> getTecnico() {
+        List<String> categories = new ArrayList<>();
+
+        try (Connection conn = new Connect().conectar();
+             PreparedStatement stmt = conn.prepareStatement("SELECT nome FROM usuario");
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                categories.add(rs.getString("nome"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace(); // Or use logging
+        }
+
+        return categories;
+    }
