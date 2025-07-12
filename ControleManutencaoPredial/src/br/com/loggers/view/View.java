@@ -4,9 +4,65 @@
  */
 package br.com.loggers.view;
 
+import br.com.loggers.controller.Controller;
+import br.com.loggers.controller.User;
+import com.formdev.flatlaf.FlatClientProperties;
+import com.formdev.flatlaf.FlatLightLaf;
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.*;
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+import java.sql.SQLException;
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
+import javax.swing.JFileChooser;
+import javax.swing.JTable;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableColumnModel;
+import popup.glasspanepopup.GlassPanePopup;
 
 public class View extends javax.swing.JFrame {
 
+    public String name;
+    boolean visible = false;
+    User logged;
+    public JPasswordField getjPasswordFieldSenha() {
+        return jPasswordFieldSenha;
+    }
+
+    public JTextField getjTextFieldEmail() {
+        return jTextFieldEmail;
+    }
+    
+    public void updateMenu(){
+        ordem_servicoButton.setFont(new Font("Poppins Medium", Font.PLAIN, 12));
+        manutencoesButton.setFont(new Font("Poppins Medium", Font.PLAIN, 12));
+        logButton.setFont(new Font("Poppins Medium", Font.PLAIN, 12));
+        relatoriosButton.setFont(new Font("Poppins Medium", Font.PLAIN, 12));
+        ativosButton.setFont(new Font("Poppins Medium", Font.PLAIN, 12));
+        
+        ordem_servicoButton.setForeground(new Color(0, 0, 0));
+        manutencoesButton.setForeground(new Color(0, 0, 0));
+        logButton.setForeground(new Color(0, 0, 0));
+        relatoriosButton.setForeground(new Color(0, 0, 0));
+        ativosButton.setForeground(new Color(0, 0, 0));
+        
+        ordem_servicoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/ChartBlack.png")));
+        manutencoesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Vector.png")));
+        logButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Clock.png")));
+        relatoriosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Document.png")));
+        ativosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Box.png")));
+    }
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(View.class.getName());
 
