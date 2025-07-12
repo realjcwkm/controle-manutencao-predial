@@ -52,6 +52,32 @@ public class Notificacao extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(791, 666));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButton5.setBackground(new java.awt.Color(60, 137, 166));
+        jButton5.setFont(new java.awt.Font("Poppins", 1, 16)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("FECHAR");
+        jButton5.setAlignmentX(0.5F);
+        jButton5.setMaximumSize(new java.awt.Dimension(94, 42));
+        jButton5.setMinimumSize(new java.awt.Dimension(94, 42));
+        jButton5.setPreferredSize(new java.awt.Dimension(107, 42));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 600, -1, -1));
+
+        jLabelTitle.setFont(new java.awt.Font("Poppins", 1, 28)); // NOI18N
+        jLabelTitle.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabelTitle.setText("Notificações");
+        jLabelTitle.setAlignmentX(0.5F);
+        jLabelTitle.setPreferredSize(new java.awt.Dimension(500, 43));
+        add(jLabelTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jLabelText.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabelText.setText("Nenhuma notificação");
+        jLabelText.setAlignmentY(0.4F);
+        add(jLabelText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 // Variables declaration - do not modify                     
