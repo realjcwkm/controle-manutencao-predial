@@ -91,6 +91,27 @@ public class View extends javax.swing.JFrame {
             OSTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
         }
     }
+
+    public void updateManutencao(){
+        Controller theController = new Controller();
+        manutencaoTable.setModel(theController.getManutencaoTable());
+        
+        manutencaoTable.getTableHeader().setFont(new Font("Poppins", Font.BOLD, 16));
+        manutencaoTable.getTableHeader().setPreferredSize(new Dimension(100, 56));
+        TableColumnModel columnModel2 = manutencaoTable.getColumnModel();
+        columnModel2.getColumn(0).setPreferredWidth(100);
+        columnModel2.getColumn(1).setPreferredWidth(300);
+        columnModel2.getColumn(2).setPreferredWidth(220);
+        columnModel2.getColumn(3).setPreferredWidth(200);
+        columnModel2.getColumn(4).setPreferredWidth(200);
+        
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+
+        for (int i = 0; i < manutencaoTable.getColumnCount(); i++) {
+            manutencaoTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        }
+    }
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(View.class.getName());
 
