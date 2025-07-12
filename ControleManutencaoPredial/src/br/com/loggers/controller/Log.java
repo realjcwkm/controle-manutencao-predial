@@ -31,5 +31,37 @@ public class Log {
         this.descricao = descricao;
     }
 
+    public LocalDate getData() {
+        return data;
+    }
+
+    public LocalTime getHora() {
+        return hora;
+    }
+
+    public int getTipo() {
+        return tipo;
+    }
+
+    public int getTipo_log_id_tipo_log() {
+        return tipo_log_id_tipo_log;
+    }
+
+    public int getUsuario_id_usuario() {
+        return usuario_id_usuario;
+    }
+
+    public int getOrdem_servico_id_ordem_servico() {
+        return ordem_servico_id_ordem_servico;
+    }
+
+    public int getManutencao_id_manutencao() {
+        return manutencao_id_manutencao;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+    
     
 }
