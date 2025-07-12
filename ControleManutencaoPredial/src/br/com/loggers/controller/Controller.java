@@ -106,4 +106,12 @@ public class Controller {
         System.out.println("[countAgendado] Total: " + quantidade);
         return quantidade;
     }
+
+    // Retorna uma lista com os nomes dos técnicos cadastrados
+    public List<String> getTecnico() {
+        System.out.println("[getTecnico] Recuperando nomes dos técnicos cadastrados...");
+        List<String> tecnicos = this.theDAO.getTecnico();
+        System.out.println("[getTecnico] Total de técnicos encontrados: " + tecnicos.size());
+        return tecnicos;
+    }
 }
