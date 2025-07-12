@@ -53,6 +53,20 @@ public class ManutencaoForms extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jButton3 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jComboBox4 = new javax.swing.JComboBox<>();
+        jComboBox6 = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
+        jComboBox7 = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(791, 554));
@@ -66,11 +80,99 @@ public class ManutencaoForms extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
         jLabel2.setText("Preencha os campos abaixos para registrar uma manutenção.");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 85, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel3.setText("ID da ordem de serviço");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 140, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel4.setText("Local");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 240, -1, -1));
+
+        jComboBox1.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 170, 336, 45));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Vector_1.png"))); // NOI18N
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 50, 45));
+
+        jLabel6.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel6.setText("Descrição");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 700, 110));
+
+        jButton3.setBackground(new java.awt.Color(217, 217, 217));
+        jButton3.setFont(new java.awt.Font("Poppins", 1, 16)); // NOI18N
+        jButton3.setText("Cancelar");
+        jButton3.setPreferredSize(new java.awt.Dimension(107, 42));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 490, -1, -1));
+
+        jButton5.setBackground(new java.awt.Color(60, 137, 166));
+        jButton5.setFont(new java.awt.Font("Poppins", 1, 16)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("Salvar");
+        jButton5.setPreferredSize(new java.awt.Dimension(107, 42));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 490, -1, -1));
+
+        jComboBox4.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 270, 283, 45));
+
+        jComboBox6.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Preditiva", "Preventiva", "Corretiva" }));
+        add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, 336, 45));
+
+        jLabel10.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel10.setText("Tipo de manutenção");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, -1, -1));
+
+        jComboBox7.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, 336, 45));
+
+        jLabel11.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel11.setText("Periodicidade De Manutenção");
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 // Variables declaration - do not modify                     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JComboBox<String> jComboBox6;
+    private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
