@@ -186,4 +186,16 @@ public class Controller {
         System.out.println("[getOSId] ID retornado: " + id);
         return id;
     }
+
+    // Insere uma nova ordem de serviço no banco
+    public boolean insertOS(OS ordem) {
+        System.out.println("[insertOS] Iniciando inserção de ordem de serviço...");
+        if (ordem == null) {
+            System.err.println("[insertOS] Objeto ordem é nulo. Operação cancelada.");
+            return false;
+        }
+        boolean resultado = this.theDAO.insertOS(ordem);
+        System.out.println("[insertOS] Resultado: " + resultado);
+        return resultado;
+    }
 }
