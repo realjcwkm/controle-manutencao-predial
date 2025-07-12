@@ -388,3 +388,22 @@ public class DAO {
             return false;
         }
     }
+
+    public boolean insertLogManut(Log log) {
+        String sql = "insert into log(data, hora, tipo, descricao, tipo_log_id_tipo_log, usuario_id_usuario, manutencao_id_manutencao) values (?, ?, ?, ?, ?, ?, ?)";
+
+        try (Connection conn = new Connect().conectar(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setDate(1, java.sql.Date.valueOf(log.getData()));
+            stmt.setTime(2, java.sql.Time.valueOf(log.getHora()));
+            stmt.setInt(3, log.getTipo());
+            stmt.setString(4, log.getDescricao());
+            stmt.setInt(5, log.getTipo_log_id_tipo_log());
+            stmt.setInt(6, log.getUsuario_id_usuario());
+            stmt.setInt(7, log.getManutencao_id_manutencao());
+            stmt.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
