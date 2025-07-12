@@ -1697,6 +1697,19 @@ public class View extends javax.swing.JFrame {
             }
             
             
+            if(loggedIn != null){
+                GlassPanePopup.showPopup(new PopupView("Login realizado", "Bem vindo!"));
+                CardLayout card = (CardLayout) root.getLayout();
+                card.show(root, "dashboard");
+                nameUser.setText("Técnico - "+loggedIn.getNome());
+                logged = loggedIn;
+                
+                updateOS();
+                
+            }
+            else{
+                GlassPanePopup.showPopup(new PopupView("Usuário não encontrado", "Verifique seu e-mail e senha."));
+            }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
