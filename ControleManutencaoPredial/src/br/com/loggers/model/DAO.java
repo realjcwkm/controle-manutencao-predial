@@ -441,3 +441,36 @@ public class DAO {
         return model;
     }
     
+
+    public DefaultTableModel getManutencaoTable() {
+        DefaultTableModel model = new DefaultTableModel();
+
+        String sql = "SELECT m.id_manutencao AS Ordem, os.titulo AS Título, os.prazo AS Data, l.nome AS Local, m.tipo_manutencao AS Tipo FROM manutencao m JOIN ordem_servico os ON m.ordem_servico_id_ordem_servico = os.id_ordem_servico JOIN local l ON m.local_id_local = l.id_local ORDER BY m.id_manutencao DESC LIMIT 10;";
+
+        try (Connection conn = new Connect().conectar();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            ResultSetMetaData meta = (ResultSetMetaData) rs.getMetaData();
+            int columnCount = meta.getColumnCount();
+
+            // Get column names
+            for (int i = 1; i <= columnCount; i++) {
+                model.addColumn(meta.getColumnLabel(i));
+            }
+
+            // Get rows
+            while (rs.next()) {
+                Object[] row = new Object[columnCount];
+                for (int i = 0; i < columnCount; i++) {
+                    row[i] = rs.getObject(i + 1);
+                }
+                model.addRow(row);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return model;
+    }
