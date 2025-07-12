@@ -222,4 +222,12 @@ public class Controller {
         System.out.println("[insertManutencao] Resultado: " + resultado);
         return resultado;
     }
+
+    // Insere um log genérico no banco
+    public boolean insertLog(Log log) {
+        System.out.println("[insertLog] Inserindo log genérico...");
+        boolean resultado = this.theDAO.insertLog(log);
+        System.out.println("[insertLog] Resultado: " + resultado);
+        return resultado;
+    }
 }
