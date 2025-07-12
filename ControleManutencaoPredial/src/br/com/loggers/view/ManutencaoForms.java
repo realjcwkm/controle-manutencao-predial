@@ -215,6 +215,17 @@ public class ManutencaoForms extends javax.swing.JPanel {
                 GlassPanePopup.showPopup(new PopupView("Erro!", "A nova manutenção não pôde ser registrada!"));
               
             }
+            //insert log
+            LocalDate data = LocalDate.now();
+            LocalTime hora = LocalTime.now();
+            int tipo = 1;
+            int tipo_log_id_tipo_log = 1;
+            int usuario_id_usuario = logged.getId_usuario();
+            int manutencao_id_manutencao = 1;
+            String descricaoLog = "Adicionar manutenção";
+            
+            Log log = new Log(data, hora, tipo, tipo_log_id_tipo_log, usuario_id_usuario, 1, manutencao_id_manutencao, descricaoLog);
+            controller.insertLogManut(log);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
