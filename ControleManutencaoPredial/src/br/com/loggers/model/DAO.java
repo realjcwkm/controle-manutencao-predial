@@ -474,3 +474,36 @@ public class DAO {
 
         return model;
     }
+
+    public DefaultTableModel getLogsTable() {
+        DefaultTableModel model = new DefaultTableModel();
+
+        String sql = "SELECT l.data as Data, l.hora as Hora, u.nome AS Usuário, l.descricao as Descrição, tl.descricao AS Tipo FROM log l JOIN usuario u ON l.usuario_id_usuario = u.id_usuario JOIN tipo_log tl ON l.tipo_log_id_tipo_log = tl.id_tipo_log ORDER BY l.data DESC, l.hora DESC LIMIT 10;";
+
+        try (Connection conn = new Connect().conectar();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            ResultSetMetaData meta = (ResultSetMetaData) rs.getMetaData();
+            int columnCount = meta.getColumnCount();
+
+            // Get column names
+            for (int i = 1; i <= columnCount; i++) {
+                model.addColumn(meta.getColumnLabel(i));
+            }
+
+            // Get rows
+            while (rs.next()) {
+                Object[] row = new Object[columnCount];
+                for (int i = 0; i < columnCount; i++) {
+                    row[i] = rs.getObject(i + 1);
+                }
+                model.addRow(row);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return model;
+    }
