@@ -283,6 +283,17 @@ public class OSForms extends javax.swing.JPanel {
                 GlassPanePopup.showPopup(new PopupView("Erro!", "A nova ordem de serviço não pôde ser registrada!"));
               
             }
+            //para enviar o log
+            LocalDate data = LocalDate.now();
+            LocalTime hora = LocalTime.now();
+            int tipo = 1;
+            int tipo_log_id_tipo_log = 1;
+            int usuario_id_usuario = logged.getId_usuario();
+            int ordem_servico_id_ordem_servico = controller.getOSId(titulo);
+            String descricaoLog = "Adicionar ordem de serviço";
+            
+            Log log = new Log(data, hora, tipo, tipo_log_id_tipo_log, usuario_id_usuario, ordem_servico_id_ordem_servico, 1, descricaoLog);
+            controller.insertLogOS(log);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
