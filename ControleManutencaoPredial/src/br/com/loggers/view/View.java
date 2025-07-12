@@ -207,6 +207,7 @@ public class View extends javax.swing.JFrame {
             try (FileWriter csvWriter = new FileWriter(fileToSave)) {
 
                 // Write column names
+                for (int i = 0; i < table.getColumnCount(); i++) {
                     csvWriter.append(table.getColumnName(i));
                     if (i != table.getColumnCount() - 1) csvWriter.append(",");
                 }
@@ -237,7 +238,22 @@ public class View extends javax.swing.JFrame {
      * Creates new form LoginView
      */
     public View() {
+        initComponents();
+        GlassPanePopup.install(this);
+        FlatLightLaf.install();
         
+        
+        
+        
+        
+        relatorioTable.getTableHeader().setFont(new Font("Poppins", Font.BOLD, 16));
+        relatorioTable.getTableHeader().setPreferredSize(new Dimension(100, 56));
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+
+        for (int i = 0; i < relatorioTable.getColumnCount(); i++) {
+            relatorioTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        }
         
         }
 
