@@ -162,4 +162,12 @@ public class Controller {
         System.out.println("[getLocalId] ID encontrado: " + id);
         return id;
     }
+
+    // Busca o ID de um tipo de ativo
+    public int getAtivoTipoID(String nome) {
+        System.out.println("[getAtivoTipoID] Buscando ID para o tipo de ativo: " + nome);
+        int id = this.theDAO.getAtivoTipoID(nome);
+        System.out.println("[getAtivoTipoID] ID localizado: " + id);
+        return id;
+    }
 }
