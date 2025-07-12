@@ -155,6 +155,46 @@ public class View extends javax.swing.JFrame {
             ativoTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
         }
     }
+
+    private void exportToPDF(JTable table) {
+    JFileChooser fileChooser = new JFileChooser();
+    fileChooser.setSelectedFile(new java.io.File("table_output.pdf"));
+    int userSelection = fileChooser.showSaveDialog(this);
+
+    if (userSelection == JFileChooser.APPROVE_OPTION) {
+        java.io.File fileToSave = fileChooser.getSelectedFile();
+
+        try {
+            Document document = new Document();
+            PdfWriter.getInstance(document, new FileOutputStream(fileToSave));
+            document.open();
+
+            PdfPTable pdfTable = new PdfPTable(table.getColumnCount());
+
+            // Add column headers
+            for (int i = 0; i < table.getColumnCount(); i++) {
+                pdfTable.addCell(new PdfPCell(new Phrase(table.getColumnName(i))));
+            }
+
+            // Add rows
+            for (int row = 0; row < table.getRowCount(); row++) {
+                for (int col = 0; col < table.getColumnCount(); col++) {
+                    Object value = table.getValueAt(row, col);
+                    pdfTable.addCell(value != null ? value.toString() : "");
+                }
+            }
+
+            document.add(pdfTable);
+            document.close();
+
+            GlassPanePopup.showPopup(new PopupView("PDF exportado com sucesso!", "Verifique sua pasta"));
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            GlassPanePopup.showPopup(new PopupView("Erro ao exportar o PDF", "Contate o administrador"));
+        }
+    }
+}
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(View.class.getName());
 
