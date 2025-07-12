@@ -98,4 +98,12 @@ public class Controller {
         System.out.println("[countFinalizado] Total: " + quantidade);
         return quantidade;
     }
+
+    // Conta quantas ordens estão agendadas
+    public int countAgendado() {
+        System.out.println("[countAgendado] Contando ordens com status 'Agendado'...");
+        int quantidade = this.theDAO.countAgendado();
+        System.out.println("[countAgendado] Total: " + quantidade);
+        return quantidade;
+    }
 }
