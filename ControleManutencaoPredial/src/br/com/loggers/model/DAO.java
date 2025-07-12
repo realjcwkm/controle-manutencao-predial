@@ -35,3 +35,17 @@ public class DAO {
         theStatement.execute();
         return true;
     }
+    public User getUser(User theUser) throws SQLException{
+            Connection theConnection = new Connect().conectar();
+            //prepare the insert query
+            PreparedStatement theStatement = theConnection.prepareStatement("select * from usuario where email = ? and senha = ?");
+            //attach the values to be inserted into the database through the query
+            theStatement.setString(1, theUser.getEmail());
+            theStatement.setString(2, theUser.getSenha());//execute the query to get the record for the user
+            ResultSet queryResult = theStatement.executeQuery();if (queryResult.next()) {
+                //if query has results, return the user record 
+                return new User(queryResult.getInt("id_usuario"), queryResult.getString("nome"), queryResult.getString("email"), queryResult.getString("senha"), queryResult.getInt("tipo"));
+            } else {
+                return null;
+            }
+    }   
