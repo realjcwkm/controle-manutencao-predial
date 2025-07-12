@@ -1751,6 +1751,14 @@ public class View extends javax.swing.JFrame {
         
         updateManutencao();
     }//GEN-LAST:event_manutencoesButtonActionPerformed
+
+    private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
+        if(evt.getComponent().getWidth() < 800){
+            menu.setPreferredSize(new Dimension(43, 746));
+        } else{
+            menu.setPreferredSize(new Dimension(263, 746));
+        }
+    }//GEN-LAST:event_formComponentResized
     
     /**
      * @param args the command line arguments
