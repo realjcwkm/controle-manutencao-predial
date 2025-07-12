@@ -1760,6 +1760,17 @@ public class View extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_formComponentResized
     
+    private void logButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logButtonActionPerformed
+        CardLayout card = (CardLayout) rootDashboard.getLayout();
+        card.show(rootDashboard, "historico");
+        
+        updateMenu();
+        logButton.setFont(new Font("Poppins", Font.BOLD, 12));
+        logButton.setForeground(new Color(60,137,166));
+        logButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/ClockBlue.png")));
+        
+        updateLogs();
+    }//GEN-LAST:event_logButtonActionPerformed
     /**
      * @param args the command line arguments
      */
