@@ -184,3 +184,21 @@ public class DAO {
 
         return categories;
     }
+
+    public List<String> getOSID() {
+        List<String> categories = new ArrayList<>();
+
+        try (Connection conn = new Connect().conectar();
+             PreparedStatement stmt = conn.prepareStatement("SELECT id_ordem_servico FROM ordem_servico");
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                categories.add(rs.getString("id_ordem_servico"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace(); // Or use logging
+        }
+
+        return categories;
+    }
