@@ -1681,57 +1681,24 @@ public class View extends javax.swing.JFrame {
     pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton13ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
-
-    private void ordem_servicoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordem_servicoButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ordem_servicoButtonActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void manutencoesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manutencoesButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_manutencoesButtonActionPerformed
-
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton12ActionPerformed
-
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton14ActionPerformed
-
-    private void logButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_logButtonActionPerformed
-
-    private void relatoriosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_relatoriosButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_relatoriosButtonActionPerformed
-
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton16ActionPerformed
-
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton15ActionPerformed
-
-    private void ativosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ativosButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ativosButtonActionPerformed
-
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton17ActionPerformed
+        if(getjTextFieldEmail().getText().matches("") || getjPasswordFieldSenha().getText().matches("")){
+            GlassPanePopup.showPopup(new PopupView("Erro!", "Um ou mais campos obrigatórios não foram preenchidos."));
+        } else{
+            Controller theController = new Controller();
+            String email = jTextFieldEmail.getText();
+            String senha = new String(jPasswordFieldSenha.getPassword());
+            User loggedIn = null;
+            try {
+                loggedIn = theController.getUser(new User(0, null, email, senha, 0));
+            } catch (SQLException ex) {
+                System.getLogger(View.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+            }
+            
+            
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     
     /**
