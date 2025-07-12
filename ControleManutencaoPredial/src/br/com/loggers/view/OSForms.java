@@ -48,6 +48,20 @@ public class OSForms extends javax.swing.JPanel {
             jComboBox1.addItem(name);
         }
     }
+    private boolean verificarCampos() {
+    if (jTextField1.getText().trim().isEmpty() ||
+        jComboBox1.getSelectedItem() == null ||
+        jComboBox2.getSelectedItem() == null ||
+        jComboBox3.getSelectedItem() == null ||
+        jComboBoxYear.getSelectedItem() == null ||
+        jComboBox5.getSelectedItem() == null ||
+        jTextArea1.getText().trim().isEmpty()) {
+        
+        
+        return false;
+    }
+    return true;
+    }
     
     
 }
