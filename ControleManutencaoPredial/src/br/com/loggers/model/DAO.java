@@ -316,3 +316,23 @@ public class DAO {
             return false;
         }
     }
+
+    public boolean insertAtivo(Ativo ativo) {
+        String sql = "insert into ativos (modelo_ativo, ultima_manutencao, data_instalacao, descricao, local_id_local, tipo_ativo_id_tipo_ativo, periodicidade_id_periodicidade) values (?, ?, ?, ?, ?, ?, ?)";
+
+        try (Connection conn = new Connect().conectar(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, ativo.getModelo_ativo());
+            stmt.setDate(2, Date.valueOf(ativo.getUltima_manutencao()));
+            stmt.setDate(3, Date.valueOf(ativo.getData_instalacao()));
+            stmt.setString(4, ativo.getDescricao());
+            stmt.setInt(5, ativo.getLocal_id_local());
+            stmt.setInt(6, ativo.getTipo_ativo_id_tipo_ativo());
+            stmt.setInt(7, ativo.getPeriodicidade_id_periodicidade());
+            System.out.println(ativo.getPeriodicidade_id_periodicidade());
+            stmt.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
