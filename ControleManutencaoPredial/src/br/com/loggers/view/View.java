@@ -1833,7 +1833,24 @@ public class View extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldEmail2ActionPerformed
 
-    
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        if(jTextFieldEmail2.getText().matches("") || jTextFieldEmail1.getText().matches("") || new String(jPasswordFieldSenha1.getPassword()).matches("")){
+            GlassPanePopup.showPopup(new PopupView("Erro!", "Um ou mais campos obrigatórios não foram preenchidos."));
+        }else{
+        User usuario = new User(0, jTextFieldEmail2.getText(), jTextFieldEmail1.getText(), new String(jPasswordFieldSenha1.getPassword()), 1);
+        Controller controller = new Controller();
+        try {
+            if(controller.createUser(usuario)){
+                GlassPanePopup.showPopup(new PopupView("Usuário criado com sucesso!", "Vá para a tela de login para poder logar"));
+            }
+            else{
+                GlassPanePopup.showPopup(new PopupView("Erro ao criar o usuário", "Contate o administrator"));
+            }
+        } catch (SQLException ex) {
+            System.getLogger(View.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
     /**
      * @param args the command line arguments
      */
