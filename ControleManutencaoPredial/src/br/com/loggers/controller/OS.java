@@ -20,5 +20,15 @@ public class OS {
     int tecnico;
     int local_id_local;
     
+    public OS(String titulo, String urgencia, String status, String descricao, LocalDate prazo, int tecnico, int local_id_local) {
+        this.titulo = titulo;
+        this.urgencia = urgencia;
+        this.status = status;
+        this.descricao = descricao;
+        this.prazo = prazo;
+        this.tecnico = tecnico;
+        this.local_id_local = local_id_local;
+    }
+
     
 }
