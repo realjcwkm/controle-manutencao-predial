@@ -146,4 +146,12 @@ public class Controller {
         System.out.println("[getOSID] Total de IDs obtidos: " + osIds.size());
         return osIds;
     }
+
+    // Busca o ID de um usuário a partir de seu nome
+    public int getUserId(String nome) {
+        System.out.println("[getUserId] Buscando ID do usuário: " + nome);
+        int id = this.theDAO.getUserId(nome);
+        System.out.println("[getUserId] ID encontrado: " + id);
+        return id;
+    }
 }
