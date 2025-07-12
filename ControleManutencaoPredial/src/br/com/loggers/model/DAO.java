@@ -65,3 +65,18 @@ public class DAO {
         System.out.println(count);
         return count;
     }
+    public int countAndamento() {
+        int count = 0;
+        String sql = "SELECT COUNT(*) AS total FROM ordem_servico WHERE status = 'em andamento'";
+        try (Connection conn = new Connect().conectar(); PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            if (rs.next()) {
+                count = rs.getInt("total");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        System.out.println(count);
+        return count;
+    }
