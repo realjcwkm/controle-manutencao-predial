@@ -91,4 +91,11 @@ public class Controller {
         return quantidade;
     }
 
+     // Conta quantas ordens já foram finalizadas
+    public int countFinalizado() {
+        System.out.println("[countFinalizado] Contando ordens com status 'Finalizado'...");
+        int quantidade = this.theDAO.countFinalizado();
+        System.out.println("[countFinalizado] Total: " + quantidade);
+        return quantidade;
+    }
 }
