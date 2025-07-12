@@ -130,4 +130,12 @@ public class Controller {
         System.out.println("[getTipoAtivo] Total encontrados: " + tipos.size());
         return tipos;
     }
+
+    // Retorna as periodicidades cadastradas
+    public List<String> getPeriodicidade() {
+        System.out.println("[getPeriodicidade] Buscando periodicidades disponíveis...");
+        List<String> periodicidades = this.theDAO.getPeriodicidade();
+        System.out.println("[getPeriodicidade] Total: " + periodicidades.size());
+        return periodicidades;
+    }
 }
