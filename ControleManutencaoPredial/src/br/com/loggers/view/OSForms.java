@@ -42,6 +42,11 @@ public class OSForms extends javax.swing.JPanel {
         for (String name : categories) {
             jComboBox2.addItem(name);
         }
+        
+        List<String> locais = controller.getLocal();
+        for (String name : locais) {
+            jComboBox1.addItem(name);
+        }
     }
     
     
