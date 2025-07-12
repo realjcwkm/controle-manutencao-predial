@@ -271,6 +271,33 @@ public class AtivoForms extends javax.swing.JPanel {
             GlassPanePopup.showPopup(new PopupView("Erro!", "Um ou mais campos obrigatórios não foram preenchidos."));
         }
         else{
+            Controller controller = new Controller();
+            
+            String modelo_ativo = jTextField1.getText();
+            int tipo_ativo_id_tipo_ativo = controller.getAtivoTipoID(jComboBox2.getSelectedItem().toString());
+            int local_id_local = controller.getLocalId(jComboBox1.getSelectedItem().toString());
+            int periodicidade_id_periodicidade = controller.getPeriocididadeID(jComboBox3.getSelectedItem().toString());
+            
+            int mesNumero = converterMes(jComboBoxMonth.getSelectedItem().toString());
+            String dateString = String.format("%s-%02d-%02d",
+                jComboBoxYear.getSelectedItem().toString(),
+                mesNumero,
+                Integer.parseInt(jComboBoxDay.getSelectedItem().toString())
+               );
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            LocalDate data_instalacao = LocalDate.parse(dateString, formatter);
+            
+            int mesNumero2 = converterMes(jComboBoxMonth2.getSelectedItem().toString());
+            String dateString2 = String.format("%s-%02d-%02d",
+                jComboBoxYear2.getSelectedItem().toString(),
+                mesNumero2,
+                Integer.parseInt(jComboBoxDay2.getSelectedItem().toString())
+               );
+
+            LocalDate ultima_manutencao = LocalDate.parse(dateString2, formatter);
+            
+            String descricao = jTextArea1.getText();
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
