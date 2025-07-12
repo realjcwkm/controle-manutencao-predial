@@ -252,6 +252,26 @@ public class OSForms extends javax.swing.JPanel {
             GlassPanePopup.showPopup(new PopupView("Erro!", "Um ou mais campos obrigatórios não foram preenchidos."));
         }
         else{
+            Controller controller = new Controller();
+            String titulo = jTextField1.getText();
+            int tecnico = controller.getUserId(jComboBox2.getSelectedItem().toString());
+            int mesNumero = converterMes(jComboBoxMonth.getSelectedItem().toString());
+            String dateString = String.format("%s-%02d-%02d",
+                jComboBoxYear.getSelectedItem().toString(),
+                mesNumero,
+                Integer.parseInt(jComboBoxDay.getSelectedItem().toString())
+               );
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            LocalDate prazo = LocalDate.parse(dateString, formatter);
+            
+            String urgencia = jComboBox3.getSelectedItem().toString();
+            String status = jComboBox5.getSelectedItem().toString();
+            String descricao = jTextArea1.getText();
+            
+            int local_id_local = controller.getLocalId(jComboBox1.getSelectedItem().toString());
+            
+            
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
