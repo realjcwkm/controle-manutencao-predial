@@ -192,6 +192,31 @@ public class ManutencaoForms extends javax.swing.JPanel {
         GlassPanePopup.closePopupLast();
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        if(!verificarCampos()){
+            GlassPanePopup.showPopup(new PopupView("Erro!", "Um ou mais campos obrigatórios não foram preenchidos."));
+        }
+        else{
+            Controller controller = new Controller();
+            
+            int periodicidade_id_periodicidade = controller.getPeriocididadeID(jComboBox7.getSelectedItem().toString());
+            int local_id_local = controller.getLocalId(jComboBox4.getSelectedItem().toString());
+            String tipo_manutencao = jComboBox6.getSelectedItem().toString();
+            int ordem_servico_id_ordem_servico = Integer.parseInt((String) jComboBox1.getSelectedItem());
+            
+            Manutencao manutencao = new Manutencao(tipo_manutencao, ordem_servico_id_ordem_servico, local_id_local, periodicidade_id_periodicidade);
+            
+           
+            try {
+                controller.insertManutencao(manutencao);
+                GlassPanePopup.showPopup(new PopupView("Manutenção registrada!", "A manutenção foi registrada com sucesso!"));
+            }
+            catch(Exception e) {
+                GlassPanePopup.showPopup(new PopupView("Erro!", "A nova manutenção não pôde ser registrada!"));
+              
+            }
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
 
 // Variables declaration - do not modify                     
     // Variables declaration - do not modify//GEN-BEGIN:variables
