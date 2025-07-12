@@ -263,4 +263,13 @@ public class Controller {
         return model;
     }
 
+    // Retorna os dados dos logs em formato de tabela
+    public DefaultTableModel getLogsTable() {
+        System.out.println("[getLogsTable] Carregando tabela de logs...");
+        DefaultTableModel model = this.theDAO.getLogsTable();
+        System.out.println("[getLogsTable] Tabela carregada com sucesso.");
+        return model;
+    }
+
+  
 }
