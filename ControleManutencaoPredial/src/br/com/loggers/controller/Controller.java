@@ -75,4 +75,12 @@ public class Controller {
         return encontrado;
     }
 
+    // Conta quantas ordens de serviço estão com o status "Pendente"
+    public int countPendente() {
+        System.out.println("[countPendente] Contando ordens de serviço com status 'Pendente'...");
+        int quantidade = this.theDAO.countPendente();
+        System.out.println("[countPendente] Total encontrado: " + quantidade);
+        return quantidade;
+    }
+
 }
