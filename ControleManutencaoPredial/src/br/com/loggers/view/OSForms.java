@@ -48,6 +48,8 @@ public class OSForms extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jButton3 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         jComboBoxDay = new javax.swing.JComboBox<>();
         jComboBoxMonth = new javax.swing.JComboBox<>();
 
@@ -133,6 +135,29 @@ public class OSForms extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 470, 700, 110));
 
+        jButton3.setBackground(new java.awt.Color(217, 217, 217));
+        jButton3.setFont(new java.awt.Font("Poppins", 1, 16)); // NOI18N
+        jButton3.setText("Cancelar");
+        jButton3.setPreferredSize(new java.awt.Dimension(107, 42));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 600, -1, -1));
+
+        jButton5.setBackground(new java.awt.Color(60, 137, 166));
+        jButton5.setFont(new java.awt.Font("Poppins", 1, 16)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("Salvar");
+        jButton5.setPreferredSize(new java.awt.Dimension(107, 42));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(635, 600, -1, -1));
+
         jComboBoxDay.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
         jComboBoxDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", " " }));
         add(jComboBoxDay, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, 60, 45));
@@ -146,10 +171,20 @@ public class OSForms extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        //
+    }//GEN-LAST:event_jButton3ActionPerformed
+
 // Variables declaration - do not modify                     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
