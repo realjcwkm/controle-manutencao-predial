@@ -198,4 +198,16 @@ public class Controller {
         System.out.println("[insertOS] Resultado: " + resultado);
         return resultado;
     }
+
+    // Insere um novo ativo no banco
+    public boolean insertAtivo(Ativo ativo) {
+        System.out.println("[insertAtivo] Iniciando inserção de ativo...");
+        if (ativo == null) {
+            System.err.println("[insertAtivo] Objeto ativo é nulo. Operação cancelada.");
+            return false;
+        }
+        boolean resultado = this.theDAO.insertAtivo(ativo);
+        System.out.println("[insertAtivo] Resultado: " + resultado);
+        return resultado;
+    }
 }
