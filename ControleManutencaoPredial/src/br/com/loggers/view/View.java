@@ -63,6 +63,17 @@ public class View extends javax.swing.JFrame {
         relatoriosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Document.png")));
         ativosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Box.png")));
     }
+
+    public void updateOS(){
+        Controller theController = new Controller();
+        OSTable.setModel(theController.getOSTable());
+        pendenteLabel.setText("<html><body style='text-align: center'>"+ String.valueOf(theController.countPendente())+"<br>Pendentes");
+        andamentoLabel.setText("<html><body style='text-align: center'>"+ String.valueOf(theController.countAndamento())+"<br>Em andamento");
+        finalizadoLabel.setText("<html><body style='text-align: center'>"+ String.valueOf(theController.countFinalizado())+"<br>Finalizadas");
+        agendadoLabel.setText("<html><body style='text-align: center'>"+ String.valueOf(theController.countAgendado())+"<br>Agendadas");
+        
+        
+    }
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(View.class.getName());
 
