@@ -238,4 +238,12 @@ public class Controller {
         System.out.println("[insertLogOS] Resultado: " + resultado);
         return resultado;
     }
+
+    // Insere um log de manutenção
+    public boolean insertLogManut(Log log) {
+        System.out.println("[insertLogManut] Inserindo log de manutenção...");
+        boolean resultado = this.theDAO.insertLogManut(log);
+        System.out.println("[insertLogManut] Resultado: " + resultado);
+        return resultado;
+    }
 }
