@@ -33,15 +33,32 @@ public class ManutencaoForms extends javax.swing.JPanel {
      * Creates new form PopupView
      */
     
+    User logged;
     
     public ManutencaoForms(User logged) {
         initComponents();
         setOpaque(false);
         
+        this.logged = logged;
+        
+        Controller controller = new Controller();
+        
+        List<String> categoriesOS = controller.getOSID();
+        for (String name : categoriesOS) {
+            jComboBox1.addItem(name);
+        }
+        
+        List<String> categoriesPeriodicidade = controller.getPeriodicidade();
+        for (String name : categoriesPeriodicidade) {
+            jComboBox7.addItem(name);
+        }
+        List<String> locais = controller.getLocal();
+        for (String name : locais) {
+            jComboBox4.addItem(name);
+        }
     }
     
     
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -148,13 +165,10 @@ public class ManutencaoForms extends javax.swing.JPanel {
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-
-    }//GEN-LAST:event_jButton5ActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
+        GlassPanePopup.closePopupLast();
     }//GEN-LAST:event_jButton3ActionPerformed
+
 
 // Variables declaration - do not modify                     
     // Variables declaration - do not modify//GEN-BEGIN:variables
