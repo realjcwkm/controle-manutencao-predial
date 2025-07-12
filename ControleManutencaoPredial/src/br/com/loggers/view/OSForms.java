@@ -39,8 +39,15 @@ public class OSForms extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jComboBoxYear = new javax.swing.JComboBox<>();
+        jComboBox5 = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jComboBoxDay = new javax.swing.JComboBox<>();
         jComboBoxMonth = new javax.swing.JComboBox<>();
 
@@ -89,6 +96,14 @@ public class OSForms extends javax.swing.JPanel {
         jComboBox2.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
         add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, 283, 45));
 
+        jLabel6.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel6.setText("Descrição");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 440, -1, -1));
+
+        jComboBox3.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "baixa", "média", "alta" }));
+        add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 370, 336, 45));
+
         jLabel7.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
         jLabel7.setText("Data");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, -1, -1));
@@ -98,6 +113,25 @@ public class OSForms extends javax.swing.JPanel {
         jComboBoxYear.setSelectedIndex(25);
         jComboBoxYear.setToolTipText("");
         add(jComboBoxYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, 130, 45));
+
+        jComboBox5.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "pendente", "em andamento", "finalizado", "agendado" }));
+        add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 336, 45));
+
+        jLabel8.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel8.setText("Status");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel9.setText("Urgência");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 340, -1, -1));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 470, 700, 110));
 
         jComboBoxDay.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
         jComboBoxDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", " " }));
@@ -118,6 +152,8 @@ public class OSForms extends javax.swing.JPanel {
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBoxDay;
     private javax.swing.JComboBox<String> jComboBoxMonth;
     private javax.swing.JComboBox<String> jComboBoxYear;
@@ -126,7 +162,12 @@ public class OSForms extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
