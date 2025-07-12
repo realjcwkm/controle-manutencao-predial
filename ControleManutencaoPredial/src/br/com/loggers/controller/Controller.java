@@ -154,4 +154,12 @@ public class Controller {
         System.out.println("[getUserId] ID encontrado: " + id);
         return id;
     }
+
+    // Busca o ID de um local a partir de seu nome
+    public int getLocalId(String nome) {
+        System.out.println("[getLocalId] Buscando ID do local: " + nome);
+        int id = this.theDAO.getLocalId(nome);
+        System.out.println("[getLocalId] ID encontrado: " + id);
+        return id;
+    }
 }
