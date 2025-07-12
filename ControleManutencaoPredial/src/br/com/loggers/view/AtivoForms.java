@@ -70,6 +70,24 @@ public class AtivoForms extends javax.swing.JPanel {
         default: return -1;
     }
 }
+    private boolean verificarCampos() {
+    if (jTextField1.getText().trim().isEmpty() ||
+        jComboBox1.getSelectedItem() == null ||
+        jComboBox2.getSelectedItem() == null ||
+        jComboBox3.getSelectedItem() == null ||
+        jComboBoxYear.getSelectedItem() == null || 
+        jComboBoxDay.getSelectedItem() == null ||
+        jComboBoxMonth.getSelectedItem() == null ||
+        jComboBoxDay2.getSelectedItem() == null ||
+        jComboBoxMonth2.getSelectedItem() == null ||
+        jComboBoxYear2.getSelectedItem() == null ||
+        jTextArea1.getText().trim().isEmpty()) {
+        
+        
+        return false;
+    }
+    return true;
+    }
     
 
     /**
