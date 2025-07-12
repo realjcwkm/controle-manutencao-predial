@@ -1793,6 +1793,14 @@ public class View extends javax.swing.JFrame {
         
         updateAtivo();
     }//GEN-LAST:event_ativosButtonActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        GlassPanePopup.showPopup(new Notificacao());
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton13ActionPerformed
     /**
      * @param args the command line arguments
      */
