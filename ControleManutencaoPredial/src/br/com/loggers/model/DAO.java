@@ -407,3 +407,37 @@ public class DAO {
             return false;
         }
     }
+
+    public DefaultTableModel getOSTable() {
+        DefaultTableModel model = new DefaultTableModel();
+
+        String sql = "SELECT os.id_ordem_servico AS Ordem, os.titulo AS Título, u.nome AS Técnico, os.status as Status, l.nome AS Local, os.prazo as Prazo FROM ordem_servico os JOIN usuario u ON os.tecnico = u.id_usuario JOIN local l ON os.local_id_local = l.id_local ORDER BY os.id_ordem_servico DESC LIMIT 10;";
+
+        try (Connection conn = new Connect().conectar();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            ResultSetMetaData meta = (ResultSetMetaData) rs.getMetaData();
+            int columnCount = meta.getColumnCount();
+
+            // Get column names
+            for (int i = 1; i <= columnCount; i++) {
+                model.addColumn(meta.getColumnLabel(i));
+            }
+
+            // Get rows
+            while (rs.next()) {
+                Object[] row = new Object[columnCount];
+                for (int i = 0; i < columnCount; i++) {
+                    row[i] = rs.getObject(i + 1);
+                }
+                model.addRow(row);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return model;
+    }
+    
