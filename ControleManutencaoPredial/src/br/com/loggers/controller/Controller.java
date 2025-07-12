@@ -170,4 +170,12 @@ public class Controller {
         System.out.println("[getAtivoTipoID] ID localizado: " + id);
         return id;
     }
+
+    // Busca o ID de uma periodicidade
+    public int getPeriocididadeID(String nome) {
+        System.out.println("[getPeriocididadeID] Buscando ID da periodicidade: " + nome);
+        int id = this.theDAO.getPeriocididadeID(nome);
+        System.out.println("[getPeriocididadeID] ID: " + id);
+        return id;
+    }
 }
