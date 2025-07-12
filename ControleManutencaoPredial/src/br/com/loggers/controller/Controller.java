@@ -83,4 +83,12 @@ public class Controller {
         return quantidade;
     }
 
+    // Conta quantas ordens estão em andamento
+    public int countAndamento() {
+        System.out.println("[countAndamento] Contando ordens com status 'Em Andamento'...");
+        int quantidade = this.theDAO.countAndamento();
+        System.out.println("[countAndamento] Total: " + quantidade);
+        return quantidade;
+    }
+
 }
