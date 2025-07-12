@@ -28,4 +28,33 @@ public class Ativo {
         this.periodicidade_id_periodicidade = periodicidade_id_periodicidade;
     }
 
+    public String getModelo_ativo() {
+        return modelo_ativo;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public LocalDate getData_instalacao() {
+        return data_instalacao;
+    }
+
+    public LocalDate getUltima_manutencao() {
+        return ultima_manutencao;
+    }
+
+    public int getLocal_id_local() {
+        return local_id_local;
+    }
+
+    public int getTipo_ativo_id_tipo_ativo() {
+        return tipo_ativo_id_tipo_ativo;
+    }
+
+    public int getPeriodicidade_id_periodicidade() {
+        return periodicidade_id_periodicidade;
+    }
+    
+    
 }
