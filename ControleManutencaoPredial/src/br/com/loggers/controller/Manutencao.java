@@ -20,5 +20,22 @@ public class Manutencao {
         this.local_id_local = local_id_local;
         this.periodicidade_id_periodicidade = periodicidade_id_periodicidade;
     }
+
+    public String getTipo_manutencao() {
+        return tipo_manutencao;
+    }
+
+    public int getOrdem_servico_id_ordem_servico() {
+        return ordem_servico_id_ordem_servico;
+    }
+
+    public int getLocal_id_local() {
+        return local_id_local;
+    }
+
+    public int getPeriodicidade_id_periodicidade() {
+        return periodicidade_id_periodicidade;
+    }
+    
     
 }
