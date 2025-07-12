@@ -1781,6 +1781,18 @@ public class View extends javax.swing.JFrame {
         relatoriosButton.setForeground(new Color(60,137,166));
         relatoriosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/DocumentBlue.png")));
     }//GEN-LAST:event_relatoriosButtonActionPerformed
+
+    private void ativosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ativosButtonActionPerformed
+        CardLayout card = (CardLayout) rootDashboard.getLayout();
+        card.show(rootDashboard, "ativo");
+        
+        updateMenu();
+        ativosButton.setFont(new Font("Poppins", Font.BOLD, 12));
+        ativosButton.setForeground(new Color(60,137,166));
+        ativosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/BoxBlue.png")));
+        
+        updateAtivo();
+    }//GEN-LAST:event_ativosButtonActionPerformed
     /**
      * @param args the command line arguments
      */
