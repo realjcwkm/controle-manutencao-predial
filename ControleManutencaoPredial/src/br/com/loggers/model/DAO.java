@@ -507,3 +507,38 @@ public class DAO {
 
         return model;
     }
+
+    public DefaultTableModel getAtivoTable() {
+        DefaultTableModel model = new DefaultTableModel();
+
+        String sql = "SELECT a.id_ativos AS ID, a.modelo_ativo AS Nome, ta.nome_tipo_ativo AS Tipo, l.nome AS Localização, a.ultima_manutencao FROM ativos a JOIN tipo_ativo ta ON a.tipo_ativo_id_tipo_ativo = ta.id_tipo_ativo JOIN local l ON a.local_id_local = l.id_local ORDER BY a.id_ativos DESC LIMIT 10;";
+
+        try (Connection conn = new Connect().conectar();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            ResultSetMetaData meta = (ResultSetMetaData) rs.getMetaData();
+            int columnCount = meta.getColumnCount();
+
+            // Get column names
+            for (int i = 1; i <= columnCount; i++) {
+                model.addColumn(meta.getColumnLabel(i));
+            }
+
+            // Get rows
+            while (rs.next()) {
+                Object[] row = new Object[columnCount];
+                for (int i = 0; i < columnCount; i++) {
+                    row[i] = rs.getObject(i + 1);
+                }
+                model.addRow(row);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return model;
+    }
+
+}
