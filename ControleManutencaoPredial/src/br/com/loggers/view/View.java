@@ -196,6 +196,41 @@ public class View extends javax.swing.JFrame {
     }
 }
     
+    private void exportToCSV(JTable table) {
+    try {
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setSelectedFile(new java.io.File("table_output.csv"));
+        int userSelection = fileChooser.showSaveDialog(this);
+
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            java.io.File fileToSave = fileChooser.getSelectedFile();
+            try (FileWriter csvWriter = new FileWriter(fileToSave)) {
+
+                // Write column names
+                    csvWriter.append(table.getColumnName(i));
+                    if (i != table.getColumnCount() - 1) csvWriter.append(",");
+                }
+                csvWriter.append("\n");
+
+                // Write rows
+                for (int row = 0; row < table.getRowCount(); row++) {
+                    for (int col = 0; col < table.getColumnCount(); col++) {
+                        Object cellValue = table.getValueAt(row, col);
+                        csvWriter.append(cellValue != null ? cellValue.toString() : "");
+                        if (col != table.getColumnCount() - 1) csvWriter.append(",");
+                    }
+                    csvWriter.append("\n");
+                }
+
+                GlassPanePopup.showPopup(new PopupView("CSV exportado com sucesso!", "Verifique sua pasta"));
+            }
+        }
+    } catch (Exception ex) {
+        ex.printStackTrace();
+        GlassPanePopup.showPopup(new PopupView("Erro ao exportar o CSV", "Contate o administrador"));
+    }
+}
+    
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(View.class.getName());
 
     /**
