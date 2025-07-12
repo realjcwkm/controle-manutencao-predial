@@ -1739,6 +1739,18 @@ public class View extends javax.swing.JFrame {
         
         updateOS();
     }//GEN-LAST:event_ordem_servicoButtonActionPerformed
+
+    private void manutencoesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manutencoesButtonActionPerformed
+        CardLayout card = (CardLayout) rootDashboard.getLayout();
+        card.show(rootDashboard, "manutencoes");
+        
+        updateMenu();
+        manutencoesButton.setFont(new Font("Poppins", Font.BOLD, 12));
+        manutencoesButton.setForeground(new Color(60,137,166));
+        manutencoesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/predioBlue.png")));
+        
+        updateManutencao();
+    }//GEN-LAST:event_manutencoesButtonActionPerformed
     
     /**
      * @param args the command line arguments
