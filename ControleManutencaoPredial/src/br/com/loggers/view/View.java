@@ -31,6 +31,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumnModel;
 import popup.glasspanepopup.GlassPanePopup;
 
+
 public class View extends javax.swing.JFrame {
 
     public String name;
@@ -63,7 +64,7 @@ public class View extends javax.swing.JFrame {
         relatoriosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Document.png")));
         ativosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Box.png")));
     }
-
+    
     public void updateOS(){
         Controller theController = new Controller();
         OSTable.setModel(theController.getOSTable());
@@ -91,7 +92,7 @@ public class View extends javax.swing.JFrame {
             OSTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
         }
     }
-
+    
     public void updateManutencao(){
         Controller theController = new Controller();
         manutencaoTable.setModel(theController.getManutencaoTable());
@@ -112,7 +113,7 @@ public class View extends javax.swing.JFrame {
             manutencaoTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
         }
     }
-
+    
     public void updateLogs(){
         Controller theController = new Controller();
         logsTable.setModel(theController.getLogsTable());
@@ -133,7 +134,7 @@ public class View extends javax.swing.JFrame {
             logsTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
         }
     }
-
+    
     public void updateAtivo(){
         Controller theController = new Controller();
         ativoTable.setModel(theController.getAtivoTable());
@@ -155,7 +156,7 @@ public class View extends javax.swing.JFrame {
             ativoTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
         }
     }
-
+    
     private void exportToPDF(JTable table) {
     JFileChooser fileChooser = new JFileChooser();
     fileChooser.setSelectedFile(new java.io.File("table_output.pdf"));
@@ -195,6 +196,7 @@ public class View extends javax.swing.JFrame {
         }
     }
 }
+
     
     private void exportToCSV(JTable table) {
     try {
@@ -1681,6 +1683,10 @@ public class View extends javax.swing.JFrame {
     pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTextFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEmailActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         if(getjTextFieldEmail().getText().matches("") || getjPasswordFieldSenha().getText().matches("")){
@@ -1759,7 +1765,7 @@ public class View extends javax.swing.JFrame {
             menu.setPreferredSize(new Dimension(263, 746));
         }
     }//GEN-LAST:event_formComponentResized
-    
+
     private void logButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logButtonActionPerformed
         CardLayout card = (CardLayout) rootDashboard.getLayout();
         card.show(rootDashboard, "historico");
@@ -1864,6 +1870,10 @@ public class View extends javax.swing.JFrame {
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         exportToPDF(relatorioTable);
     }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        exportToCSV(relatorioTable);
+    }//GEN-LAST:event_jButton15ActionPerformed
 
     /**
      * @param args the command line arguments
