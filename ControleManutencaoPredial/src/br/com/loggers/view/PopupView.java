@@ -121,6 +121,18 @@ public class PopupView extends javax.swing.JPanel {
         add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 23, 474, 134));
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        GlassPanePopup.closePopupLast();
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    public JLabel getjLabelText() {
+        return jLabelText;
+    }
+
+    public JLabel getjLabelTitle() {
+        return jLabelTitle;
+    }
 // Variables declaration - do not modify                     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton5;
