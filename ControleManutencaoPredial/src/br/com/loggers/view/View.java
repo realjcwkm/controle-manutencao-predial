@@ -4,9 +4,235 @@
  */
 package br.com.loggers.view;
 
+import br.com.loggers.controller.Controller;
+import br.com.loggers.controller.User;
+import com.formdev.flatlaf.FlatClientProperties;
+import com.formdev.flatlaf.FlatLightLaf;
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.*;
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+import java.sql.SQLException;
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
+import javax.swing.JFileChooser;
+import javax.swing.JTable;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableColumnModel;
+import popup.glasspanepopup.GlassPanePopup;
+
 
 public class View extends javax.swing.JFrame {
 
+    public String name;
+    boolean visible = false;
+    User logged;
+    public JPasswordField getjPasswordFieldSenha() {
+        return jPasswordFieldSenha;
+    }
+
+    public JTextField getjTextFieldEmail() {
+        return jTextFieldEmail;
+    }
+    
+    public void updateMenu(){
+        ordem_servicoButton.setFont(new Font("Poppins Medium", Font.PLAIN, 12));
+        manutencoesButton.setFont(new Font("Poppins Medium", Font.PLAIN, 12));
+        logButton.setFont(new Font("Poppins Medium", Font.PLAIN, 12));
+        relatoriosButton.setFont(new Font("Poppins Medium", Font.PLAIN, 12));
+        ativosButton.setFont(new Font("Poppins Medium", Font.PLAIN, 12));
+        
+        ordem_servicoButton.setForeground(new Color(0, 0, 0));
+        manutencoesButton.setForeground(new Color(0, 0, 0));
+        logButton.setForeground(new Color(0, 0, 0));
+        relatoriosButton.setForeground(new Color(0, 0, 0));
+        ativosButton.setForeground(new Color(0, 0, 0));
+        
+        ordem_servicoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/ChartBlack.png")));
+        manutencoesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Vector.png")));
+        logButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Clock.png")));
+        relatoriosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Document.png")));
+        ativosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Box.png")));
+    }
+    
+    public void updateOS(){
+        Controller theController = new Controller();
+        OSTable.setModel(theController.getOSTable());
+        pendenteLabel.setText("<html><body style='text-align: center'>"+ String.valueOf(theController.countPendente())+"<br>Pendentes");
+        andamentoLabel.setText("<html><body style='text-align: center'>"+ String.valueOf(theController.countAndamento())+"<br>Em andamento");
+        finalizadoLabel.setText("<html><body style='text-align: center'>"+ String.valueOf(theController.countFinalizado())+"<br>Finalizadas");
+        agendadoLabel.setText("<html><body style='text-align: center'>"+ String.valueOf(theController.countAgendado())+"<br>Agendadas");
+        
+        
+        OSTable.getTableHeader().setFont(new Font("Poppins", Font.BOLD, 16));
+        OSTable.getTableHeader().setPreferredSize(new Dimension(100, 56));
+        TableColumnModel columnModel = OSTable.getColumnModel();
+        columnModel.getColumn(0).setPreferredWidth(100);
+        columnModel.getColumn(1).setPreferredWidth(280);
+        columnModel.getColumn(2).setPreferredWidth(220);
+        columnModel.getColumn(3).setPreferredWidth(160);
+        columnModel.getColumn(4).setPreferredWidth(180);
+        columnModel.getColumn(5).setPreferredWidth(193);
+        
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+
+        // Apply to all columns (optional: use specific indices if needed)
+        for (int i = 0; i < OSTable.getColumnCount(); i++) {
+            OSTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        }
+    }
+    
+    public void updateManutencao(){
+        Controller theController = new Controller();
+        manutencaoTable.setModel(theController.getManutencaoTable());
+        
+        manutencaoTable.getTableHeader().setFont(new Font("Poppins", Font.BOLD, 16));
+        manutencaoTable.getTableHeader().setPreferredSize(new Dimension(100, 56));
+        TableColumnModel columnModel2 = manutencaoTable.getColumnModel();
+        columnModel2.getColumn(0).setPreferredWidth(100);
+        columnModel2.getColumn(1).setPreferredWidth(300);
+        columnModel2.getColumn(2).setPreferredWidth(220);
+        columnModel2.getColumn(3).setPreferredWidth(200);
+        columnModel2.getColumn(4).setPreferredWidth(200);
+        
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+
+        for (int i = 0; i < manutencaoTable.getColumnCount(); i++) {
+            manutencaoTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        }
+    }
+    
+    public void updateLogs(){
+        Controller theController = new Controller();
+        logsTable.setModel(theController.getLogsTable());
+        
+        logsTable.getTableHeader().setFont(new Font("Poppins", Font.BOLD, 16));
+        logsTable.getTableHeader().setPreferredSize(new Dimension(100, 56));
+        TableColumnModel columnModel3 = logsTable.getColumnModel();
+        columnModel3.getColumn(0).setPreferredWidth(120);
+        columnModel3.getColumn(1).setPreferredWidth(100);
+        columnModel3.getColumn(2).setPreferredWidth(100);
+        columnModel3.getColumn(3).setPreferredWidth(480);
+        columnModel3.getColumn(4).setPreferredWidth(300);
+        
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+
+        for (int i = 0; i < logsTable.getColumnCount(); i++) {
+            logsTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        }
+    }
+    
+    public void updateAtivo(){
+        Controller theController = new Controller();
+        ativoTable.setModel(theController.getAtivoTable());
+        
+        
+        ativoTable.getTableHeader().setFont(new Font("Poppins", Font.BOLD, 16));
+        ativoTable.getTableHeader().setPreferredSize(new Dimension(100, 56));
+        TableColumnModel columnModel4 = ativoTable.getColumnModel();
+        columnModel4.getColumn(0).setPreferredWidth(100);
+        columnModel4.getColumn(1).setPreferredWidth(300);
+        columnModel4.getColumn(2).setPreferredWidth(220);
+        columnModel4.getColumn(3).setPreferredWidth(200);
+        columnModel4.getColumn(4).setPreferredWidth(200);
+        
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+
+        for (int i = 0; i < ativoTable.getColumnCount(); i++) {
+            ativoTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        }
+    }
+    
+    private void exportToPDF(JTable table) {
+    JFileChooser fileChooser = new JFileChooser();
+    fileChooser.setSelectedFile(new java.io.File("table_output.pdf"));
+    int userSelection = fileChooser.showSaveDialog(this);
+
+    if (userSelection == JFileChooser.APPROVE_OPTION) {
+        java.io.File fileToSave = fileChooser.getSelectedFile();
+
+        try {
+            Document document = new Document();
+            PdfWriter.getInstance(document, new FileOutputStream(fileToSave));
+            document.open();
+
+            PdfPTable pdfTable = new PdfPTable(table.getColumnCount());
+
+            // Add column headers
+            for (int i = 0; i < table.getColumnCount(); i++) {
+                pdfTable.addCell(new PdfPCell(new Phrase(table.getColumnName(i))));
+            }
+
+            // Add rows
+            for (int row = 0; row < table.getRowCount(); row++) {
+                for (int col = 0; col < table.getColumnCount(); col++) {
+                    Object value = table.getValueAt(row, col);
+                    pdfTable.addCell(value != null ? value.toString() : "");
+                }
+            }
+
+            document.add(pdfTable);
+            document.close();
+
+            GlassPanePopup.showPopup(new PopupView("PDF exportado com sucesso!", "Verifique sua pasta"));
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            GlassPanePopup.showPopup(new PopupView("Erro ao exportar o PDF", "Contate o administrador"));
+        }
+    }
+}
+
+    
+    private void exportToCSV(JTable table) {
+    try {
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setSelectedFile(new java.io.File("table_output.csv"));
+        int userSelection = fileChooser.showSaveDialog(this);
+
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            java.io.File fileToSave = fileChooser.getSelectedFile();
+            try (FileWriter csvWriter = new FileWriter(fileToSave)) {
+
+                // Write column names
+                for (int i = 0; i < table.getColumnCount(); i++) {
+                    csvWriter.append(table.getColumnName(i));
+                    if (i != table.getColumnCount() - 1) csvWriter.append(",");
+                }
+                csvWriter.append("\n");
+
+                // Write rows
+                for (int row = 0; row < table.getRowCount(); row++) {
+                    for (int col = 0; col < table.getColumnCount(); col++) {
+                        Object cellValue = table.getValueAt(row, col);
+                        csvWriter.append(cellValue != null ? cellValue.toString() : "");
+                        if (col != table.getColumnCount() - 1) csvWriter.append(",");
+                    }
+                    csvWriter.append("\n");
+                }
+
+                GlassPanePopup.showPopup(new PopupView("CSV exportado com sucesso!", "Verifique sua pasta"));
+            }
+        }
+    } catch (Exception ex) {
+        ex.printStackTrace();
+        GlassPanePopup.showPopup(new PopupView("Erro ao exportar o CSV", "Contate o administrador"));
+    }
+}
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(View.class.getName());
 
@@ -14,7 +240,22 @@ public class View extends javax.swing.JFrame {
      * Creates new form LoginView
      */
     public View() {
+        initComponents();
+        GlassPanePopup.install(this);
+        FlatLightLaf.install();
         
+        
+        
+        
+        
+        relatorioTable.getTableHeader().setFont(new Font("Poppins", Font.BOLD, 16));
+        relatorioTable.getTableHeader().setPreferredSize(new Dimension(100, 56));
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+
+        for (int i = 0; i < relatorioTable.getColumnCount(); i++) {
+            relatorioTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        }
         
         }
 
@@ -1442,59 +1683,198 @@ public class View extends javax.swing.JFrame {
     pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTextFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEmailActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        if(getjTextFieldEmail().getText().matches("") || getjPasswordFieldSenha().getText().matches("")){
+            GlassPanePopup.showPopup(new PopupView("Erro!", "Um ou mais campos obrigatórios não foram preenchidos."));
+        } else{
+            Controller theController = new Controller();
+            String email = jTextFieldEmail.getText();
+            String senha = new String(jPasswordFieldSenha.getPassword());
+            User loggedIn = null;
+            try {
+                loggedIn = theController.getUser(new User(0, null, email, senha, 0));
+            } catch (SQLException ex) {
+                System.getLogger(View.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+            }
+            
+            
+            if(loggedIn != null){
+                GlassPanePopup.showPopup(new PopupView("Login realizado", "Bem vindo!"));
+                CardLayout card = (CardLayout) root.getLayout();
+                card.show(root, "dashboard");
+                nameUser.setText("Técnico - "+loggedIn.getNome());
+                logged = loggedIn;
+                
+                updateOS();
+                
+            }
+            else{
+                GlassPanePopup.showPopup(new PopupView("Usuário não encontrado", "Verifique seu e-mail e senha."));
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        CardLayout card = (CardLayout) root.getLayout();
+        card.show(root, "cadastro");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        if (visible == false){
+            visible = true;
+            jPasswordFieldSenha.setEchoChar((char)0);
+        } else{
+            visible = false;
+            jPasswordFieldSenha.setEchoChar('*');
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void ordem_servicoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordem_servicoButtonActionPerformed
+        CardLayout card = (CardLayout) rootDashboard.getLayout();
+        card.show(rootDashboard, "ordem_servico");
+        
+        updateMenu();
+        ordem_servicoButton.setFont(new Font("Poppins", Font.BOLD, 12));
+        ordem_servicoButton.setForeground(new Color(60,137,166));
+        ordem_servicoButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Chart.png")));
+        
+        updateOS();
+    }//GEN-LAST:event_ordem_servicoButtonActionPerformed
+
+    private void manutencoesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manutencoesButtonActionPerformed
+        CardLayout card = (CardLayout) rootDashboard.getLayout();
+        card.show(rootDashboard, "manutencoes");
+        
+        updateMenu();
+        manutencoesButton.setFont(new Font("Poppins", Font.BOLD, 12));
+        manutencoesButton.setForeground(new Color(60,137,166));
+        manutencoesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/predioBlue.png")));
+        
+        updateManutencao();
+    }//GEN-LAST:event_manutencoesButtonActionPerformed
+
+    private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
+        if(evt.getComponent().getWidth() < 800){
+            menu.setPreferredSize(new Dimension(43, 746));
+        } else{
+            menu.setPreferredSize(new Dimension(263, 746));
+        }
+    }//GEN-LAST:event_formComponentResized
+
+    private void logButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logButtonActionPerformed
+        CardLayout card = (CardLayout) rootDashboard.getLayout();
+        card.show(rootDashboard, "historico");
+        
+        updateMenu();
+        logButton.setFont(new Font("Poppins", Font.BOLD, 12));
+        logButton.setForeground(new Color(60,137,166));
+        logButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/ClockBlue.png")));
+        
+        updateLogs();
+    }//GEN-LAST:event_logButtonActionPerformed
+
+    private void relatoriosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_relatoriosButtonActionPerformed
+        CardLayout card = (CardLayout) rootDashboard.getLayout();
+        card.show(rootDashboard, "relatorio");
+        
+        updateMenu();
+        relatoriosButton.setFont(new Font("Poppins", Font.BOLD, 12));
+        relatoriosButton.setForeground(new Color(60,137,166));
+        relatoriosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/DocumentBlue.png")));
+    }//GEN-LAST:event_relatoriosButtonActionPerformed
+
+    private void ativosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ativosButtonActionPerformed
+        CardLayout card = (CardLayout) rootDashboard.getLayout();
+        card.show(rootDashboard, "ativo");
+        
+        updateMenu();
+        ativosButton.setFont(new Font("Poppins", Font.BOLD, 12));
+        ativosButton.setForeground(new Color(60,137,166));
+        ativosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/BoxBlue.png")));
+        
+        updateAtivo();
+    }//GEN-LAST:event_ativosButtonActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        GlassPanePopup.showPopup(new Notificacao());
+    }//GEN-LAST:event_jButton10ActionPerformed
+
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton13ActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
-
-    private void ordem_servicoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordem_servicoButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ordem_servicoButtonActionPerformed
-
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        OSForms formulario = new OSForms(logged);
+        GlassPanePopup.showPopup(formulario);
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void manutencoesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manutencoesButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_manutencoesButtonActionPerformed
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        GlassPanePopup.showPopup(new AtivoForms(logged));
+    }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
+        GlassPanePopup.showPopup(new ManutencaoForms(logged));
     }//GEN-LAST:event_jButton12ActionPerformed
 
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+    private void jTextFieldEmail1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmail1ActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEmail1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        if (visible == false){
+            visible = true;
+            jPasswordFieldSenha1.setEchoChar((char)0);
+        } else{
+            visible = false;
+            jPasswordFieldSenha1.setEchoChar('*');
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jTextFieldEmail2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmail2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEmail2ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        if(jTextFieldEmail2.getText().matches("") || jTextFieldEmail1.getText().matches("") || new String(jPasswordFieldSenha1.getPassword()).matches("")){
+            GlassPanePopup.showPopup(new PopupView("Erro!", "Um ou mais campos obrigatórios não foram preenchidos."));
+        }else{
+        User usuario = new User(0, jTextFieldEmail2.getText(), jTextFieldEmail1.getText(), new String(jPasswordFieldSenha1.getPassword()), 1);
+        Controller controller = new Controller();
+        try {
+            if(controller.createUser(usuario)){
+                GlassPanePopup.showPopup(new PopupView("Usuário criado com sucesso!", "Vá para a tela de login para poder logar"));
+            }
+            else{
+                GlassPanePopup.showPopup(new PopupView("Erro ao criar o usuário", "Contate o administrator"));
+            }
+        } catch (SQLException ex) {
+            System.getLogger(View.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        CardLayout card = (CardLayout) root.getLayout();
+        card.show(root, "login");
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        exportToPDF(manutencaoTable);
     }//GEN-LAST:event_jButton14ActionPerformed
 
-    private void logButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_logButtonActionPerformed
-
-    private void relatoriosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_relatoriosButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_relatoriosButtonActionPerformed
-
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        // TODO add your handling code here:
+        exportToPDF(relatorioTable);
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        // TODO add your handling code here:
+        exportToCSV(relatorioTable);
     }//GEN-LAST:event_jButton15ActionPerformed
 
-    private void ativosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ativosButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ativosButtonActionPerformed
-
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton17ActionPerformed
-
-    
     /**
      * @param args the command line arguments
      */
