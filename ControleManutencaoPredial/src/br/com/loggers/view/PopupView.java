@@ -5,11 +5,15 @@
 package br.com.loggers.view;
 
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontFormatException;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
+import java.io.IOException;
+import java.io.InputStream;
 import javax.swing.JLabel;
 import popup.glasspanepopup.GlassPanePopup;
 
@@ -49,6 +53,28 @@ public class PopupView extends javax.swing.JPanel {
         g2.dispose();
         super.paintComponent(grphcs);
     }
+    public static Font carregarFonte(int estilo, float tamanho) {
+    try {
+        String caminhoFonte;
+
+        switch (estilo) {
+            case Font.BOLD:
+                caminhoFonte = "/resources/fonts/Poppins-Bold.ttf";
+                break;
+            default:
+                caminhoFonte = "/resources/fonts/Poppins-Medium.ttf";
+                break;
+        }
+
+        InputStream is = View.class.getResourceAsStream(caminhoFonte);
+        Font fonteBase = Font.createFont(Font.TRUETYPE_FONT, is);
+        return fonteBase.deriveFont(estilo, tamanho);
+
+    } catch (FontFormatException | IOException | NullPointerException e) {
+        e.printStackTrace();
+        return new JLabel().getFont(); // fallback: fonte padrão do Swing
+    }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -78,10 +104,11 @@ public class PopupView extends javax.swing.JPanel {
         jPanel1.setPreferredSize(new java.awt.Dimension(534, 40));
         jPanel1.setLayout(new java.awt.BorderLayout());
 
-        jLabelTitle.setFont(new java.awt.Font("Poppins", 1, 28)); // NOI18N
+        jLabelTitle.setFont(carregarFonte(Font.BOLD, 28));
         jLabelTitle.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabelTitle.setText("Erro!");
         jLabelTitle.setAlignmentX(0.5F);
+        jLabelTitle.setMaximumSize(new java.awt.Dimension(123, 12136));
         jLabelTitle.setPreferredSize(new java.awt.Dimension(500, 43));
         jPanel1.add(jLabelTitle, java.awt.BorderLayout.WEST);
 
@@ -91,9 +118,10 @@ public class PopupView extends javax.swing.JPanel {
         jPanel4.setPreferredSize(new java.awt.Dimension(474, 70));
         jPanel4.setLayout(new java.awt.BorderLayout());
 
-        jLabelText.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabelText.setFont(carregarFonte(Font.PLAIN, 15));
         jLabelText.setText("<html>Um ou mais campos obrigatórios não foram preenchidos.<br><br></html>");
         jLabelText.setAlignmentY(0.4F);
+        jLabelText.setMaximumSize(new java.awt.Dimension(2147483647, 3332));
         jPanel4.add(jLabelText, java.awt.BorderLayout.WEST);
 
         jPanel5.add(jPanel4);
@@ -102,7 +130,7 @@ public class PopupView extends javax.swing.JPanel {
         jPanel2.setLayout(new java.awt.BorderLayout());
 
         jButton5.setBackground(new java.awt.Color(60, 137, 166));
-        jButton5.setFont(new java.awt.Font("Poppins", 1, 16)); // NOI18N
+        jButton5.setFont(carregarFonte(Font.BOLD, 16));
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("FECHAR");
         jButton5.setAlignmentX(0.5F);

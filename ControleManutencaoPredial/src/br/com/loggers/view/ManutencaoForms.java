@@ -10,11 +10,15 @@ import br.com.loggers.controller.Manutencao;
 import br.com.loggers.controller.OS;
 import br.com.loggers.controller.User;
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontFormatException;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
+import java.io.IOException;
+import java.io.InputStream;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -81,6 +85,29 @@ public class ManutencaoForms extends javax.swing.JPanel {
         g2.dispose();
         super.paintComponent(grphcs);
     }
+    
+    public static Font carregarFonte(int estilo, float tamanho) {
+    try {
+        String caminhoFonte;
+
+        switch (estilo) {
+            case Font.BOLD:
+                caminhoFonte = "/resources/fonts/Poppins-Bold.ttf";
+                break;
+            default:
+                caminhoFonte = "/resources/fonts/Poppins-Medium.ttf";
+                break;
+        }
+
+        InputStream is = View.class.getResourceAsStream(caminhoFonte);
+        Font fonteBase = Font.createFont(Font.TRUETYPE_FONT, is);
+        return fonteBase.deriveFont(estilo, tamanho);
+
+    } catch (FontFormatException | IOException | NullPointerException e) {
+        e.printStackTrace();
+        return new JLabel().getFont(); // fallback: fonte padrão do Swing
+    }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -113,41 +140,46 @@ public class ManutencaoForms extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(791, 554));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Poppins", 1, 28)); // NOI18N
+        jLabel1.setFont(carregarFonte(Font.BOLD, 28));
         jLabel1.setText("Registrar Manutenção");
+        jLabel1.setMaximumSize(new java.awt.Dimension(142316, 42316));
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 35, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel2.setFont(carregarFonte(Font.PLAIN, 15));
         jLabel2.setText("Preencha os campos abaixos para registrar uma manutenção.");
+        jLabel2.setMaximumSize(new java.awt.Dimension(334223, 1623));
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 85, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel3.setFont(carregarFonte(Font.PLAIN, 15));
         jLabel3.setText("ID da ordem de serviço");
+        jLabel3.setMaximumSize(new java.awt.Dimension(333, 1336));
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 140, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel4.setFont(carregarFonte(Font.PLAIN, 15));
         jLabel4.setText("Local");
+        jLabel4.setMaximumSize(new java.awt.Dimension(3333, 1336));
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 240, -1, -1));
 
-        jComboBox1.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jComboBox1.setFont(carregarFonte(Font.PLAIN, 14));
         add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 170, 336, 45));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Vector_1.png"))); // NOI18N
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 50, 45));
 
-        jLabel6.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel6.setFont(carregarFonte(Font.PLAIN, 15));
         jLabel6.setText("Descrição");
+        jLabel6.setMaximumSize(new java.awt.Dimension(343, 1643));
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
 
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jTextArea1.setFont(carregarFonte(Font.PLAIN, 14));
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 700, 110));
 
         jButton3.setBackground(new java.awt.Color(217, 217, 217));
-        jButton3.setFont(new java.awt.Font("Poppins", 1, 16)); // NOI18N
+        jButton3.setFont(carregarFonte(Font.BOLD, 16));
         jButton3.setText("Cancelar");
         jButton3.setPreferredSize(new java.awt.Dimension(107, 42));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -158,7 +190,7 @@ public class ManutencaoForms extends javax.swing.JPanel {
         add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 490, -1, -1));
 
         jButton5.setBackground(new java.awt.Color(60, 137, 166));
-        jButton5.setFont(new java.awt.Font("Poppins", 1, 16)); // NOI18N
+        jButton5.setFont(carregarFonte(Font.BOLD, 16));
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Salvar");
         jButton5.setPreferredSize(new java.awt.Dimension(107, 42));
@@ -169,22 +201,24 @@ public class ManutencaoForms extends javax.swing.JPanel {
         });
         add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 490, -1, -1));
 
-        jComboBox4.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jComboBox4.setFont(carregarFonte(Font.PLAIN, 14));
         add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 270, 283, 45));
 
-        jComboBox6.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jComboBox6.setFont(carregarFonte(Font.PLAIN, 14));
         jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Preditiva", "Preventiva", "Corretiva" }));
         add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, 336, 45));
 
-        jLabel10.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel10.setFont(carregarFonte(Font.PLAIN, 15));
         jLabel10.setText("Tipo de manutenção");
+        jLabel10.setMaximumSize(new java.awt.Dimension(3333, 2330));
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, -1, -1));
 
-        jComboBox7.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jComboBox7.setFont(carregarFonte(Font.PLAIN, 14));
         add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, 336, 45));
 
-        jLabel11.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel11.setFont(carregarFonte(Font.PLAIN, 15));
         jLabel11.setText("Periodicidade De Manutenção");
+        jLabel11.setMaximumSize(new java.awt.Dimension(13359, 1336));
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 

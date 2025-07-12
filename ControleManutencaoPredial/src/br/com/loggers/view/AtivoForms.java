@@ -10,11 +10,15 @@ import br.com.loggers.controller.Log;
 import br.com.loggers.controller.User;
 import static br.com.loggers.view.OSForms.converterMes;
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontFormatException;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
+import java.io.IOException;
+import java.io.InputStream;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -89,6 +93,29 @@ public class AtivoForms extends javax.swing.JPanel {
     return true;
     }
     
+    public static Font carregarFonte(int estilo, float tamanho) {
+    try {
+        String caminhoFonte;
+
+        switch (estilo) {
+            case Font.BOLD:
+                caminhoFonte = "/resources/fonts/Poppins-Bold.ttf";
+                break;
+            default:
+                caminhoFonte = "/resources/fonts/Poppins-Medium.ttf";
+                break;
+        }
+
+        InputStream is = View.class.getResourceAsStream(caminhoFonte);
+        Font fonteBase = Font.createFont(Font.TRUETYPE_FONT, is);
+        return fonteBase.deriveFont(estilo, tamanho);
+
+    } catch (FontFormatException | IOException | NullPointerException e) {
+        e.printStackTrace();
+        return new JLabel().getFont(); // fallback: fonte padrão do Swing
+    }
+}
+    
     @Override
     protected void paintComponent(Graphics grphcs) {
         
@@ -140,19 +167,22 @@ public class AtivoForms extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(791, 666));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Poppins", 1, 28)); // NOI18N
+        jLabel1.setFont(carregarFonte(Font.BOLD, 28));
         jLabel1.setText("Registrar ativo");
+        jLabel1.setMaximumSize(new java.awt.Dimension(32423, 1423426));
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 35, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel2.setFont(carregarFonte(Font.PLAIN, 15));
         jLabel2.setText("Preencha os campos abaixos para registrar uma ordem de serviço.");
+        jLabel2.setMaximumSize(new java.awt.Dimension(2223, 1236));
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 85, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel3.setFont(carregarFonte(Font.PLAIN, 15));
         jLabel3.setText("Modelo");
+        jLabel3.setMaximumSize(new java.awt.Dimension(333, 1336));
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 140, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jTextField1.setFont(carregarFonte(Font.PLAIN, 14));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -160,50 +190,55 @@ public class AtivoForms extends javax.swing.JPanel {
         });
         add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 170, 336, 45));
 
-        jLabel4.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel4.setFont(carregarFonte(Font.PLAIN, 15));
         jLabel4.setText("Local");
+        jLabel4.setMaximumSize(new java.awt.Dimension(333, 1633));
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 240, -1, -1));
 
-        jComboBox1.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jComboBox1.setFont(carregarFonte(Font.PLAIN, 14));
         add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 270, 283, 45));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Vector_1.png"))); // NOI18N
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 50, 45));
 
-        jLabel5.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel5.setFont(carregarFonte(Font.PLAIN, 15));
         jLabel5.setText("Tipo");
+        jLabel5.setMaximumSize(new java.awt.Dimension(2334, 1336));
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, -1, -1));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Vector_1.png"))); // NOI18N
         add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 170, 50, 45));
 
-        jComboBox2.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jComboBox2.setFont(carregarFonte(Font.PLAIN, 14));
         add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, 283, 45));
 
-        jLabel6.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel6.setFont(carregarFonte(Font.PLAIN, 15));
         jLabel6.setText("Descrição");
+        jLabel6.setMaximumSize(new java.awt.Dimension(521, 126));
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 440, -1, -1));
 
-        jComboBox3.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jComboBox3.setFont(carregarFonte(Font.PLAIN, 14));
         add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 370, 336, 45));
 
-        jLabel7.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel7.setFont(carregarFonte(Font.PLAIN, 15));
         jLabel7.setText("Data De Instalação");
+        jLabel7.setMaximumSize(new java.awt.Dimension(9733, 12326));
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, -1, -1));
 
-        jLabel9.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel9.setFont(carregarFonte(Font.PLAIN, 15));
         jLabel9.setText("Periodicidade De Manutenção");
+        jLabel9.setMaximumSize(new java.awt.Dimension(1593, 163));
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 340, -1, -1));
 
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jTextArea1.setFont(carregarFonte(Font.PLAIN, 14));
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 470, 700, 110));
 
         jButton3.setBackground(new java.awt.Color(217, 217, 217));
-        jButton3.setFont(new java.awt.Font("Poppins", 1, 16)); // NOI18N
+        jButton3.setFont(carregarFonte(Font.BOLD, 16));
         jButton3.setText("Cancelar");
         jButton3.setPreferredSize(new java.awt.Dimension(107, 42));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -214,7 +249,7 @@ public class AtivoForms extends javax.swing.JPanel {
         add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 600, -1, -1));
 
         jButton5.setBackground(new java.awt.Color(60, 137, 166));
-        jButton5.setFont(new java.awt.Font("Poppins", 1, 16)); // NOI18N
+        jButton5.setFont(carregarFonte(Font.BOLD, 16));
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Salvar");
         jButton5.setPreferredSize(new java.awt.Dimension(107, 42));
@@ -225,33 +260,34 @@ public class AtivoForms extends javax.swing.JPanel {
         });
         add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(635, 600, -1, -1));
 
-        jComboBoxDay.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jComboBoxDay.setFont(carregarFonte(Font.PLAIN, 14));
         jComboBoxDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", " " }));
         add(jComboBoxDay, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, 60, 45));
 
-        jComboBoxMonth.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jComboBoxMonth.setFont(carregarFonte(Font.PLAIN, 14));
         jComboBoxMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro" }));
         add(jComboBoxMonth, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 270, 120, 45));
 
-        jComboBoxYear.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jComboBoxYear.setFont(carregarFonte(Font.PLAIN, 14));
         jComboBoxYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035" }));
         jComboBoxYear.setSelectedIndex(25);
         jComboBoxYear.setToolTipText("");
         add(jComboBoxYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, 130, 45));
 
-        jLabel10.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel10.setFont(carregarFonte(Font.PLAIN, 15));
         jLabel10.setText("Última Manutenção");
+        jLabel10.setMaximumSize(new java.awt.Dimension(10533, 3316));
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, -1, -1));
 
-        jComboBoxDay2.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jComboBoxDay2.setFont(carregarFonte(Font.PLAIN, 14));
         jComboBoxDay2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", " " }));
         add(jComboBoxDay2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 60, 45));
 
-        jComboBoxMonth2.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jComboBoxMonth2.setFont(carregarFonte(Font.PLAIN, 14));
         jComboBoxMonth2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro" }));
         add(jComboBoxMonth2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 370, 120, 45));
 
-        jComboBoxYear2.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jComboBoxYear2.setFont(carregarFonte(Font.PLAIN, 14));
         jComboBoxYear2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035" }));
         jComboBoxYear2.setSelectedIndex(25);
         jComboBoxYear2.setToolTipText("");
