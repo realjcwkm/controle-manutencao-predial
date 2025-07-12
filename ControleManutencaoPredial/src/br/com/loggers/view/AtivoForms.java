@@ -309,6 +309,16 @@ public class AtivoForms extends javax.swing.JPanel {
                 GlassPanePopup.showPopup(new PopupView("Erro!", "O novo ativo não pôde ser registrado!"));
               
             }
+            //insert log
+            LocalDate data = LocalDate.now();
+            LocalTime hora = LocalTime.now();
+            int tipo = 1;
+            int tipo_log_id_tipo_log = 1;
+            int usuario_id_usuario = logged.getId_usuario();
+            String descricaoLog = "Adicionar ativo";
+            
+            Log log = new Log(data, hora, tipo, tipo_log_id_tipo_log, usuario_id_usuario, 1, 1, descricaoLog);
+            controller.insertLog(log);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
