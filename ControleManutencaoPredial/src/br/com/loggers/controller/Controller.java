@@ -246,4 +246,12 @@ public class Controller {
         System.out.println("[insertLogManut] Resultado: " + resultado);
         return resultado;
     }
+
+    // Retorna os dados das ordens de serviço em formato de tabela
+    public DefaultTableModel getOSTable() {
+        System.out.println("[getOSTable] Carregando tabela de ordens de serviço...");
+        DefaultTableModel model = this.theDAO.getOSTable();
+        System.out.println("[getOSTable] Tabela carregada com sucesso.");
+        return model;
+    }
 }
