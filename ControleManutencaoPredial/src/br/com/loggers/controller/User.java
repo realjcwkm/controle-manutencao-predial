@@ -23,4 +23,24 @@ public class User {
         this.senha = senha;
         this.tipo = tipo;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public int getId_usuario() {
+        return id_usuario;
+    }
+
+    public int getTipo() {
+        return tipo;
+    }
 }
