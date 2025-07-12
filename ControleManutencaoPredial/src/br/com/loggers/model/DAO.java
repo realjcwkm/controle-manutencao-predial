@@ -221,3 +221,22 @@ public class DAO {
 
         return id_usuario;
     }
+
+    public int getLocalId(String nome){
+        int id_local = 0;
+
+        try (Connection conn = new Connect().conectar();
+             PreparedStatement stmt = conn.prepareStatement("SELECT id_local FROM local WHERE nome = ?");) {
+
+            stmt.setString(1, nome); 
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                id_local = rs.getInt("id_local");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace(); // Or use logging
+        }
+
+        return id_local;
+    }
