@@ -202,3 +202,22 @@ public class DAO {
 
         return categories;
     }
+
+    public int getUserId(String nome){
+        int id_usuario = 0;
+
+        try (Connection conn = new Connect().conectar();
+             PreparedStatement stmt = conn.prepareStatement("SELECT id_usuario FROM usuario WHERE nome = ?");) {
+
+            stmt.setString(1, nome); 
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                id_usuario = rs.getInt("id_usuario");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace(); // Or use logging
+        }
+
+        return id_usuario;
+    }
