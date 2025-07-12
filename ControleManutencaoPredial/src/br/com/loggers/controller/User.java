@@ -15,4 +15,12 @@ public class User {
     String senha;
     int id_usuario;
     int tipo;
+
+    public User(int id_usuario, String nome, String email, String senha, int tipo){
+        this.id_usuario = id_usuario;
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+        this.tipo = tipo;
+    }
 }
