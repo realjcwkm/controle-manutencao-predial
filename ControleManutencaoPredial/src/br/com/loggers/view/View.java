@@ -73,6 +73,23 @@ public class View extends javax.swing.JFrame {
         agendadoLabel.setText("<html><body style='text-align: center'>"+ String.valueOf(theController.countAgendado())+"<br>Agendadas");
         
         
+        OSTable.getTableHeader().setFont(new Font("Poppins", Font.BOLD, 16));
+        OSTable.getTableHeader().setPreferredSize(new Dimension(100, 56));
+        TableColumnModel columnModel = OSTable.getColumnModel();
+        columnModel.getColumn(0).setPreferredWidth(100);
+        columnModel.getColumn(1).setPreferredWidth(280);
+        columnModel.getColumn(2).setPreferredWidth(220);
+        columnModel.getColumn(3).setPreferredWidth(160);
+        columnModel.getColumn(4).setPreferredWidth(180);
+        columnModel.getColumn(5).setPreferredWidth(193);
+        
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+
+        // Apply to all columns (optional: use specific indices if needed)
+        for (int i = 0; i < OSTable.getColumnCount(); i++) {
+            OSTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        }
     }
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(View.class.getName());
