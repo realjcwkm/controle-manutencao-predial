@@ -37,6 +37,20 @@ public class AtivoForms extends javax.swing.JPanel {
         setOpaque(false);
         
         this.logged = logged;
+        
+        Controller controller = new Controller();
+        List<String> categories = controller.getTipoAtivo();
+        for (String name : categories) {
+            jComboBox2.addItem(name);
+        }
+        List<String> categoriesLocal = controller.getLocal();
+        for (String name : categoriesLocal) {
+            jComboBox1.addItem(name);
+        }
+        List<String> categoriesPeriodicidade = controller.getPeriodicidade();
+        for (String name : categoriesPeriodicidade) {
+            jComboBox3.addItem(name);
+        }
     }
     
     
