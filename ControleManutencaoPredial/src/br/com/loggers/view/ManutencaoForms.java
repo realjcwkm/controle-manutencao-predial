@@ -51,13 +51,26 @@ public class ManutencaoForms extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(791, 554));
         setPreferredSize(new java.awt.Dimension(791, 554));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Poppins", 1, 28)); // NOI18N
+        jLabel1.setText("Registrar Manutenção");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 35, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel2.setText("Preencha os campos abaixos para registrar uma manutenção.");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 85, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 // Variables declaration - do not modify                     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
