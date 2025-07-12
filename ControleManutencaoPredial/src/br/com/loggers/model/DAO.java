@@ -336,3 +336,19 @@ public class DAO {
             return false;
         }
     }
+
+    public boolean insertManutencao(Manutencao manutencao) {
+        String sql = "insert into manutencao(tipo_manutencao, ordem_servico_id_ordem_servico, local_id_local, periodicidade_id_periodicidade) values (?, ?, ?, ?)";
+
+        try (Connection conn = new Connect().conectar(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, manutencao.getTipo_manutencao());
+            stmt.setInt(2, manutencao.getOrdem_servico_id_ordem_servico());
+            stmt.setInt(3, manutencao.getLocal_id_local());
+            stmt.setInt(4, manutencao.getPeriodicidade_id_periodicidade());
+            stmt.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
