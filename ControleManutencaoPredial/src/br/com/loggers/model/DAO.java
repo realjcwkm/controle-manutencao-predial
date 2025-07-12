@@ -278,3 +278,22 @@ public class DAO {
 
         return id_local;
     }
+
+    public int getOSId(String nome){
+        int idOS = 0;
+
+        try (Connection conn = new Connect().conectar();
+             PreparedStatement stmt = conn.prepareStatement("SELECT id_ordem_servico FROM ordem_servico WHERE titulo = ?");) {
+
+            stmt.setString(1, nome); 
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                idOS = rs.getInt("id_ordem_servico");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace(); // Or use logging
+        }
+
+        return idOS;
+    }
