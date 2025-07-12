@@ -56,6 +56,14 @@ public class AtivoForms extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        jComboBoxDay = new javax.swing.JComboBox<>();
+        jComboBoxMonth = new javax.swing.JComboBox<>();
+        jComboBoxYear = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
+        jComboBoxDay2 = new javax.swing.JComboBox<>();
+        jComboBoxMonth2 = new javax.swing.JComboBox<>();
+        jComboBoxYear2 = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(791, 666));
@@ -101,6 +109,42 @@ public class AtivoForms extends javax.swing.JPanel {
 
         jComboBox2.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
         add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, 283, 45));
+
+        jLabel7.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel7.setText("Data De Instalação");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, -1, -1));
+
+        jComboBoxDay.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jComboBoxDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", " " }));
+        add(jComboBoxDay, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, 60, 45));
+
+        jComboBoxMonth.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jComboBoxMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro" }));
+        add(jComboBoxMonth, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 270, 120, 45));
+
+        jComboBoxYear.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jComboBoxYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035" }));
+        jComboBoxYear.setSelectedIndex(25);
+        jComboBoxYear.setToolTipText("");
+        add(jComboBoxYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, 130, 45));
+
+        jLabel10.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel10.setText("Última Manutenção");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, -1, -1));
+
+        jComboBoxDay2.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jComboBoxDay2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", " " }));
+        add(jComboBoxDay2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 60, 45));
+
+        jComboBoxMonth2.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jComboBoxMonth2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro" }));
+        add(jComboBoxMonth2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 370, 120, 45));
+
+        jComboBoxYear2.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jComboBoxYear2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035" }));
+        jComboBoxYear2.setSelectedIndex(25);
+        jComboBoxYear2.setToolTipText("");
+        add(jComboBoxYear2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 370, 130, 45));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -113,11 +157,19 @@ public class AtivoForms extends javax.swing.JPanel {
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBoxDay;
+    private javax.swing.JComboBox<String> jComboBoxDay2;
+    private javax.swing.JComboBox<String> jComboBoxMonth;
+    private javax.swing.JComboBox<String> jComboBoxMonth2;
+    private javax.swing.JComboBox<String> jComboBoxYear;
+    private javax.swing.JComboBox<String> jComboBoxYear2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
