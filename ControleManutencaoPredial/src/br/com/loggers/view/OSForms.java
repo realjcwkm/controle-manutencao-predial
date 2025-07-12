@@ -31,6 +31,14 @@ public class OSForms extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jComboBox2 = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(791, 666));
@@ -44,11 +52,55 @@ public class OSForms extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
         jLabel2.setText("Preencha os campos abaixos para registrar uma ordem de serviço.");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 85, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel3.setText("Título");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 140, -1, -1));
+
+        jTextField1.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 170, 336, 45));
+
+        jLabel4.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel4.setText("Local");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 240, -1, -1));
+
+        jComboBox1.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 270, 283, 45));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Vector_1.png"))); // NOI18N
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 50, 45));
+
+        jLabel5.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabel5.setText("Técnico Responsável");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, -1, -1));
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Vector_1.png"))); // NOI18N
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 170, 50, 45));
+
+        jComboBox2.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, 283, 45));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
 // Variables declaration - do not modify                     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
