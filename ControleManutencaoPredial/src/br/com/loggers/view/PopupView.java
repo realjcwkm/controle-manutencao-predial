@@ -67,10 +67,62 @@ public class PopupView extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(534, 188));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel5.setPreferredSize(new java.awt.Dimension(534, 176));
+        jPanel5.setLayout(new javax.swing.BoxLayout(jPanel5, javax.swing.BoxLayout.Y_AXIS));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(534, 40));
+        jPanel1.setLayout(new java.awt.BorderLayout());
+
+        jLabelTitle.setFont(new java.awt.Font("Poppins", 1, 28)); // NOI18N
+        jLabelTitle.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabelTitle.setText("Erro!");
+        jLabelTitle.setAlignmentX(0.5F);
+        jLabelTitle.setPreferredSize(new java.awt.Dimension(500, 43));
+        jPanel1.add(jLabelTitle, java.awt.BorderLayout.WEST);
+
+        jPanel5.add(jPanel1);
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setPreferredSize(new java.awt.Dimension(474, 70));
+        jPanel4.setLayout(new java.awt.BorderLayout());
+
+        jLabelText.setFont(new java.awt.Font("Poppins Medium", 0, 15)); // NOI18N
+        jLabelText.setText("<html>Um ou mais campos obrigatórios não foram preenchidos.<br><br></html>");
+        jLabelText.setAlignmentY(0.4F);
+        jPanel4.add(jLabelText, java.awt.BorderLayout.WEST);
+
+        jPanel5.add(jPanel4);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new java.awt.BorderLayout());
+
+        jButton5.setBackground(new java.awt.Color(60, 137, 166));
+        jButton5.setFont(new java.awt.Font("Poppins", 1, 16)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("FECHAR");
+        jButton5.setAlignmentX(0.5F);
+        jButton5.setMaximumSize(new java.awt.Dimension(94, 42));
+        jButton5.setMinimumSize(new java.awt.Dimension(94, 42));
+        jButton5.setPreferredSize(new java.awt.Dimension(107, 42));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton5, java.awt.BorderLayout.EAST);
+
+        jPanel5.add(jPanel2);
+
+        add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 23, 474, 134));
     }// </editor-fold>//GEN-END:initComponents
 
 // Variables declaration - do not modify                     
-    // Variables declaration - do not modify//GEN-BEGIN:variable
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabelText;
     private javax.swing.JLabel jLabelTitle;
