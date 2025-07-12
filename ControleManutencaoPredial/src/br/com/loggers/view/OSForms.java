@@ -271,7 +271,18 @@ public class OSForms extends javax.swing.JPanel {
             
             int local_id_local = controller.getLocalId(jComboBox1.getSelectedItem().toString());
             
+            OS ordem = new OS(titulo, urgencia, status, descricao, prazo, tecnico, local_id_local);
             
+            
+           
+            try {
+                controller.insertOS(ordem);
+                GlassPanePopup.showPopup(new PopupView("Ordem de serviço registrada!", "A nova ordem de serviço foi registrada com sucesso!"));
+            }
+            catch(Exception e) {
+                GlassPanePopup.showPopup(new PopupView("Erro!", "A nova ordem de serviço não pôde ser registrada!"));
+              
+            }
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
