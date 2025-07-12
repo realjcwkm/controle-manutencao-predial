@@ -369,3 +369,22 @@ public class DAO {
             return false;
         }
     }
+
+    public boolean insertLogOS(Log log) {
+        String sql = "insert into log(data, hora, tipo, descricao, tipo_log_id_tipo_log, usuario_id_usuario, ordem_servico_id_ordem_servico) values (?, ?, ?, ?, ?, ?, ?)";
+
+        try (Connection conn = new Connect().conectar(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setDate(1, java.sql.Date.valueOf(log.getData()));
+            stmt.setTime(2, java.sql.Time.valueOf(log.getHora()));
+            stmt.setInt(3, log.getTipo());
+            stmt.setString(4, log.getDescricao());
+            stmt.setInt(5, log.getTipo_log_id_tipo_log());
+            stmt.setInt(6, log.getUsuario_id_usuario());
+            stmt.setInt(7, log.getOrdem_servico_id_ordem_servico());
+            stmt.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
