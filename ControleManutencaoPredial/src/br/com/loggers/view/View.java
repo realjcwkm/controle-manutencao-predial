@@ -1810,6 +1810,14 @@ public class View extends javax.swing.JFrame {
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         GlassPanePopup.showPopup(new AtivoForms(logged));
     }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        GlassPanePopup.showPopup(new ManutencaoForms(logged));
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jTextFieldEmail1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmail1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEmail1ActionPerformed
     /**
      * @param args the command line arguments
      */
