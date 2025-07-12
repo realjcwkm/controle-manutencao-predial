@@ -49,4 +49,30 @@ public class Controller {
         return sucesso;
     }
 
+    // Método responsável por buscar um usuário a partir de suas credenciais
+    public User getUser(User theUser) throws SQLException {
+        System.out.println("[getUser] Iniciando busca de usuário...");
+
+        // Verifica se o objeto User é válido
+        if (theUser == null) {
+            System.err.println("[getUser] Objeto User fornecido é nulo.");
+            return null;
+        }
+
+        // Mostra os dados fornecidos para depuração
+        System.out.println("[getUser] Dados fornecidos - Email: " + theUser.getEmail());
+
+        // Realiza a busca no banco de dados
+        User encontrado = this.theDAO.getUser(theUser);
+
+        // Verifica se o usuário foi localizado
+        if (encontrado != null) {
+            System.out.println("[getUser] Usuário localizado: " + encontrado.getNome());
+        } else {
+            System.out.println("[getUser] Nenhum usuário encontrado com os dados informados.");
+        }
+
+        return encontrado;
+    }
+
 }
