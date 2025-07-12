@@ -114,4 +114,12 @@ public class Controller {
         System.out.println("[getTecnico] Total de técnicos encontrados: " + tecnicos.size());
         return tecnicos;
     }
+
+    // Retorna uma lista com os nomes dos locais cadastrados
+    public List<String> getLocal() {
+        System.out.println("[getLocal] Obtendo lista de locais cadastrados...");
+        List<String> locais = this.theDAO.getLocal();
+        System.out.println("[getLocal] Total de locais: " + locais.size());
+        return locais;
+    }
 }
