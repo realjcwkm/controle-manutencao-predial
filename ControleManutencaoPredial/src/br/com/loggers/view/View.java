@@ -112,6 +112,27 @@ public class View extends javax.swing.JFrame {
             manutencaoTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
         }
     }
+
+    public void updateLogs(){
+        Controller theController = new Controller();
+        logsTable.setModel(theController.getLogsTable());
+        
+        logsTable.getTableHeader().setFont(new Font("Poppins", Font.BOLD, 16));
+        logsTable.getTableHeader().setPreferredSize(new Dimension(100, 56));
+        TableColumnModel columnModel3 = logsTable.getColumnModel();
+        columnModel3.getColumn(0).setPreferredWidth(120);
+        columnModel3.getColumn(1).setPreferredWidth(100);
+        columnModel3.getColumn(2).setPreferredWidth(100);
+        columnModel3.getColumn(3).setPreferredWidth(480);
+        columnModel3.getColumn(4).setPreferredWidth(300);
+        
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+
+        for (int i = 0; i < logsTable.getColumnCount(); i++) {
+            logsTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        }
+    }
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(View.class.getName());
 
