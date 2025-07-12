@@ -298,6 +298,17 @@ public class AtivoForms extends javax.swing.JPanel {
             LocalDate ultima_manutencao = LocalDate.parse(dateString2, formatter);
             
             String descricao = jTextArea1.getText();
+            
+            Ativo ativo = new Ativo(modelo_ativo, descricao, data_instalacao, ultima_manutencao, local_id_local, tipo_ativo_id_tipo_ativo, periodicidade_id_periodicidade);
+            
+            try {
+                controller.insertAtivo(ativo);
+                GlassPanePopup.showPopup(new PopupView("Ativo registrado!", "O novo ativo foi registrado com sucesso!"));
+            }
+            catch(Exception e) {
+                GlassPanePopup.showPopup(new PopupView("Erro!", "O novo ativo não pôde ser registrado!"));
+              
+            }
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
