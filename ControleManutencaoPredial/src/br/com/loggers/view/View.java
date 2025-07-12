@@ -133,6 +133,28 @@ public class View extends javax.swing.JFrame {
             logsTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
         }
     }
+
+    public void updateAtivo(){
+        Controller theController = new Controller();
+        ativoTable.setModel(theController.getAtivoTable());
+        
+        
+        ativoTable.getTableHeader().setFont(new Font("Poppins", Font.BOLD, 16));
+        ativoTable.getTableHeader().setPreferredSize(new Dimension(100, 56));
+        TableColumnModel columnModel4 = ativoTable.getColumnModel();
+        columnModel4.getColumn(0).setPreferredWidth(100);
+        columnModel4.getColumn(1).setPreferredWidth(300);
+        columnModel4.getColumn(2).setPreferredWidth(220);
+        columnModel4.getColumn(3).setPreferredWidth(200);
+        columnModel4.getColumn(4).setPreferredWidth(200);
+        
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+
+        for (int i = 0; i < ativoTable.getColumnCount(); i++) {
+            ativoTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        }
+    }
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(View.class.getName());
 
