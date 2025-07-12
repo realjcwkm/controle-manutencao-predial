@@ -6,13 +6,11 @@ package br.com.loggers.controller;
 
 /**
  *
- * @author Matheus
+ * @author Pichau
  */
 public class Manutencao {
     String tipo_manutencao;
-    int ordem_servico_id_ordem_servico;
-    int local_id_local;
-    int periodicidade_id_periodicidade;
+    int ordem_servico_id_ordem_servico, local_id_local, periodicidade_id_periodicidade;
 
     public Manutencao(String tipo_manutencao, int ordem_servico_id_ordem_servico, int local_id_local, int periodicidade_id_periodicidade) {
         this.tipo_manutencao = tipo_manutencao;

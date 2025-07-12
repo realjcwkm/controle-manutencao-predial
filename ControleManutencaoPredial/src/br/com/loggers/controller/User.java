@@ -6,15 +6,11 @@ package br.com.loggers.controller;
 
 /**
  *
- * @author Matheus
+ * @author Aluno
  */
-
 public class User {
-    String nome;
-    String email;
-    String senha;
-    int id_usuario;
-    int tipo;
+    String nome, email, senha;
+    int id_usuario, tipo;
 
     public User(int id_usuario, String nome, String email, String senha, int tipo){
         this.id_usuario = id_usuario;
@@ -43,4 +39,8 @@ public class User {
     public int getTipo() {
         return tipo;
     }
+
+    
+    
+    
 }

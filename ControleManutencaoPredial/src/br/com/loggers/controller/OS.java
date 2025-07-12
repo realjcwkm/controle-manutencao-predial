@@ -8,17 +8,13 @@ import java.time.LocalDate;
 
 /**
  *
- * @author Matheus
+ * @author Pichau
  */
 public class OS {
 
-    String titulo;
-    String urgencia;
-    String status;
-    String descricao;
+    String titulo, urgencia, status, descricao;
     LocalDate prazo;
-    int tecnico;
-    int local_id_local;
+    int tecnico, local_id_local;
     
     public OS(String titulo, String urgencia, String status, String descricao, LocalDate prazo, int tecnico, int local_id_local) {
         this.titulo = titulo;
@@ -57,5 +53,7 @@ public class OS {
     public int getLocal_id_local() {
         return local_id_local;
     }
+    
+    
     
 }

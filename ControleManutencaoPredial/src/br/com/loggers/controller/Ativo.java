@@ -8,15 +8,12 @@ import java.time.LocalDate;
 
 /**
  *
- * @author Matheus
+ * @author Pichau
  */
 public class Ativo {
     String modelo_ativo, descricao;
-    LocalDate data_instalacao;
-    LocalDate ultima_manutencao;
-    int local_id_local;
-    int tipo_ativo_id_tipo_ativo;
-    int periodicidade_id_periodicidade;
+    LocalDate data_instalacao, ultima_manutencao;
+    int local_id_local, tipo_ativo_id_tipo_ativo, periodicidade_id_periodicidade;
 
     public Ativo(String modelo_ativo, String descricao, LocalDate data_instalacao, LocalDate ultima_manutencao, int local_id_local, int tipo_ativo_id_tipo_ativo, int periodicidade_id_periodicidade) {
         this.modelo_ativo = modelo_ativo;

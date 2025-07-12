@@ -35,6 +35,7 @@ public class DAO {
         theStatement.execute();
         return true;
     }
+    
     public User getUser(User theUser) throws SQLException{
             Connection theConnection = new Connect().conectar();
             //prepare the insert query
@@ -48,9 +49,9 @@ public class DAO {
             } else {
                 return null;
             }
-    }   
-
-     public int countPendente() {
+    }
+    
+    public int countPendente() {
         int count = 0;
         String sql = "SELECT COUNT(*) AS total FROM ordem_servico WHERE status = 'pendente'";
         try (Connection conn = new Connect().conectar(); PreparedStatement stmt = conn.prepareStatement(sql);
@@ -80,7 +81,8 @@ public class DAO {
         System.out.println(count);
         return count;
     }
-
+    
+    
     public int countFinalizado() {
         int count = 0;
         String sql = "SELECT COUNT(*) AS total FROM ordem_servico WHERE status = 'finalizado'";
@@ -96,7 +98,7 @@ public class DAO {
         System.out.println(count);
         return count;
     }
-
+    
     public int countAgendado() {
         int count = 0;
         String sql = "SELECT COUNT(*) AS total FROM ordem_servico WHERE status = 'agendado'";
@@ -112,7 +114,7 @@ public class DAO {
         System.out.println(count);
         return count;
     }
-
+    
     public List<String> getTecnico() {
         List<String> categories = new ArrayList<>();
 
@@ -130,7 +132,7 @@ public class DAO {
 
         return categories;
     }
-
+    
     public List<String> getLocal() {
         List<String> categories = new ArrayList<>();
 
@@ -166,7 +168,7 @@ public class DAO {
 
         return categories;
     }
-
+    
     public List<String> getPeriodicidade() {
         List<String> categories = new ArrayList<>();
 
@@ -184,7 +186,7 @@ public class DAO {
 
         return categories;
     }
-
+    
     public List<String> getOSID() {
         List<String> categories = new ArrayList<>();
 
@@ -202,7 +204,7 @@ public class DAO {
 
         return categories;
     }
-
+    
     public int getUserId(String nome){
         int id_usuario = 0;
 
@@ -221,7 +223,7 @@ public class DAO {
 
         return id_usuario;
     }
-
+    
     public int getLocalId(String nome){
         int id_local = 0;
 
@@ -240,7 +242,7 @@ public class DAO {
 
         return id_local;
     }
-
+    
     public int getAtivoTipoID(String nome){
         int id_local = 0;
 
@@ -259,7 +261,7 @@ public class DAO {
 
         return id_local;
     }
-
+    
     public int getPeriocididadeID(String nome){
         int id_local = 0;
 
@@ -278,7 +280,7 @@ public class DAO {
 
         return id_local;
     }
-
+    
     public int getOSId(String nome){
         int idOS = 0;
 
@@ -297,7 +299,8 @@ public class DAO {
 
         return idOS;
     }
-
+    
+    
     public boolean insertOS(OS ordem) {
         String sql = "insert into ordem_servico(titulo, tecnico, prazo, urgencia, status, descricao, local_id_local) values (?, ?, ?, ?, ?, ?, ?)";
 
@@ -316,7 +319,7 @@ public class DAO {
             return false;
         }
     }
-
+    
     public boolean insertAtivo(Ativo ativo) {
         String sql = "insert into ativos (modelo_ativo, ultima_manutencao, data_instalacao, descricao, local_id_local, tipo_ativo_id_tipo_ativo, periodicidade_id_periodicidade) values (?, ?, ?, ?, ?, ?, ?)";
 
@@ -336,7 +339,7 @@ public class DAO {
             return false;
         }
     }
-
+    
     public boolean insertManutencao(Manutencao manutencao) {
         String sql = "insert into manutencao(tipo_manutencao, ordem_servico_id_ordem_servico, local_id_local, periodicidade_id_periodicidade) values (?, ?, ?, ?)";
 
@@ -369,7 +372,7 @@ public class DAO {
             return false;
         }
     }
-
+    
     public boolean insertLogOS(Log log) {
         String sql = "insert into log(data, hora, tipo, descricao, tipo_log_id_tipo_log, usuario_id_usuario, ordem_servico_id_ordem_servico) values (?, ?, ?, ?, ?, ?, ?)";
 
@@ -388,7 +391,7 @@ public class DAO {
             return false;
         }
     }
-
+    
     public boolean insertLogManut(Log log) {
         String sql = "insert into log(data, hora, tipo, descricao, tipo_log_id_tipo_log, usuario_id_usuario, manutencao_id_manutencao) values (?, ?, ?, ?, ?, ?, ?)";
 
@@ -407,7 +410,7 @@ public class DAO {
             return false;
         }
     }
-
+    
     public DefaultTableModel getOSTable() {
         DefaultTableModel model = new DefaultTableModel();
 
@@ -441,7 +444,6 @@ public class DAO {
         return model;
     }
     
-
     public DefaultTableModel getManutencaoTable() {
         DefaultTableModel model = new DefaultTableModel();
 
@@ -474,7 +476,7 @@ public class DAO {
 
         return model;
     }
-
+    
     public DefaultTableModel getLogsTable() {
         DefaultTableModel model = new DefaultTableModel();
 
@@ -507,7 +509,7 @@ public class DAO {
 
         return model;
     }
-
+    
     public DefaultTableModel getAtivoTable() {
         DefaultTableModel model = new DefaultTableModel();
 

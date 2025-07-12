@@ -9,15 +9,12 @@ import java.time.LocalTime;
 
 /**
  *
- * @author Matheus
+ * @author Pichau
  */
 public class Log {
     LocalDate data;
     LocalTime hora;
-    int tipo, tipo_log_id_tipo_log;
-    int usuario_id_usuario;
-    int ordem_servico_id_ordem_servico;
-    int manutencao_id_manutencao;
+    int tipo, tipo_log_id_tipo_log, usuario_id_usuario, ordem_servico_id_ordem_servico, manutencao_id_manutencao;
     String descricao;
 
     public Log(LocalDate data, LocalTime hora, int tipo, int tipo_log_id_tipo_log, int usuario_id_usuario, int ordem_servico_id_ordem_servico, int manutencao_id_manutencao, String descricao) {
