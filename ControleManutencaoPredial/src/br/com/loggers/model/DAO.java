@@ -166,3 +166,21 @@ public class DAO {
 
         return categories;
     }
+
+    public List<String> getPeriodicidade() {
+        List<String> categories = new ArrayList<>();
+
+        try (Connection conn = new Connect().conectar();
+             PreparedStatement stmt = conn.prepareStatement("SELECT tipo_periodicidade FROM periodicidade");
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                categories.add(rs.getString("tipo_periodicidade"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace(); // Or use logging
+        }
+
+        return categories;
+    }
