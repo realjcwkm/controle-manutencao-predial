@@ -6,16 +6,16 @@ O SGMP (Sistema de Gerenciamento de Manutenção Predial) é uma aplicação des
 
 ### Funcionalidades Implementadas
 
-* [x] Autenticação: Sistema de login seguro com perfis de usuário (técnico, admin, solicitante).
+* [x] Autenticação: Sistema de login seguro com perfis de usuário (técnico).
 * [x] Dashboard: Painel principal com indicadores visuais, como a contagem de ordens de serviço.
-* [x] Gerenciamento de Ativos: Cadastro, edição e exclusão de equipamentos e instalações prediais.
+* [x] Gerenciamento de Ativos: Cadastro de equipamentos e instalações prediais.
 * [x] Ordens de Serviço: Registro completo de manutenções preventivas e corretivas.
 * [x] Relatórios: Exportação de dados em formatos PDF e CSV.
-* [x] Auditoria: Tela de logs de sistema, alimentada por triggers no banco de dados.
+* [x] Auditoria: Tela de histórico ou logs de sistema, onde os registros são gerados por meio de triggers com base nas ações do usuário na interface.
 
 ### 💻 Tecnologias Utilizadas
 
-- Linguagem: Java SE 8+
+- Linguagem: Java
 - Interface Gráfica: Java Swing
 - Arquitetura: MVC (Model-View-Controller)
 - Banco de Dados: MySQL
@@ -43,12 +43,12 @@ Este projeto segue o padrão de **commits semânticos**, inspirado nas convenç�
 #### Exemplos de Commits Realizados:
 
 ```bash
-Feat: Criar tela de login
-Feat: Implementar exportação de relatórios
-Fix: Corrigir erro na tabela de ativos
-Docs: Adicionar seção de banco de dados no README
-Style: Ajustar espaçamento entre botões da interface
-Chore: Configurar conexão com banco de dados
+Feat: Criando tela de login
+Feat: Implementando exportação de relatórios
+Fix: Corrigindo erro na tabela de ativos
+Docs: Adicionando seção de banco de dados no README
+Style: Ajustando espaçamento entre botões da interface
+Chore: Configurando conexão com banco de dados
 ```
 #
 
@@ -83,6 +83,8 @@ Disponibilizamos o link da ferramenta abaixo:
 
 As telas abaixo foram desenvolvidas com base nos requisitos levantados, utilizando a ferramenta Figma. A seguir, estão as principais interfaces do sistema:
 
+##### (Obs: As imagens são ilustrativas. O visual pode mudar no sistema, já que o Java Swing tem limitações de design.)
+
 - Tela de Login
 ![Tela de Login](./ImagensREADME/PrototipoFigma/TelaLoginSGMP.png)
 
@@ -92,7 +94,7 @@ As telas abaixo foram desenvolvidas com base nos requisitos levantados, utilizan
 - Tela de Manutenção
 ![Tela de Manutenção](./ImagensREADME/PrototipoFigma/TelaManuntencaoSGMP.png)
 
-- Tela de Histórico
+- Tela de Histórico ou Logs de sistema
 ![Tela de Histórico](./ImagensREADME/PrototipoFigma/TelaHistoricoSGMP.png)
 
 - Tela de Relatório
@@ -116,17 +118,16 @@ A modelagem geral do banco de dados foi feita utilizando o SGBD MySQL, atendendo
 | Chave Estrangeira (FK) | ✅ |
 | Constraints            | ✅ |
 | Consultas (SELECT)     | ✅ |
-| Triggers               | ✅ |
 
-Estrutura da pasta `BancoDeDados/` com descrição entre parênteses:
+Onde está localizado as principais partes do Banco de Dados:
 
 ```txt
-📁
 ├── 📁 BancoDeDados/
 │   ├── 📁 ModeloConceitual/
 │   │   └── *ConceitualSGMP.png*
 │   └── 📁 ModeloLogico/
 │       └── *LogicoSGMP.png*
+│
 ├── *ScriptSGMP.sql* ← Localizado na raiz do projeto (fora da pasta BancoDeDados)
 ```
 
@@ -135,6 +136,8 @@ Estrutura da pasta `BancoDeDados/` com descrição entre parênteses:
 ### ⚙️ Manual de Usuário
 
 ### 1 Primeiro passo
+
+Requisitos: Git instalado em sua máquina.
 
 Clone o repositório via terminal em sua máquina utilizando o comando:
 
@@ -164,6 +167,8 @@ Requisitos: MySQL e MySQL Workbench instalados na máquina com conexão configur
 
 ### 3 Como configurar e executar a aplicação no NetBeans
 
+Requisitos: Ter o Java e todas as suas dependências devidamente instalados em sua máquina.
+
 1 - Abra a IDE Apache NetBeans
 
 2 - Clique em "Open Project…"
@@ -192,7 +197,7 @@ Requisitos: MySQL e MySQL Workbench instalados na máquina com conexão configur
 - Luiz Guilherme Ribeiro Da Costa
 - Matheus Henrique Sousa Lima
 - Paulo Henrique Ximenes De Albuquerque
-- Eduarda Vitória Leiga De Lima
+- Eduarda Vitória Leigue De Lima
 
 #
 
