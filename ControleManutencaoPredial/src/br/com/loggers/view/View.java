@@ -16,6 +16,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.FontFormatException;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -33,6 +35,7 @@ import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumnModel;
+import org.netbeans.lib.awtextra.AbsoluteConstraints;
 import popup.glasspanepopup.GlassPanePopup;
 
 
@@ -1161,8 +1164,9 @@ public class View extends javax.swing.JFrame {
     pendenteLabel.setText("<html><body style='text-align: center'>0<br>Pendentes");
     pendenteLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
     gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.gridx = 0;
     gridBagConstraints.gridy = 0;
-    gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 35);
+    gridBagConstraints.insets = new java.awt.Insets(35, 35, 35, 0);
     jPanel19.add(pendenteLabel, gridBagConstraints);
 
     andamentoLabel.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
@@ -1171,8 +1175,9 @@ public class View extends javax.swing.JFrame {
     andamentoLabel.setText("<html><body style='text-align: center'>0<br>Em andamento");
     andamentoLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
     gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.gridx = 1;
     gridBagConstraints.gridy = 0;
-    gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 35);
+    gridBagConstraints.insets = new java.awt.Insets(35, 35, 35, 0);
     jPanel19.add(andamentoLabel, gridBagConstraints);
 
     finalizadoLabel.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
@@ -1181,8 +1186,9 @@ public class View extends javax.swing.JFrame {
     finalizadoLabel.setText("<html><body style='text-align: center'>0<br>Finalizadas");
     finalizadoLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
     gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.gridx = 2;
     gridBagConstraints.gridy = 0;
-    gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 35);
+    gridBagConstraints.insets = new java.awt.Insets(35, 35, 35, 0);
     jPanel19.add(finalizadoLabel, gridBagConstraints);
 
     agendadoLabel.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
@@ -1191,7 +1197,9 @@ public class View extends javax.swing.JFrame {
     agendadoLabel.setText("<html><body style='text-align: center'>0<br>Agendadas");
     agendadoLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
     gridBagConstraints = new java.awt.GridBagConstraints();
+    gridBagConstraints.gridx = 3;
     gridBagConstraints.gridy = 0;
+    gridBagConstraints.insets = new java.awt.Insets(35, 35, 35, 0);
     jPanel19.add(agendadoLabel, gridBagConstraints);
 
     jPanel22.add(jPanel19);
@@ -1221,6 +1229,8 @@ public class View extends javax.swing.JFrame {
 
     jPanel27.setAlignmentX(0.0F);
     jPanel27.setLayout(new java.awt.GridBagLayout());
+
+    jScrollPane6.setMinimumSize(new java.awt.Dimension(16, 402));
 
     OSTable.setFont(carregarFonte(Font.PLAIN, 15));
     OSTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -1821,10 +1831,69 @@ public class View extends javax.swing.JFrame {
     }//GEN-LAST:event_manutencoesButtonActionPerformed
 
     private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
-        if(evt.getComponent().getWidth() < 800){
+        if(evt.getComponent().getWidth() < 1250){
+            jPanel20.setPreferredSize(new Dimension(500, 1300));
+            jPanel19.setPreferredSize(new Dimension(1177, 400));
+            
+            jPanel19.remove(finalizadoLabel);
+
+            GridBagConstraints novoGbc = new GridBagConstraints();
+            novoGbc.gridx = 0;
+            novoGbc.gridy = 1; // Nova linha
+            novoGbc.insets = new Insets(35, 35, 35, 0);
+
+            jPanel19.add(finalizadoLabel, novoGbc);
+            jPanel19.revalidate();
+            jPanel19.repaint();
+            
+            jPanel19.remove(agendadoLabel);
+
+            novoGbc.gridx = 1;
+            novoGbc.gridy = 1; // Nova linha
+
+            jPanel19.add(agendadoLabel, novoGbc);
+            jPanel19.revalidate();
+            jPanel19.repaint();
+        }
+        else{
+            jPanel20.setPreferredSize(new Dimension(500, 1000));
+            jPanel19.setPreferredSize(new Dimension(1177, 200));
+            
+            jPanel19.remove(finalizadoLabel);
+
+            GridBagConstraints novoGbc = new GridBagConstraints();
+            novoGbc.gridx = 2;
+            novoGbc.gridy = 0; // Nova linha
+            novoGbc.insets = new Insets(35, 35, 35, 0);
+
+            jPanel19.add(finalizadoLabel, novoGbc);
+            jPanel19.revalidate();
+            jPanel19.repaint();
+            
+            jPanel19.remove(agendadoLabel);
+
+            novoGbc.gridx = 3;
+            novoGbc.gridy = 0; // Nova linha
+
+            jPanel19.add(agendadoLabel, novoGbc);
+            jPanel19.revalidate();
+            jPanel19.repaint();
+        }
+        if(evt.getComponent().getWidth() < 850){
             menu.setPreferredSize(new Dimension(43, 746));
+            menu.remove(jPanel10); // remover do layout
+            menu.add(jPanel10, new AbsoluteConstraints(0, 10, 220, 300));
+            menu.revalidate();
+            menu.repaint();
+            ordem_servicoButton.setText("   Ordens de Serviço");
         } else{
             menu.setPreferredSize(new Dimension(263, 746));
+            menu.remove(jPanel10); // remover do layout
+            menu.add(jPanel10, new AbsoluteConstraints(20, 10, 220, 300));
+            menu.revalidate();
+            menu.repaint();
+            ordem_servicoButton.setText("  Ordens de Serviço");
+            
         }
     }//GEN-LAST:event_formComponentResized
 
