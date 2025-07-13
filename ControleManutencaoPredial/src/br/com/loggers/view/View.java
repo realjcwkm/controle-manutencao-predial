@@ -1832,7 +1832,7 @@ public class View extends javax.swing.JFrame {
 
     private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
         if(evt.getComponent().getWidth() < 1250){
-            jPanel20.setPreferredSize(new Dimension(500, 1300));
+            jPanel25.setPreferredSize(new Dimension(500, 1300));
             jPanel19.setPreferredSize(new Dimension(1177, 400));
             
             jPanel19.remove(finalizadoLabel);
@@ -1856,7 +1856,7 @@ public class View extends javax.swing.JFrame {
             jPanel19.repaint();
         }
         else{
-            jPanel20.setPreferredSize(new Dimension(500, 1000));
+            jPanel25.setPreferredSize(new Dimension(500, 1000));
             jPanel19.setPreferredSize(new Dimension(1177, 200));
             
             jPanel19.remove(finalizadoLabel);
