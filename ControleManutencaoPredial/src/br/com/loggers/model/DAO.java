@@ -508,7 +508,7 @@ public class DAO {
     public DefaultTableModel getAtivoTable() {
         DefaultTableModel model = new DefaultTableModel();
 
-        String sql = "SELECT a.id_ativos AS ID, a.modelo_ativo AS Nome, ta.nome_tipo_ativo AS Tipo, l.nome AS Localização, a.ultima_manutencao FROM ativos a JOIN tipo_ativo ta ON a.tipo_ativo_id_tipo_ativo = ta.id_tipo_ativo JOIN local l ON a.local_id_local = l.id_local ORDER BY a.id_ativos DESC LIMIT 10;";
+        String sql = "SELECT a.id_ativos AS ID, a.modelo_ativo AS Nome, ta.nome_tipo_ativo AS Tipo, l.nome AS Localização, a.ultima_manutencao AS \"Última manut.\" FROM ativos a JOIN tipo_ativo ta ON a.tipo_ativo_id_tipo_ativo = ta.id_tipo_ativo JOIN local l ON a.local_id_local = l.id_local ORDER BY a.id_ativos DESC LIMIT 10;";
 
         try (Connection conn = new Connect().conectar();
              PreparedStatement stmt = conn.prepareStatement(sql);
