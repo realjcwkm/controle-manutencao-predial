@@ -1456,8 +1456,8 @@
                                   <SubComponents>
                                     <Component class="javax.swing.JLabel" name="pendenteLabel">
                                       <Properties>
-                                        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                                          <Connection code="carregarFonte(Font.PLAIN, 16)" type="code"/>
+                                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                          <Font name="Segoe UI Semibold" size="18" style="1"/>
                                         </Property>
                                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1476,8 +1476,8 @@
                                     </Component>
                                     <Component class="javax.swing.JLabel" name="andamentoLabel">
                                       <Properties>
-                                        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                                          <Connection code="carregarFonte(Font.PLAIN, 16)" type="code"/>
+                                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                          <Font name="Segoe UI Semibold" size="18" style="1"/>
                                         </Property>
                                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1496,8 +1496,8 @@
                                     </Component>
                                     <Component class="javax.swing.JLabel" name="finalizadoLabel">
                                       <Properties>
-                                        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                                          <Connection code="carregarFonte(Font.PLAIN, 16)" type="code"/>
+                                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                          <Font name="Segoe UI Semibold" size="18" style="1"/>
                                         </Property>
                                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1516,8 +1516,8 @@
                                     </Component>
                                     <Component class="javax.swing.JLabel" name="agendadoLabel">
                                       <Properties>
-                                        <Property name="font" type="java.awt.Font" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                                          <Connection code="carregarFonte(Font.PLAIN, 16)" type="code"/>
+                                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                          <Font name="Segoe UI Semibold" size="18" style="0"/>
                                         </Property>
                                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                           <Color blue="ff" green="ff" red="ff" type="rgb"/>

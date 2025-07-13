@@ -1155,7 +1155,7 @@ public class View extends javax.swing.JFrame {
     jPanel19.setPreferredSize(new java.awt.Dimension(1177, 200));
     jPanel19.setLayout(new java.awt.GridBagLayout());
 
-    pendenteLabel.setFont(carregarFonte(Font.PLAIN, 16));
+    pendenteLabel.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
     pendenteLabel.setForeground(new java.awt.Color(255, 255, 255));
     pendenteLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/pendentes.png"))); // NOI18N
     pendenteLabel.setText("<html><body style='text-align: center'>0<br>Pendentes");
@@ -1165,7 +1165,7 @@ public class View extends javax.swing.JFrame {
     gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 35);
     jPanel19.add(pendenteLabel, gridBagConstraints);
 
-    andamentoLabel.setFont(carregarFonte(Font.PLAIN, 16));
+    andamentoLabel.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
     andamentoLabel.setForeground(new java.awt.Color(255, 255, 255));
     andamentoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/em_andamento.png"))); // NOI18N
     andamentoLabel.setText("<html><body style='text-align: center'>0<br>Em andamento");
@@ -1175,7 +1175,7 @@ public class View extends javax.swing.JFrame {
     gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 35);
     jPanel19.add(andamentoLabel, gridBagConstraints);
 
-    finalizadoLabel.setFont(carregarFonte(Font.PLAIN, 16));
+    finalizadoLabel.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
     finalizadoLabel.setForeground(new java.awt.Color(255, 255, 255));
     finalizadoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/finalizados.png"))); // NOI18N
     finalizadoLabel.setText("<html><body style='text-align: center'>0<br>Finalizadas");
@@ -1185,7 +1185,7 @@ public class View extends javax.swing.JFrame {
     gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 35);
     jPanel19.add(finalizadoLabel, gridBagConstraints);
 
-    agendadoLabel.setFont(carregarFonte(Font.PLAIN, 16));
+    agendadoLabel.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
     agendadoLabel.setForeground(new java.awt.Color(255, 255, 255));
     agendadoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/agendados.png"))); // NOI18N
     agendadoLabel.setText("<html><body style='text-align: center'>0<br>Agendadas");

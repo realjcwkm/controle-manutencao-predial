@@ -63,7 +63,6 @@ public class DAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println(count);
         return count;
     }
     public int countAndamento() {
@@ -78,7 +77,6 @@ public class DAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println(count);
         return count;
     }
     
@@ -95,7 +93,6 @@ public class DAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println(count);
         return count;
     }
     
@@ -111,7 +108,6 @@ public class DAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println(count);
         return count;
     }
     
@@ -331,7 +327,6 @@ public class DAO {
             stmt.setInt(5, ativo.getLocal_id_local());
             stmt.setInt(6, ativo.getTipo_ativo_id_tipo_ativo());
             stmt.setInt(7, ativo.getPeriodicidade_id_periodicidade());
-            System.out.println(ativo.getPeriodicidade_id_periodicidade());
             stmt.executeUpdate();
             return true;
         } catch (SQLException e) {
